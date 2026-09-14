@@ -1,0 +1,9 @@
+{
+  "name": "Lebensbrücke Deutschland – Mensch & Tier",
+  "short_name": "Lebensbrücke",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f5f8fb",
+  "theme_color": "#174f72",
+  "description": "Gemeinsam helfen – für Menschen und Tiere. Weil jedes Leben zählt."
+}
