@@ -2,71 +2,120 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lebensbrücke – Mensch & Tier</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Lebensbrücke Deutschland – Mensch & Tier</title>
 
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background: #f5f8fb;
   text-align: center;
+  color: #174f72;
 }
-header {
-  padding: 35px 15px;
-  background: white;
-}
-h1 { color: #123b5d; }
-p { color: #555; }
 
-.container {
-  padding: 20px;
-}
-.button {
+.hero {
+  width: 100%;
+  max-width: 1000px;
+  height: auto;
   display: block;
-  padding: 25px;
-  margin: 15px auto;
-  max-width: 400px;
-  border-radius: 18px;
-  color: white;
+  margin: 0 auto;
+}
+
+.content {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 30px 18px 45px;
+}
+
+h1 {
+  margin: 0 0 8px;
+  font-size: 34px;
+}
+
+.claim {
+  margin: 0 0 30px;
   font-size: 22px;
   font-weight: bold;
-  text-decoration: none;
+  font-style: italic;
 }
-.hilfe { background: #c83d3d; }
-.helfen { background: #398b3f; }
-.faelle { background: #1676b8; }
-.spenden { background: #e5a400; }
+
+.button {
+  display: block;
+  width: 100%;
+  margin: 16px auto;
+  padding: 24px 15px;
+  border-radius: 22px;
+  color: white;
+  text-decoration: none;
+  font-size: 21px;
+  font-weight: bold;
+}
+
+.need {
+  background: #cc3e42;
+}
+
+.help {
+  background: #389342;
+}
+
+.cases {
+  background: #2581ba;
+}
+
+.donate {
+  background: #e9a900;
+}
+
+footer {
+  padding: 25px 15px 35px;
+  color: #777;
+  font-size: 14px;
+}
 </style>
 </head>
 
 <body>
 
-<header>
-  <h1>Lebensbrücke Deutschland</h1>
-  <h2>Mensch & Tier e. V.</h2>
-  <p>Hilfe. Hoffnung. Zusammen.</p>
-</header>
+<img
+  class="hero"
+  src="file_00000000b5788210a59bc98b3a8234b5.png"
+  alt="Lebensbrücke Deutschland – Mensch & Tier e. V."
+>
 
-<div class="container">
+<div class="content">
 
-<a class="button hilfe" href="hilfe.html">
-🆘 Ich brauche Hilfe
-</a>
+  <h1>Willkommen bei der Lebensbrücke</h1>
 
-<a class="button helfen" href="#">
-🤝 Ich möchte helfen
-</a>
+  <p class="claim">Weil jedes Leben zählt.</p>
 
-<a class="button faelle" href="#">
-🐾 Aktuelle Hilfsfälle
-</a>
+  <a class="button need" href="hilfe.html">
+    🆘 Ich brauche Hilfe
+  </a>
 
-<a class="button spenden" href="spenden.html">
-💶 Spenden
-</a>
+  <a class="button help" href="mensch.html">
+    🤝 Ich möchte helfen
+  </a>
+
+  <a class="button cases" href="finanzielle-notlage.html">
+    🐾 Aktuelle Hilfsfälle
+  </a>
+
+  <a class="button donate" href="spenden.html">
+    💶 Spenden
+  </a>
 
 </div>
+
+<footer>
+  Lebensbrücke Deutschland – Mensch &amp; Tier e. V.
+</footer>
 
 </body>
 </html>
