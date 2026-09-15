@@ -258,7 +258,9 @@ button{
       Eigener Betrag
     </button>
   </div>
-
+<div id="customAmount" style="display:none;">
+  <input type="number" min="1" step="1" placeholder="Spendenbetrag in €">
+</div>
   <div class="frequency">
     <button class="selected" onclick="chooseFrequency(this)">Einmalig</button>
     <button onclick="chooseFrequency(this)">Monatlich</button>
@@ -341,14 +343,10 @@ function chooseAmount(btn){
 }
 
 function ownAmount(btn){
-  let value=prompt("Gewünschten Spendenbetrag in Euro eingeben:");
-  if(value){
-    value=value.replace(",",".");
-    if(!isNaN(value) && Number(value)>0){
-      chooseAmount(btn);
-      btn.textContent=Number(value).toLocaleString("de-DE")+" €";
-    }
-  }
+  chooseAmount(btn);
+  const box = document.getElementById('customAmount');
+  box.style.display = 'block';
+  box.querySelector('input').focus();
 }
 
 function chooseFrequency(btn){
