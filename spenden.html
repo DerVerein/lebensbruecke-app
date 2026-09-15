@@ -6,172 +6,192 @@
 <title>Spenden – Lebensbrücke Deutschland</title>
 
 <style>
-* { box-sizing: border-box; }
+*{box-sizing:border-box}
 
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fffaf5;
-  color: #244f62;
+body{
+ margin:0;
+ font-family:Arial,sans-serif;
+ background:#fff7ef;
+ color:#174f67;
 }
 
-.hero {
-  text-align: center;
-  padding: 42px 22px 32px;
-  background: linear-gradient(180deg,#fff3e4,#ffffff);
+.hero{
+ background:linear-gradient(135deg,#e94f64,#ef855e);
+ color:white;
+ text-align:center;
+ padding:45px 22px 38px;
 }
 
-.heart {
-  font-size: 50px;
+.hero h1{
+ margin:0 0 12px;
+ font-size:38px;
+ line-height:1.1;
 }
 
-.hero h1 {
-  font-size: 34px;
-  line-height: 1.15;
-  margin: 10px 0 14px;
+.hero p{
+ margin:auto;
+ max-width:550px;
+ font-size:20px;
+ line-height:1.5;
 }
 
-.hero p {
-  font-size: 19px;
-  line-height: 1.5;
-  color: #626262;
-  max-width: 550px;
-  margin: auto;
+main{
+ max-width:650px;
+ margin:auto;
+ padding:24px 20px 40px;
 }
 
-main {
-  max-width: 650px;
-  margin: auto;
-  padding: 20px;
+.intro{
+ text-align:center;
+ margin:10px 5px 28px;
 }
 
-.card {
-  background: white;
-  border-radius: 26px;
-  padding: 26px 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,.08);
+.intro h2{
+ font-size:27px;
+ margin:0 0 10px;
+ color:#d94559;
 }
 
-.small-title {
-  text-align: center;
-  color: #d46b4c;
-  font-size: 17px;
-  font-weight: bold;
-  margin-bottom: 5px;
+.intro p{
+ font-size:18px;
+ line-height:1.5;
+ color:#555;
+ margin:0;
 }
 
-h2 {
-  text-align: center;
-  font-size: 25px;
-  margin: 8px 0 22px;
+.card{
+ background:white;
+ border-radius:26px;
+ padding:25px 20px;
+ box-shadow:0 8px 25px rgba(0,0,0,.10);
 }
 
-.amounts {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 12px;
+.amounts{
+ display:grid;
+ grid-template-columns:repeat(2,1fr);
+ gap:12px;
 }
 
-button {
-  font-family: inherit;
-  cursor: pointer;
+button{
+ font-family:inherit;
+ cursor:pointer;
 }
 
-.amount {
-  padding: 18px 5px;
-  border: 2px solid #e8c7ad;
-  border-radius: 18px;
-  background: #fff9f4;
-  color: #244f62;
-  font-size: 23px;
-  font-weight: bold;
+.amount{
+ border:2px solid #f0b19b;
+ background:#fff8f3;
+ color:#174f67;
+ border-radius:18px;
+ padding:19px 5px;
+ font-size:24px;
+ font-weight:bold;
 }
 
-.amount.selected {
-  background: #e88b64;
-  border-color: #e88b64;
-  color: white;
+.amount.selected{
+ background:#e95466;
+ border-color:#e95466;
+ color:white;
+ box-shadow:0 5px 12px rgba(233,84,102,.25);
 }
 
-.custom {
-  grid-column: 1 / -1;
-  font-size: 19px;
+.custom{
+ grid-column:1/-1;
+ font-size:19px;
 }
 
-.message {
-  text-align: center;
-  margin: 22px 5px 28px;
-  padding: 16px;
-  background: #f2f8f3;
-  border-radius: 16px;
-  color: #52705a;
-  font-size: 17px;
-  line-height: 1.45;
+.frequency{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ margin-top:24px;
+ background:#f3f3f3;
+ border-radius:17px;
+ padding:5px;
+ gap:4px;
 }
 
-.frequency-title {
-  text-align: center;
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 14px;
+.frequency button{
+ border:0;
+ background:transparent;
+ color:#174f67;
+ border-radius:13px;
+ padding:14px 2px;
+ font-size:16px;
+ font-weight:bold;
 }
 
-.frequency {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 8px;
+.frequency button.selected{
+ background:#398b83;
+ color:white;
+ box-shadow:0 3px 8px rgba(0,0,0,.12);
 }
 
-.frequency button {
-  padding: 14px 3px;
-  border: 1px solid #c8d7dc;
-  border-radius: 14px;
-  background: white;
-  color: #244f62;
-  font-size: 16px;
-  font-weight: bold;
+.donate{
+ width:100%;
+ margin-top:22px;
+ border:0;
+ border-radius:18px;
+ padding:19px;
+ background:#e6294f;
+ color:white;
+ font-size:23px;
+ font-weight:bold;
+ box-shadow:0 7px 18px rgba(230,41,79,.28);
 }
 
-.frequency button.selected {
-  background: #397b83;
-  border-color: #397b83;
-  color: white;
+.heartline{
+ text-align:center;
+ margin:25px 8px 5px;
+ font-size:18px;
+ line-height:1.5;
+ color:#555;
 }
 
-.donate {
-  width: 100%;
-  margin-top: 25px;
-  padding: 19px;
-  border: none;
-  border-radius: 18px;
-  background: #df5262;
-  color: white;
-  font-size: 22px;
-  font-weight: bold;
-  box-shadow: 0 5px 12px rgba(223,82,98,.25);
+.values{
+ display:grid;
+ grid-template-columns:repeat(3,1fr);
+ gap:8px;
+ margin-top:28px;
+ text-align:center;
 }
 
-.promise {
-  text-align: center;
-  padding: 25px 10px 5px;
+.value{
+ padding:15px 4px;
+ font-size:15px;
+ font-weight:bold;
 }
 
-.promise strong {
-  font-size: 19px;
+.icon{
+ font-size:27px;
+ display:block;
+ margin-bottom:7px;
 }
 
-.promise p {
-  color: #666;
-  font-size: 16px;
-  line-height: 1.5;
+.thanks{
+ margin-top:25px;
+ background:#ffe8dc;
+ border-radius:20px;
+ padding:20px;
+ text-align:center;
 }
 
-.back {
-  display: block;
-  text-align: center;
-  margin: 30px 0;
-  color: #666;
-  font-size: 17px;
+.thanks strong{
+ display:block;
+ color:#d94559;
+ font-size:22px;
+ margin-bottom:7px;
+}
+
+.thanks span{
+ color:#555;
+ font-size:16px;
+}
+
+.back{
+ display:block;
+ text-align:center;
+ margin:30px 0 5px;
+ color:#666;
+ font-size:18px;
 }
 </style>
 </head>
@@ -179,84 +199,91 @@ button {
 <body>
 
 <section class="hero">
-  <div class="heart">❤️</div>
-  <h1>Hilf uns, Menschen<br>und Tieren zu helfen.</h1>
-  <p>
-    Manchmal braucht es nur viele kleine Hände,
-    damit aus Hoffnung echte Hilfe wird.
-  </p>
+ <h1>Gemeinsam Leben verändern.</h1>
+ <p>Für Menschen. Für Tiere. Für eine Zukunft, in der Hilfe ankommt.</p>
 </section>
 
 <main>
 
-<div class="card">
+ <section class="intro">
+   <h2>Deine Unterstützung macht den Unterschied.</h2>
+   <p>Jeder Beitrag hilft uns, dort zu unterstützen, wo Hilfe gebraucht wird.</p>
+ </section>
 
-  <div class="small-title">DEINE HILFE ZÄHLT</div>
-  <h2>Wie viel möchtest du geben?</h2>
+ <div class="card">
 
-  <div class="amounts">
-    <button class="amount" onclick="amount(this)">5 €</button>
-    <button class="amount" onclick="amount(this)">10 €</button>
-    <button class="amount" onclick="amount(this)">25 €</button>
-    <button class="amount" onclick="amount(this)">50 €</button>
-    <button class="amount custom" onclick="ownAmount(this)">
-      ✨ Eigener Betrag
-    </button>
-  </div>
+   <div class="amounts">
+     <button class="amount" onclick="chooseAmount(this)">5 €</button>
+     <button class="amount" onclick="chooseAmount(this)">10 €</button>
+     <button class="amount" onclick="chooseAmount(this)">25 €</button>
+     <button class="amount" onclick="chooseAmount(this)">50 €</button>
+     <button class="amount custom" onclick="ownAmount(this)">
+       Eigener Betrag
+     </button>
+   </div>
 
-  <div class="message">
-    ❤️ Auch ein kleiner Beitrag kann gemeinsam
-    mit vielen anderen Großes bewirken.
-  </div>
+   <div class="frequency">
+     <button class="selected" onclick="chooseFrequency(this)">Einmalig</button>
+     <button onclick="chooseFrequency(this)">Monatlich</button>
+     <button onclick="chooseFrequency(this)">Jährlich</button>
+   </div>
 
-  <div class="frequency-title">Wie möchtest du helfen?</div>
+   <button class="donate">Jetzt spenden →</button>
 
-  <div class="frequency">
-    <button onclick="frequency(this)">Einmalig</button>
-    <button onclick="frequency(this)">Monatlich</button>
-    <button onclick="frequency(this)">Jährlich</button>
-  </div>
+   <div class="heartline">
+     ❤️ Viele kleine Beiträge können gemeinsam Großes bewirken.
+   </div>
 
-  <button class="donate">❤️ Jetzt helfen</button>
+ </div>
 
-</div>
+ <div class="values">
+   <div class="value">
+     <span class="icon">❤️</span>
+     Direkte Hilfe
+   </div>
+   <div class="value">
+     <span class="icon">🤝</span>
+     Gemeinsam stark
+   </div>
+   <div class="value">
+     <span class="icon">🐾</span>
+     Mensch & Tier
+   </div>
+ </div>
 
-<div class="promise">
-  <strong>🐾 Gemeinsam können wir etwas bewegen.</strong>
-  <p>
-    Deine Unterstützung ermöglicht Hilfe dort,
-    wo Menschen und Tiere sie dringend benötigen.
-  </p>
-</div>
+ <div class="thanks">
+   <strong>Jeder Beitrag zählt.</strong>
+   <span>Danke, dass du Teil unserer Lebensbrücke bist.</span>
+ </div>
 
-<a class="back" href="index.html">← Zurück zur Startseite</a>
+ <a class="back" href="index.html">← Zurück zur Startseite</a>
 
 </main>
 
 <script>
-function amount(btn) {
-  document.querySelectorAll('.amount').forEach(b =>
-    b.classList.remove('selected')
-  );
-  btn.classList.add('selected');
+function chooseAmount(btn){
+ document.querySelectorAll('.amount').forEach(b =>
+   b.classList.remove('selected')
+ );
+ btn.classList.add('selected');
 }
 
-function ownAmount(btn) {
-  let value = prompt("Welchen Betrag möchtest du spenden?");
-  if (value) {
-    value = value.replace(",", ".");
-    if (!isNaN(value) && Number(value) > 0) {
-      amount(btn);
-      btn.innerHTML = "✨ " + value.replace(".", ",") + " €";
-    }
-  }
+function ownAmount(btn){
+ let value=prompt("Bitte gib deinen gewünschten Spendenbetrag in Euro ein:");
+ if(value){
+   value=value.replace(",",".");
+   if(!isNaN(value) && Number(value)>0){
+     chooseAmount(btn);
+     btn.textContent=Number(value).toLocaleString("de-DE") + " €";
+   }
+ }
 }
 
-function frequency(btn) {
-  document.querySelectorAll('.frequency button').forEach(b =>
-    b.classList.remove('selected')
-  );
-  btn.classList.add('selected');
+function chooseFrequency(btn){
+ document.querySelectorAll('.frequency button').forEach(b =>
+   b.classList.remove('selected')
+ );
+ btn.classList.add('selected');
 }
 </script>
 
