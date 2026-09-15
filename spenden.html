@@ -228,7 +228,17 @@ button{
      <button onclick="chooseFrequency(this)">Jährlich</button>
    </div>
 
-   <button class="donate">Jetzt spenden →</button>
+   <button class="donate" onclick="showPayment()">Jetzt spenden →</button>
+
+<div id="payment" style="display:none; margin-top:22px;">
+  <div style="text-align:center; font-size:20px; font-weight:bold; margin-bottom:15px;">
+    Zahlungsart auswählen
+  </div>
+
+  <button class="paybutton">🏦 Banküberweisung</button>
+  <button class="paybutton">🔄 SEPA-Lastschrift</button>
+  <button class="paybutton">PayPal</button>
+</div>
 
    <div class="heartline">
      ❤️ Viele kleine Beiträge können gemeinsam Großes bewirken.
