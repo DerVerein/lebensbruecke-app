@@ -273,7 +273,7 @@ button{
 
     <div class="payment-title">Zahlungsart wählen</div>
 
-    <button class="pay">
+    <button class="pay" onclick="showBank()">
       <span class="pay-icon">🏦</span>
       <span>
         <strong>Banküberweisung</strong>
@@ -281,6 +281,15 @@ button{
       </span>
       <span class="pay-arrow">›</span>
     </button>
+    <div id="bankInfo" style="display:none;">
+  <div class="bank-info">
+    <strong>🏦 Bankverbindung</strong>
+    <p>Lebensbrücke Deutschland – Mensch & Tier e. V.</p>
+    <p><b>IBAN:</b> wird ergänzt</p>
+    <p><b>BIC:</b> wird ergänzt</p>
+    <p><b>Verwendungszweck:</b> Spende</p>
+  </div>
+    </div>
 
     <button class="pay">
       <span class="pay-icon">↻</span>
@@ -350,6 +359,10 @@ function showPayment(){
     block:'center'
   });
 }
+function showBank(){
+  const bank = document.getElementById('bankInfo');
+  bank.style.display = bank.style.display === 'none' ? 'block' : 'none';
+}  
 </script>
 
 </body>
