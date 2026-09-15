@@ -2,43 +2,67 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ich brauche Hilfe – Lebensbrücke</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hilfe für ein Tier – Lebensbrücke Deutschland</title>
 
 <style>
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f5f8fb;
-  text-align: center;
+  background: #f4f8fb;
+  color: #174f72;
 }
+
 header {
   background: white;
-  padding: 35px 20px;
+  text-align: center;
+  padding: 45px 20px;
 }
-h1 { color: #123b5d; }
-p { color: #555; font-size: 18px; }
 
-.container {
-  padding: 30px 20px;
+h1 {
+  font-size: 38px;
+  margin: 0 0 15px;
 }
-.button {
-  display: block;
-  max-width: 400px;
-  margin: 20px auto;
-  padding: 28px 15px;
-  border-radius: 18px;
-  color: white;
-  text-decoration: none;
-  font-size: 22px;
-  font-weight: bold;
-}
-.mensch { background: #1676b8; }
-.tier { background: #398b3f; }
 
-.zurueck {
+header p {
+  font-size: 21px;
+  color: #666;
+  margin: 0;
+}
+
+main {
+  max-width: 700px;
+  margin: auto;
+  padding: 35px 22px;
+}
+
+.box {
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 22px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.box h2 {
+  margin: 0 0 12px;
+  font-size: 27px;
+}
+
+.box p {
+  margin: 0;
+  color: #555;
+  font-size: 19px;
+  line-height: 1.5;
+}
+
+.back {
   display: block;
-  margin-top: 35px;
+  text-align: center;
+  margin: 35px 0;
+  font-size: 20px;
   color: #555;
 }
 </style>
@@ -47,25 +71,30 @@ p { color: #555; font-size: 18px; }
 <body>
 
 <header>
-<h1>🆘 Ich brauche Hilfe</h1>
-<p>Für wen wird Hilfe benötigt?</p>
+  <h1>🐾 Hilfe für ein Tier</h1>
+  <p>Welche Unterstützung wird benötigt?</p>
 </header>
 
-<div class="container">
+<main>
 
-<a class="button mensch" href="mensch.html">
-👤 Hilfe für einen Menschen
-</a>
+  <div class="box">
+    <h2>🏥 Tierarztkosten</h2>
+    <p>Unterstützung bei notwendigen tierärztlichen Behandlungen, wenn die finanziellen Mittel fehlen.</p>
+  </div>
 
-<a class="button tier" href="tier.html">
-🐾 Hilfe für ein Tier
-</a>
+  <div class="box">
+    <h2>🥣 Futterhilfe</h2>
+    <p>Unterstützung mit Tierfutter bei einer finanziellen Notlage.</p>
+  </div>
 
-<a class="zurueck" href="index.html">
-← Zurück zur Startseite
-</a>
+  <div class="box">
+    <h2>🐕 Sonstige Hilfe</h2>
+    <p>Du benötigst eine andere Form der Unterstützung für dein Tier? Teile uns deine Situation mit.</p>
+  </div>
 
-</div>
+  <a class="back" href="hilfe.html">← Zurück</a>
+
+</main>
 
 </body>
 </html>
