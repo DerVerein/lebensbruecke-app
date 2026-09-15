@@ -9,189 +9,226 @@
 *{box-sizing:border-box}
 
 body{
- margin:0;
- font-family:Arial,sans-serif;
- background:#fff7ef;
- color:#174f67;
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#fff5ed;
+  color:#174f62;
 }
 
 .hero{
- background:linear-gradient(135deg,#e94f64,#ef855e);
- color:white;
- text-align:center;
- padding:45px 22px 38px;
+  background:linear-gradient(135deg,#d94155,#ef765c);
+  color:white;
+  text-align:center;
+  padding:45px 22px 42px;
+  border-radius:0 0 35px 35px;
 }
 
 .hero h1{
- margin:0 0 12px;
- font-size:38px;
- line-height:1.1;
+  margin:0 0 12px;
+  font-size:38px;
+  line-height:1.12;
 }
 
 .hero p{
- margin:auto;
- max-width:550px;
- font-size:20px;
- line-height:1.5;
+  margin:auto;
+  max-width:520px;
+  font-size:20px;
+  line-height:1.45;
 }
 
 main{
- max-width:650px;
- margin:auto;
- padding:24px 20px 40px;
-}
-
-.intro{
- text-align:center;
- margin:10px 5px 28px;
-}
-
-.intro h2{
- font-size:27px;
- margin:0 0 10px;
- color:#d94559;
-}
-
-.intro p{
- font-size:18px;
- line-height:1.5;
- color:#555;
- margin:0;
+  max-width:650px;
+  margin:auto;
+  padding:25px 20px 40px;
 }
 
 .card{
- background:white;
- border-radius:26px;
- padding:25px 20px;
- box-shadow:0 8px 25px rgba(0,0,0,.10);
+  background:white;
+  border-radius:28px;
+  padding:25px 20px;
+  box-shadow:0 8px 25px rgba(0,0,0,.10);
+}
+
+.intro{
+  text-align:center;
+  margin-bottom:24px;
+}
+
+.intro strong{
+  display:block;
+  color:#d94155;
+  font-size:23px;
+  margin-bottom:8px;
+}
+
+.intro span{
+  color:#666;
+  font-size:17px;
+  line-height:1.4;
 }
 
 .amounts{
- display:grid;
- grid-template-columns:repeat(2,1fr);
- gap:12px;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
 }
 
 button{
- font-family:inherit;
- cursor:pointer;
+  font-family:inherit;
+  cursor:pointer;
 }
 
 .amount{
- border:2px solid #f0b19b;
- background:#fff8f3;
- color:#174f67;
- border-radius:18px;
- padding:19px 5px;
- font-size:24px;
- font-weight:bold;
+  padding:19px 5px;
+  border:2px solid #efb09f;
+  border-radius:19px;
+  background:#fff8f3;
+  color:#174f62;
+  font-size:24px;
+  font-weight:bold;
 }
 
 .amount.selected{
- background:#e95466;
- border-color:#e95466;
- color:white;
- box-shadow:0 5px 12px rgba(233,84,102,.25);
+  background:#df4b5e;
+  border-color:#df4b5e;
+  color:white;
+  box-shadow:0 5px 13px rgba(223,75,94,.25);
 }
 
 .custom{
- grid-column:1/-1;
- font-size:19px;
+  grid-column:1/-1;
+  font-size:19px;
 }
 
 .frequency{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- margin-top:24px;
- background:#f3f3f3;
- border-radius:17px;
- padding:5px;
- gap:4px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:4px;
+  background:#eef3f2;
+  padding:5px;
+  border-radius:18px;
+  margin-top:22px;
 }
 
 .frequency button{
- border:0;
- background:transparent;
- color:#174f67;
- border-radius:13px;
- padding:14px 2px;
- font-size:16px;
- font-weight:bold;
+  border:0;
+  background:transparent;
+  border-radius:14px;
+  padding:14px 2px;
+  color:#174f62;
+  font-size:16px;
+  font-weight:bold;
 }
 
 .frequency button.selected{
- background:#398b83;
- color:white;
- box-shadow:0 3px 8px rgba(0,0,0,.12);
+  background:#277d78;
+  color:white;
 }
 
 .donate{
- width:100%;
- margin-top:22px;
- border:0;
- border-radius:18px;
- padding:19px;
- background:#e6294f;
- color:white;
- font-size:23px;
- font-weight:bold;
- box-shadow:0 7px 18px rgba(230,41,79,.28);
+  width:100%;
+  border:0;
+  border-radius:20px;
+  padding:19px;
+  margin-top:22px;
+  background:#e6244e;
+  color:white;
+  font-size:23px;
+  font-weight:bold;
+  box-shadow:0 7px 16px rgba(230,36,78,.25);
 }
 
-.heartline{
- text-align:center;
- margin:25px 8px 5px;
- font-size:18px;
- line-height:1.5;
- color:#555;
+.payment{
+  display:none;
+  margin-top:25px;
+  padding-top:23px;
+  border-top:1px solid #eee;
 }
 
-.values{
- display:grid;
- grid-template-columns:repeat(3,1fr);
- gap:8px;
- margin-top:28px;
- text-align:center;
+.payment-title{
+  text-align:center;
+  font-size:20px;
+  font-weight:bold;
+  margin-bottom:15px;
 }
 
-.value{
- padding:15px 4px;
- font-size:15px;
- font-weight:bold;
+.pay{
+  width:100%;
+  display:flex;
+  align-items:center;
+  text-align:left;
+  gap:15px;
+  border:0;
+  border-radius:18px;
+  padding:16px;
+  margin:10px 0;
+  background:#f5f8f7;
+  color:#174f62;
 }
 
-.icon{
- font-size:27px;
- display:block;
- margin-bottom:7px;
+.pay-icon{
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#277d78;
+  color:white;
+  font-size:24px;
+  flex-shrink:0;
+}
+
+.pay strong{
+  display:block;
+  font-size:18px;
+}
+
+.pay small{
+  display:block;
+  color:#666;
+  font-size:14px;
+  margin-top:3px;
+}
+
+.pay-arrow{
+  margin-left:auto;
+  font-size:24px;
+}
+
+.message{
+  text-align:center;
+  margin:25px 10px 5px;
+  color:#555;
+  font-size:17px;
+  line-height:1.5;
 }
 
 .thanks{
- margin-top:25px;
- background:#ffe8dc;
- border-radius:20px;
- padding:20px;
- text-align:center;
+  background:#ffdcd2;
+  margin-top:24px;
+  padding:20px;
+  border-radius:20px;
+  text-align:center;
 }
 
 .thanks strong{
- display:block;
- color:#d94559;
- font-size:22px;
- margin-bottom:7px;
+  color:#c9364d;
+  font-size:20px;
 }
 
-.thanks span{
- color:#555;
- font-size:16px;
+.thanks p{
+  color:#555;
+  margin:7px 0 0;
+  font-size:16px;
 }
 
 .back{
- display:block;
- text-align:center;
- margin:30px 0 5px;
- color:#666;
- font-size:18px;
+  display:block;
+  text-align:center;
+  margin:30px 0 5px;
+  color:#666;
+  font-size:18px;
 }
 </style>
 </head>
@@ -199,104 +236,119 @@ button{
 <body>
 
 <section class="hero">
- <h1>Gemeinsam Leben verändern.</h1>
- <p>Für Menschen. Für Tiere. Für eine Zukunft, in der Hilfe ankommt.</p>
+  <h1>Gemeinsam etwas bewegen.</h1>
+  <p>Deine Spende schenkt Hilfe, wo sie gebraucht wird.</p>
 </section>
 
 <main>
 
- <section class="intro">
-   <h2>Deine Unterstützung macht den Unterschied.</h2>
-   <p>Jeder Beitrag hilft uns, dort zu unterstützen, wo Hilfe gebraucht wird.</p>
- </section>
+<div class="card">
 
- <div class="card">
-
-   <div class="amounts">
-     <button class="amount" onclick="chooseAmount(this)">5 €</button>
-     <button class="amount" onclick="chooseAmount(this)">10 €</button>
-     <button class="amount" onclick="chooseAmount(this)">25 €</button>
-     <button class="amount" onclick="chooseAmount(this)">50 €</button>
-     <button class="amount custom" onclick="ownAmount(this)">
-       Eigener Betrag
-     </button>
-   </div>
-
-   <div class="frequency">
-     <button class="selected" onclick="chooseFrequency(this)">Einmalig</button>
-     <button onclick="chooseFrequency(this)">Monatlich</button>
-     <button onclick="chooseFrequency(this)">Jährlich</button>
-   </div>
-
-   <button class="donate" onclick="showPayment()">Jetzt spenden →</button>
-
-<div id="payment" style="display:none; margin-top:22px;">
-  <div style="text-align:center; font-size:20px; font-weight:bold; margin-bottom:15px;">
-    Zahlungsart auswählen
+  <div class="intro">
+    <strong>Deine Hilfe zählt.</strong>
+    <span>Für Menschen. Für Tiere. Gemeinsam.</span>
   </div>
 
-  <button class="paybutton">🏦 Banküberweisung</button>
-  <button class="paybutton">🔄 SEPA-Lastschrift</button>
-  <button class="paybutton">PayPal</button>
+  <div class="amounts">
+    <button class="amount" onclick="chooseAmount(this)">5 €</button>
+    <button class="amount" onclick="chooseAmount(this)">10 €</button>
+    <button class="amount" onclick="chooseAmount(this)">25 €</button>
+    <button class="amount" onclick="chooseAmount(this)">50 €</button>
+    <button class="amount custom" onclick="ownAmount(this)">
+      Eigener Betrag
+    </button>
+  </div>
+
+  <div class="frequency">
+    <button class="selected" onclick="chooseFrequency(this)">Einmalig</button>
+    <button onclick="chooseFrequency(this)">Monatlich</button>
+    <button onclick="chooseFrequency(this)">Jährlich</button>
+  </div>
+
+  <button class="donate" onclick="showPayment()">
+    Jetzt spenden →
+  </button>
+
+  <div class="payment" id="payment">
+
+    <div class="payment-title">Zahlungsart wählen</div>
+
+    <button class="pay">
+      <span class="pay-icon">🏦</span>
+      <span>
+        <strong>Banküberweisung</strong>
+        <small>Direkt auf unser Vereinskonto</small>
+      </span>
+      <span class="pay-arrow">›</span>
+    </button>
+
+    <button class="pay">
+      <span class="pay-icon">↻</span>
+      <span>
+        <strong>SEPA-Lastschrift</strong>
+        <small>Einmalig oder regelmäßig</small>
+      </span>
+      <span class="pay-arrow">›</span>
+    </button>
+
+    <button class="pay">
+      <span class="pay-icon">P</span>
+      <span>
+        <strong>PayPal</strong>
+        <small>Schnell und unkompliziert</small>
+      </span>
+      <span class="pay-arrow">›</span>
+    </button>
+
+  </div>
+
+  <div class="message">
+    ❤️ Viele kleine Beiträge können gemeinsam Großes bewirken.
+  </div>
+
 </div>
 
-   <div class="heartline">
-     ❤️ Viele kleine Beiträge können gemeinsam Großes bewirken.
-   </div>
+<div class="thanks">
+  <strong>Danke, dass du Teil unserer Lebensbrücke bist.</strong>
+  <p>Gemeinsam für Mensch & Tier.</p>
+</div>
 
- </div>
-
- <div class="values">
-   <div class="value">
-     <span class="icon">❤️</span>
-     Direkte Hilfe
-   </div>
-   <div class="value">
-     <span class="icon">🤝</span>
-     Gemeinsam stark
-   </div>
-   <div class="value">
-     <span class="icon">🐾</span>
-     Mensch & Tier
-   </div>
- </div>
-
- <div class="thanks">
-   <strong>Jeder Beitrag zählt.</strong>
-   <span>Danke, dass du Teil unserer Lebensbrücke bist.</span>
- </div>
-
- <a class="back" href="index.html">← Zurück zur Startseite</a>
+<a class="back" href="index.html">← Zurück zur Startseite</a>
 
 </main>
 
 <script>
 function chooseAmount(btn){
- document.querySelectorAll('.amount').forEach(b =>
-   b.classList.remove('selected')
- );
- btn.classList.add('selected');
+  document.querySelectorAll('.amount').forEach(b =>
+    b.classList.remove('selected')
+  );
+  btn.classList.add('selected');
 }
 
 function ownAmount(btn){
- let value=prompt("Bitte gib deinen gewünschten Spendenbetrag in Euro ein:");
- if(value){
-   value=value.replace(",",".");
-   if(!isNaN(value) && Number(value)>0){
-     chooseAmount(btn);
-     btn.textContent=Number(value).toLocaleString("de-DE") + " €";
-   }
- }
+  let value=prompt("Gewünschten Spendenbetrag in Euro eingeben:");
+  if(value){
+    value=value.replace(",",".");
+    if(!isNaN(value) && Number(value)>0){
+      chooseAmount(btn);
+      btn.textContent=Number(value).toLocaleString("de-DE")+" €";
+    }
+  }
 }
 
 function chooseFrequency(btn){
- document.querySelectorAll('.frequency button').forEach(b =>
-   b.classList.remove('selected')
- );
- btn.classList.add('selected');
+  document.querySelectorAll('.frequency button').forEach(b =>
+    b.classList.remove('selected')
+  );
+  btn.classList.add('selected');
 }
+
 function showPayment(){
   document.getElementById('payment').style.display='block';
+  document.getElementById('payment').scrollIntoView({
+    behavior:'smooth',
+    block:'center'
+  });
 }
 </script>
 
