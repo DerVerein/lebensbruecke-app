@@ -469,7 +469,16 @@ function showBank(){
   }
 
 function prepareSepa() {
-  alert("SEPA-Mandat vorbereitet. Dies ist derzeit nur ein Test.");
+  const name = document.querySelector('#sepaInfo input[type="text"]').value.trim();
+  const iban = document.querySelectorAll('#sepaInfo input[type="text"]')[1].value.trim();
+  const betrag = document.querySelector('#sepaInfo input[type="number"]').value;
+
+  if (!name || !iban || !betrag) {
+    alert("Bitte Name, IBAN und Spendenbetrag vollständig eingeben.");
+    return;
+  }
+
+  alert("Danke! Deine Angaben wurden geprüft. Es wurde noch keine Lastschrift ausgelöst.");
 }
   
 </script>
