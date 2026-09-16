@@ -330,7 +330,7 @@ button{
     <p>Das SEPA-Lastschriftformular wird in Kürze ergänzt.</p>
   </div>
 </div>
-    <button class="pay">
+    <button class="pay" onclick="showPaypal()">
       <span class="pay-icon">P</span>
       <span>
         <strong>PayPal</strong>
@@ -338,6 +338,12 @@ button{
       </span>
       <span class="pay-arrow">›</span>
     </button>
+    <div id="paypalInfo" style="display:none;">
+  <div class="bank-info">
+    <strong>🅿️ PayPal</strong>
+    <p>PayPal-Spenden sind in Kürze möglich.</p>
+  </div>
+    </div>
 
   </div>
 
@@ -392,6 +398,10 @@ function showBank(){
   function showSepa(){
   const sepa = document.getElementById('sepaInfo');
   sepa.style.display = sepa.style.display === 'block' ? 'none' : 'block';
+  }
+  function showPaypal(){
+  const paypal = document.getElementById('paypalInfo');
+  paypal.style.display = paypal.style.display === 'block' ? 'none' : 'block';
   }
 </script>
 
