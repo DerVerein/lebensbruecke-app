@@ -252,6 +252,36 @@ button{
 #customAmount input:focus {
   box-shadow: 0 0 0 4px rgba(45,140,135,0.15);
 }
+  #sepaInfo input,
+#sepaInfo select {
+  width: 100%;
+  padding: 16px 18px;
+  margin-top: 12px;
+  font-size: 18px;
+  border: 2px solid #edb3a5;
+  border-radius: 18px;
+  background: #fffaf6;
+  color: #15546a;
+  outline: none;
+}
+
+#sepaInfo button {
+  width: 100%;
+  margin-top: 16px;
+  padding: 17px;
+  border: none;
+  border-radius: 18px;
+  background: #2d8c87;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#sepaInfo small {
+  display: block;
+  margin-top: 14px;
+  line-height: 1.4;
+}
 </style>
 </head>
 
@@ -326,8 +356,20 @@ button{
 <div id="sepaInfo" style="display:none;">
   <div class="bank-info">
     <strong>🔄 SEPA-Lastschrift</strong>
-    <p>Bequem per Lastschrift spenden – einmalig, monatlich oder jährlich.</p>
-    <p>Das SEPA-Lastschriftformular wird in Kürze ergänzt.</p>
+
+    <input type="text" placeholder="Vor- und Nachname">
+    <input type="text" placeholder="IBAN">
+    <input type="number" placeholder="Spendenbetrag in €">
+
+    <select>
+      <option>Einmalig</option>
+      <option>Monatlich</option>
+      <option>Jährlich</option>
+    </select>
+
+    <button type="button">SEPA-Mandat vorbereiten</button>
+
+    <small>Dies ist derzeit noch ein Testformular. Es erfolgt keine Abbuchung.</small>
   </div>
 </div>
     <button class="pay" onclick="showPaypal()">
