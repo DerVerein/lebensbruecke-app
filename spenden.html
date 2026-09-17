@@ -474,22 +474,10 @@ function showBank(){
   paypal.style.display = paypal.style.display === 'block' ? 'none' : 'block';
   }
 
-<div id="sepaSuccess" style="display:none; margin-top:20px; padding:20px; border-radius:20px; background:#eef8f6; text-align:center;">
-  <strong style="font-size:21px; color:#15546a;">✓ SEPA-Mandat vorbereitet</strong>
-  <p style="margin:10px 0 0; color:#15546a;">
-    Vielen Dank für deine Unterstützung. 💚
-  </p>
-</div>
-  const name = document.querySelector('#sepaInfo input[type="text"]').value.trim();
-  const iban = document.querySelectorAll('#sepaInfo input[type="text"]')[1].value.trim();
-  const betrag = document.querySelector('#sepaInfo input[type="number"]').value;
-
-  if (!name || !iban || !betrag) {
-    alert("Bitte Name, IBAN und Spendenbetrag vollständig eingeben.");
-    return;
-  }
-
-  alert("Danke! Deine Angaben wurden geprüft. Es wurde noch keine Lastschrift ausgelöst.");
+function prepareSepa() {
+  const box = document.getElementById('sepaSuccess');
+  box.style.display = 'block';
+  box.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
   
 </script>
