@@ -472,6 +472,9 @@ function showBank(){
   function showPaypal(){
   const paypal = document.getElementById('paypalInfo');
   paypal.style.display = paypal.style.display === 'block' ? 'none' : 'block';
+  if(paypal.style.display === 'block'){
+    paypal.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
   }
 
 function prepareSepa() {
