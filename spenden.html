@@ -476,6 +476,17 @@ function showBank(){
 
 function prepareSepa() {
   const box = document.getElementById('sepaSuccess');
+
+  box.innerHTML = `
+    <strong style="font-size:21px; color:#15546a;">
+      ✅ Angaben erfolgreich geprüft
+    </strong>
+    <p style="margin:10px 0 0; color:#15546a;">
+      Vielen Dank für deine Unterstützung. 💚<br>
+      Es wurde noch keine Lastschrift ausgelöst.
+    </p>
+  `;
+
   box.style.display = 'block';
   box.scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
