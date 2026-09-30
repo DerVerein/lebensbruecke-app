@@ -81,6 +81,50 @@ footer {
   font-size: 14px;
 }
 </style>
+  .why {
+  background: #174f72;
+}
+
+.why-box {
+  display: none;
+  margin: 10px auto 25px;
+  padding: 20px;
+  background: white;
+  border-radius: 22px;
+  text-align: left;
+  color: #174f72;
+}
+
+.why-box h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.why-item {
+  width: 100%;
+  margin: 10px 0;
+  padding: 15px;
+  border: none;
+  border-radius: 15px;
+  background: #f5f8fb;
+  color: #174f72;
+  font-size: 17px;
+  font-weight: bold;
+  text-align: left;
+  cursor: pointer;
+}
+
+.why-text {
+  display: none;
+  padding: 12px 15px 18px;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #333;
+}
+
+.why-text strong {
+  color: #174f72;
+}
 </head>
 
 <body>
@@ -112,7 +156,71 @@ footer {
 <a class="button cases" href="finanzielle-notlage.html">
   🐾 Aktuelle Hilfsfälle
 </a>
+<a class="button why" href="#" onclick="toggleWhy(); return false;">
+  💚 Warum spenden?
+</a>
 
+<div id="whyBox" class="why-box">
+
+  <h2>💚 Warum spenden?</h2>
+
+  <button class="why-item" onclick="toggleInfo('whyHelp')">
+    ❤️ Warum helfen?
+  </button>
+  <div id="whyHelp" class="why-text">
+    Deine Spende hilft dort, wo Unterstützung gebraucht wird –
+    bei Menschen und Tieren.
+    <br><br>
+    <strong>Weil jedes Leben zählt.</strong>
+  </div>
+
+  <button class="why-item" onclick="toggleInfo('private')">
+    👤 Für Privatpersonen
+  </button>
+  <div id="private" class="why-text">
+    Spenden an steuerbegünstigte Organisationen können grundsätzlich
+    steuerlich berücksichtigt werden.
+    <br><br>
+    Für Privatpersonen gilt grundsätzlich eine Höchstgrenze von
+    20 % des Gesamtbetrags der Einkünfte.
+  </div>
+
+  <button class="why-item" onclick="toggleInfo('company')">
+    🏢 Für Unternehmen
+  </button>
+  <div id="company" class="why-text">
+    Auch Unternehmen können Spenden an steuerbegünstigte Organisationen
+    grundsätzlich steuerlich berücksichtigen.
+    <br><br>
+    Es gelten die gesetzlichen steuerlichen Grenzen und Voraussetzungen.
+  </div>
+
+  <button class="why-item" onclick="toggleInfo('tax')">
+    📄 Spenden & Steuer
+  </button>
+  <div id="tax" class="why-text">
+    Grundsätzlich ist eine Zuwendungsbestätigung der Nachweis für eine
+    Spende. Bei Spenden bis 300 € kann unter den gesetzlichen
+    Voraussetzungen ein vereinfachter Nachweis ausreichen.
+    <br><br>
+    Eine Spende wird nicht Euro für Euro zurückerstattet, sondern kann
+    steuerlich berücksichtigt werden.
+  </div>
+
+  <button class="why-item" onclick="toggleInfo('effect')">
+    💚 Was bewirkt meine Spende?
+  </button>
+  <div id="effect" class="why-text">
+    Deine Unterstützung kann konkrete Hilfe ermöglichen:
+    <br><br>
+    🐾 Hilfe für Tiere<br>
+    ❤️ Hilfe für Menschen<br>
+    🤝 Unterstützung in schwierigen Situationen
+    <br><br>
+    <strong>Jeder Beitrag zählt.</strong>
+  </div>
+
+</div>
 </div>
 
 <footer>
@@ -123,7 +231,25 @@ footer {
 if ("serviceWorker" in navigator) {
   navigator.serviceWorker.register("service-worker.js");
 }
-  </script>
+function toggleWhy() {
+  const box = document.getElementById("whyBox");
+
+  if (box.style.display === "block") {
+    box.style.display = "none";
+  } else {
+    box.style.display = "block";
+  }
+}
+
+function toggleInfo(id) {
+  const element = document.getElementById(id);
+
+  if (element.style.display === "block") {
+    element.style.display = "none";
+  } else {
+    element.style.display = "block";
+  }
+}  </script>
 
 </body>
 </html>
