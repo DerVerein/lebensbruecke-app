@@ -3,129 +3,135 @@
 <head>
   <link rel="manifest" href="manifest.json">
   <link rel="icon" type="image/png" href="VereinsIcon.png">
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Lebensbrücke Deutschland – Mensch & Tier</title>
+  <title>Lebensbrücke Deutschland – Mensch & Tier</title>
 
-<style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #f5f8fb;
-  text-align: center;
-  color: #174f72;
-}
-
-.hero {
-  width: 100%;
-  max-width: 1000px;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.content {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 30px 18px 45px;
-}
-
-h1 {
-  margin: 0 0 8px;
-  font-size: 34px;
-}
-
-.claim {
-  margin: 0 0 30px;
-  font-size: 22px;
-  font-weight: bold;
-  font-style: italic;
-}
-
-.button {
-  display: block;
-  width: 100%;
-  margin: 16px auto;
-  padding: 24px 15px;
-  border-radius: 22px;
-  color: white;
-  text-decoration: none;
-  font-size: 21px;
-  font-weight: bold;
-}
-
-.need {
-  background: #cc3e42;
-}
-
-.help {
-  background: #389342;
-}
-
-.cases {
-  background: #2581ba;
-}
-
-.donate {
-  background: #e9a900;
-}
-
-footer {
-  padding: 25px 15px 35px;
-  color: #777;
-  font-size: 14px;
-}
-</style>
   <style>
-  .why {
-  background: #174f72;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-.why-box {
-  display: none;
-  margin: 10px auto 25px;
-  padding: 20px;
-  background: white;
-  border-radius: 22px;
-  text-align: left;
-  color: #174f72;
-}
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fbf8ef;
+      color: #315c2a;
+      text-align: center;
+    }
 
-.why-box h2 {
-  text-align: center;
-  margin-top: 0;
-}
+    .hero {
+      width: 100%;
+      max-width: 1000px;
+      display: block;
+      margin: 0 auto;
+    }
 
-.why-item {
-  width: 100%;
-  margin: 10px 0;
-  padding: 15px;
-  border: none;
-  border-radius: 15px;
-  background: #f5f8fb;
-  color: #174f72;
-  font-size: 17px;
-  font-weight: bold;
-  text-align: left;
-  cursor: pointer;
-}
+    .content {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 22px 16px 40px;
+    }
 
-.why-text {
-  display: none;
-  padding: 12px 15px 18px;
-  font-size: 15px;
-  line-height: 1.5;
-  color: #333;
-}
+    h1 {
+      margin: 0 0 8px;
+      font-size: 32px;
+      color: #315c2a;
+    }
 
-.why-text strong {
-  color: #174f72;
-}
+    .claim {
+      margin: 0 0 25px;
+      font-size: 20px;
+      font-weight: bold;
+      font-style: italic;
+      color: #315c2a;
+    }
+
+    .button {
+      display: block;
+      width: 100%;
+      margin: 14px auto;
+      padding: 22px 18px;
+      border-radius: 22px;
+      color: white;
+      text-decoration: none;
+      font-size: 21px;
+      font-weight: bold;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.10);
+    }
+
+    .donate {
+      background: #d79b00;
+      font-size: 25px;
+      padding: 27px 18px;
+      box-shadow: 0 5px 14px rgba(160,110,0,0.25);
+    }
+
+    .need {
+      background: #d9533f;
+    }
+
+    .help {
+      background: #4f963f;
+    }
+
+    .cases {
+      background: #ef8b2c;
+    }
+
+    .why {
+      background: #f2ead8;
+      color: #315c2a;
+    }
+
+    .why-box {
+      display: none;
+      margin: 10px auto 25px;
+      padding: 20px;
+      background: #fffdf7;
+      border-radius: 22px;
+      text-align: left;
+      color: #315c2a;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+    }
+
+    .why-box h2 {
+      text-align: center;
+      margin-top: 0;
+    }
+
+    .why-item {
+      width: 100%;
+      margin: 10px 0;
+      padding: 16px;
+      border: none;
+      border-radius: 15px;
+      background: #fff8e8;
+      color: #315c2a;
+      font-size: 17px;
+      font-weight: bold;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .why-text {
+      display: none;
+      padding: 12px 15px 18px;
+      font-size: 15px;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .why-text strong {
+      color: #315c2a;
+    }
+
+    footer {
+      padding: 25px 15px 35px;
+      color: #777;
+      font-size: 14px;
+    }
   </style>
 </head>
 
@@ -143,6 +149,10 @@ footer {
 
   <p class="claim">Weil jedes Leben zählt.</p>
 
+  <a class="button donate" href="spenden.html">
+    💛 JETZT SPENDEN
+  </a>
+
   <a class="button need" href="hilfe.html">
     🆘 Ich brauche Hilfe
   </a>
@@ -151,107 +161,104 @@ footer {
     🤝 Ich möchte helfen
   </a>
 
-  <a class="button donate" href="spenden.html">
-  💵 Spenden
-</a>
+  <a class="button cases" href="finanzielle-notlage.html">
+    🐾 Aktuelle Hilfsfälle
+  </a>
 
-<a class="button cases" href="finanzielle-notlage.html">
-  🐾 Aktuelle Hilfsfälle
-</a>
-<a class="button why" href="#" onclick="toggleWhy(); return false;">
-  💚 Warum spenden?
-</a>
+  <a class="button why" href="#" onclick="toggleWhy(); return false;">
+    💚 Warum spenden?
+  </a>
 
-<div id="whyBox" class="why-box">
+  <div id="whyBox" class="why-box">
 
-  <h2>💚 Warum spenden?</h2>
+    <h2>💚 Warum spenden?</h2>
 
-  <button class="why-item" onclick="toggleInfo('whyHelp')">
-    ❤️ Warum helfen?
-  </button>
-  <div id="whyHelp" class="why-text">
-    Deine Spende hilft dort, wo Unterstützung gebraucht wird –
-    bei Menschen und Tieren.
-    <br><br>
-    <strong>Weil jedes Leben zählt.</strong>
+    <button class="why-item" onclick="toggleInfo('whyHelp')">
+      ❤️ Warum helfen?
+    </button>
+
+    <div id="whyHelp" class="why-text">
+      Deine Spende hilft dort, wo Unterstützung gebraucht wird –
+      bei Menschen und Tieren.
+      <br><br>
+      <strong>Weil jedes Leben zählt.</strong>
+    </div>
+
+    <button class="why-item" onclick="toggleInfo('private')">
+      👤 Für Privatpersonen
+    </button>
+
+    <div id="private" class="why-text">
+      Spenden an steuerbegünstigte Organisationen können grundsätzlich
+      steuerlich berücksichtigt werden.
+      <br><br>
+      Für Privatpersonen gilt grundsätzlich eine Höchstgrenze von
+      20 % des Gesamtbetrags der Einkünfte.
+    </div>
+
+    <button class="why-item" onclick="toggleInfo('company')">
+      🏢 Für Unternehmen
+    </button>
+
+    <div id="company" class="why-text">
+      Auch Unternehmen können Spenden an steuerbegünstigte Organisationen
+      grundsätzlich steuerlich berücksichtigen.
+      <br><br>
+      Es gelten die gesetzlichen steuerlichen Grenzen und Voraussetzungen.
+    </div>
+
+    <button class="why-item" onclick="toggleInfo('tax')">
+      📄 Spenden & Steuer
+    </button>
+
+    <div id="tax" class="why-text">
+      Grundsätzlich ist eine Zuwendungsbestätigung der Nachweis für eine
+      Spende. Bei Spenden bis 300 € kann unter den gesetzlichen
+      Voraussetzungen ein vereinfachter Nachweis ausreichen.
+      <br><br>
+      Eine Spende wird nicht Euro für Euro zurückerstattet, sondern kann
+      steuerlich berücksichtigt werden.
+    </div>
+
+    <button class="why-item" onclick="toggleInfo('effect')">
+      💚 Was bewirkt meine Spende?
+    </button>
+
+    <div id="effect" class="why-text">
+      Deine Unterstützung kann konkrete Hilfe ermöglichen:
+      <br><br>
+      🐾 Hilfe für Tiere<br>
+      ❤️ Hilfe für Menschen<br>
+      🤝 Unterstützung in schwierigen Situationen
+      <br><br>
+      <strong>Jeder Beitrag zählt.</strong>
+    </div>
+
   </div>
 
-  <button class="why-item" onclick="toggleInfo('private')">
-    👤 Für Privatpersonen
-  </button>
-  <div id="private" class="why-text">
-    Spenden an steuerbegünstigte Organisationen können grundsätzlich
-    steuerlich berücksichtigt werden.
-    <br><br>
-    Für Privatpersonen gilt grundsätzlich eine Höchstgrenze von
-    20 % des Gesamtbetrags der Einkünfte.
-  </div>
-
-  <button class="why-item" onclick="toggleInfo('company')">
-    🏢 Für Unternehmen
-  </button>
-  <div id="company" class="why-text">
-    Auch Unternehmen können Spenden an steuerbegünstigte Organisationen
-    grundsätzlich steuerlich berücksichtigen.
-    <br><br>
-    Es gelten die gesetzlichen steuerlichen Grenzen und Voraussetzungen.
-  </div>
-
-  <button class="why-item" onclick="toggleInfo('tax')">
-    📄 Spenden & Steuer
-  </button>
-  <div id="tax" class="why-text">
-    Grundsätzlich ist eine Zuwendungsbestätigung der Nachweis für eine
-    Spende. Bei Spenden bis 300 € kann unter den gesetzlichen
-    Voraussetzungen ein vereinfachter Nachweis ausreichen.
-    <br><br>
-    Eine Spende wird nicht Euro für Euro zurückerstattet, sondern kann
-    steuerlich berücksichtigt werden.
-  </div>
-
-  <button class="why-item" onclick="toggleInfo('effect')">
-    💚 Was bewirkt meine Spende?
-  </button>
-  <div id="effect" class="why-text">
-    Deine Unterstützung kann konkrete Hilfe ermöglichen:
-    <br><br>
-    🐾 Hilfe für Tiere<br>
-    ❤️ Hilfe für Menschen<br>
-    🤝 Unterstützung in schwierigen Situationen
-    <br><br>
-    <strong>Jeder Beitrag zählt.</strong>
-  </div>
-
-</div>
 </div>
 
 <footer>
   Lebensbrücke Deutschland – Mensch &amp; Tier e. V.
 </footer>
 
-  <script>
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker.register("service-worker.js");
-}
-function toggleWhy() {
-  const box = document.getElementById("whyBox");
-
-  if (box.style.display === "block") {
-    box.style.display = "none";
-  } else {
-    box.style.display = "block";
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("service-worker.js");
   }
-}
 
-function toggleInfo(id) {
-  const element = document.getElementById(id);
-
-  if (element.style.display === "block") {
-    element.style.display = "none";
-  } else {
-    element.style.display = "block";
+  function toggleWhy() {
+    const box = document.getElementById("whyBox");
+    box.style.display =
+      box.style.display === "block" ? "none" : "block";
   }
-}  </script>
+
+  function toggleInfo(id) {
+    const element = document.getElementById(id);
+    element.style.display =
+      element.style.display === "block" ? "none" : "block";
+  }
+</script>
 
 </body>
 </html>
