@@ -3,97 +3,152 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Hilfe für ein Tier – Lebensbrücke Deutschland</title>
+<title>Hilfe für Tiere</title>
 
 <style>
-* { box-sizing: border-box; }
-
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #f5f8fb;
-  color: #174f72;
-  text-align: center;
+  background: #f7fff8;
+  color: #333;
 }
 
 header {
-  background: white;
-  padding: 35px 20px;
+  background: #3f8f5b;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
 }
 
-h1 {
-  font-size: 38px;
-  margin: 10px 0;
+header h1 {
+  margin: 0;
+  font-size: 32px;
 }
 
 header p {
-  color: #555;
-  font-size: 21px;
+  font-size: 18px;
+  margin: 10px 0 0;
 }
 
-main {
-  max-width: 720px;
-  margin: auto;
-  padding: 35px 20px;
-}
-
-.option {
-  display: block;
-  width: 100%;
-  padding: 25px 15px;
-  margin: 20px 0;
-  border-radius: 22px;
-  text-decoration: none;
-  color: white;
-  font-size: 25px;
+.wir {
+  background: #dff2e4;
+  text-align: center;
+  padding: 18px;
+  font-size: 20px;
   font-weight: bold;
+  color: #327348;
 }
 
-.vet { background: #d64245; }
-.food { background: #399747; }
-.emergency { background: #2988bd; }
-.other { background: #d99b00; }
+.content {
+  padding: 25px 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  margin-top: 0;
+  color: #3f8f5b;
+  font-size: 22px;
+}
+
+.card p {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.help {
+  background: #f0a900;
+  color: white;
+  text-align: center;
+  padding: 25px 20px;
+  margin-top: 10px;
+}
+
+.help h2 {
+  margin-top: 0;
+}
+
+.help a {
+  display: inline-block;
+  background: white;
+  color: #b87900;
+  text-decoration: none;
+  padding: 13px 22px;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-top: 10px;
+}
 
 .back {
-  display: inline-block;
-  margin-top: 30px;
-  color: #555;
-  font-size: 19px;
+  text-align: center;
+  padding: 25px;
 }
 
+.back a {
+  color: #3f8f5b;
+  font-weight: bold;
+  text-decoration: none;
+}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>🐾 Hilfe für ein Tier</h1>
-  <p>Wobei wird Hilfe benötigt?</p>
+  <h1>🐾 Hilfe für Tiere</h1>
+  <p>Gemeinsam helfen, wenn Tiere unsere Unterstützung brauchen.</p>
 </header>
 
-<main>
+<div class="wir">
+  Ein WIR für Mensch &amp; Tier. 🐾❤️
+</div>
 
-  <a class="option vet" href="#">
-    🩺 Tierarztkosten
-  </a>
+<div class="content">
 
-  <a class="option food" href="#">
-    🥣 Futter & Versorgung
-  </a>
+  <div class="card">
+    <h2>🏥 Tierarztkosten</h2>
+    <p>
+      Wenn notwendige tierärztliche Behandlungen finanziell
+      nicht möglich sind, möchten wir gemeinsam nach einer
+      Unterstützungsmöglichkeit suchen.
+    </p>
+  </div>
 
-  <a class="option emergency" href="#">
-    🚨 Tier in akuter Not
-  </a>
+  <div class="card">
+    <h2>🥣 Futterhilfe</h2>
+    <p>
+      Unterstützung mit Futter kann helfen, wenn Menschen
+      vorübergehend nicht genug Geld für die Versorgung
+      ihrer Tiere haben.
+    </p>
+  </div>
 
-  <a class="option other" href="#">
-    🐾 Andere Hilfe
-  </a>
+  <div class="card">
+    <h2>🐾 Sonstige Hilfe für Tiere</h2>
+    <p>
+      Du brauchst Hilfe für dein Tier und findest dein Anliegen
+      hier nicht? Beschreibe uns einfach deine Situation.
+      Gemeinsam schauen wir, was möglich ist.
+    </p>
+  </div>
 
-  <a class="back" href="hilfe.html">
-    ← Zurück
-  </a>
+</div>
 
-</main>
+<div class="help">
+  <h2>💛 Du möchtest helfen?</h2>
+  <p>Jeder Beitrag kann einem Tier und seinem Menschen helfen.</p>
+  <a href="spenden.html">💛 Jetzt helfen &amp; spenden</a>
+</div>
+
+<div class="back">
+  <a href="hilfe.html">← Zurück zu Hilfe</a>
+</div>
 
 </body>
 </html>
