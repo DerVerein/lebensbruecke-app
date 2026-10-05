@@ -3,503 +3,188 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spenden – Lebensbrücke Deutschland</title>
+<title>Spenden – Lebensbrücke</title>
 
 <style>
-*{box-sizing:border-box}
-
-body{
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#fff5ed;
-  color:#174f62;
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fffaf0;
+  color: #333;
 }
 
-.hero{
-  background:linear-gradient(135deg,#d94155,#ef765c);
-  color:white;
-  text-align:center;
-  padding:45px 22px 42px;
-  border-radius:0 0 35px 35px;
-}
-
-.hero h1{
-  margin:0 0 12px;
-  font-size:38px;
-  line-height:1.12;
-}
-
-.hero p{
-  margin:auto;
-  max-width:520px;
-  font-size:20px;
-  line-height:1.45;
-}
-
-main{
-  max-width:650px;
-  margin:auto;
-  padding:25px 20px 40px;
-}
-
-.card{
-  background:white;
-  border-radius:28px;
-  padding:25px 20px;
-  box-shadow:0 8px 25px rgba(0,0,0,.10);
-}
-
-.intro{
-  text-align:center;
-  margin-bottom:24px;
-}
-
-.intro strong{
-  display:block;
-  color:#d94155;
-  font-size:23px;
-  margin-bottom:8px;
-}
-
-.intro span{
-  color:#666;
-  font-size:17px;
-  line-height:1.4;
-}
-
-.amounts{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:12px;
-}
-
-button{
-  font-family:inherit;
-  cursor:pointer;
-}
-
-.amount{
-  padding:19px 5px;
-  border:2px solid #efb09f;
-  border-radius:19px;
-  background:#fff8f3;
-  color:#174f62;
-  font-size:24px;
-  font-weight:bold;
-}
-
-.amount.selected{
-  background:#df4b5e;
-  border-color:#df4b5e;
-  color:white;
-  box-shadow:0 5px 13px rgba(223,75,94,.25);
-}
-
-.custom{
-  grid-column:1/-1;
-  font-size:19px;
-}
-
-.frequency{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:4px;
-  background:#eef3f2;
-  padding:5px;
-  border-radius:18px;
-  margin-top:22px;
-}
-
-.frequency button{
-  border:0;
-  background:transparent;
-  border-radius:14px;
-  padding:14px 2px;
-  color:#174f62;
-  font-size:16px;
-  font-weight:bold;
-}
-
-.frequency button.selected{
-  background:#277d78;
-  color:white;
-}
-
-.donate{
-  width:100%;
-  border:0;
-  border-radius:20px;
-  padding:19px;
-  margin-top:22px;
-  background:#e6244e;
-  color:white;
-  font-size:23px;
-  font-weight:bold;
-  box-shadow:0 7px 16px rgba(230,36,78,.25);
-}
-
-.payment{
-  display:none;
-  margin-top:25px;
-  padding-top:23px;
-  border-top:1px solid #eee;
-}
-
-.payment-title{
-  text-align:center;
-  font-size:20px;
-  font-weight:bold;
-  margin-bottom:15px;
-}
-
-.pay{
-  width:100%;
-  display:flex;
-  align-items:center;
-  text-align:left;
-  gap:15px;
-  border:0;
-  border-radius:18px;
-  padding:16px;
-  margin:10px 0;
-  background:#f5f8f7;
-  color:#174f62;
-}
-
-.pay-icon{
-  width:48px;
-  height:48px;
-  border-radius:14px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  background:#277d78;
-  color:white;
-  font-size:24px;
-  flex-shrink:0;
-}
-  .pay.paypal .pay-icon{
-  background:#0070ba;
-  }
-
-.pay strong{
-  display:block;
-  font-size:18px;
-}
-
-.pay small{
-  display:block;
-  color:#666;
-  font-size:14px;
-  margin-top:3px;
-}
-
-.pay-arrow{
-  margin-left:auto;
-  font-size:24px;
-}
-
-.message{
-  text-align:center;
-  margin:25px 10px 5px;
-  color:#555;
-  font-size:17px;
-  line-height:1.5;
-}
-
-.thanks{
-  background:#ffdcd2;
-  margin-top:24px;
-  padding:20px;
-  border-radius:20px;
-  text-align:center;
-}
-
-.thanks strong{
-  color:#c9364d;
-  font-size:20px;
-}
-
-.thanks p{
-  color:#555;
-  margin:7px 0 0;
-  font-size:16px;
-}
-
-.back{
-  display:block;
-  text-align:center;
-  margin:30px 0 5px;
-  color:#666;
-  font-size:18px;
-}
-  #customAmount {
-  margin: 12px 0 20px;
-}
-
-#customAmount input {
-  width: 100%;
-  padding: 18px 22px;
-  font-size: 22px;
-  font-weight: 600;
-  text-align: center;
-  border: 2px solid #edb3a5;
-  border-radius: 22px;
-  outline: none;
-  color: #15546a;
-  background: #fffaf6;
-  box-sizing: border-box;
-}
-  
-
-#customAmount input:focus {
-  box-shadow: 0 0 0 4px rgba(45,140,135,0.15);
-}
-  #sepaInfo input,
-#sepaInfo select {
-  width: 100%;
-  padding: 16px 18px;
-  margin-top: 12px;
-  font-size: 18px;
-  border: 2px solid #edb3a5;
-  border-radius: 18px;
-  background: #fffaf6;
-  color: #15546a;
-  outline: none;
-}
-
-#sepaInfo button {
-  width: 100%;
-  margin-top: 16px;
-  padding: 17px;
-  border: none;
-  border-radius: 18px;
-  background: #2d8c87;
+header {
+  background: #e3a900;
   color: white;
+  text-align: center;
+  padding: 32px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 34px;
+}
+
+header p {
   font-size: 18px;
+  margin: 10px 0 0;
+}
+
+.wir {
+  background: #fff0bd;
+  text-align: center;
+  padding: 18px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #9a7000;
+}
+
+.content {
+  padding: 25px 20px;
+}
+
+.intro {
+  background: white;
+  border-radius: 18px;
+  padding: 22px;
+  margin-bottom: 20px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  text-align: center;
+}
+
+.intro h2 {
+  color: #c58c00;
+  margin-top: 0;
+}
+
+.intro p {
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.amounts {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 20px;
+}
+
+.amount {
+  background: #f0b400;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  padding: 18px 10px;
+  border-radius: 15px;
+  font-size: 20px;
   font-weight: bold;
 }
 
-#sepaInfo small {
-  display: block;
-  margin-top: 14px;
-  line-height: 1.4;
-}
-  #sepaInfo .bank-info {
-  margin: 14px 0 18px;
-  padding: 20px;
-  background: #fffaf6;
-  border: 2px solid #edb3a5;
-  border-radius: 22px;
-  text-align: left;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+.amount:hover {
+  background: #d99d00;
 }
 
-#sepaInfo .bank-info strong {
-  display: block;
-  font-size: 21px;
-  color: #15546a;
-  margin-bottom: 12px;
+.help {
+  background: #e3a900;
+  color: white;
+  text-align: center;
+  padding: 28px 20px;
+  margin-top: 25px;
 }
 
-#sepaInfo .bank-info p {
-  margin: 8px 0;
+.help h2 {
+  margin-top: 0;
+  font-size: 25px;
+}
+
+.help p {
   font-size: 17px;
-  line-height: 1.45;
+}
+
+.info {
+  background: #fff0bd;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.back {
+  text-align: center;
+  padding: 25px;
+}
+
+.back a {
+  color: #a87800;
+  font-weight: bold;
+  text-decoration: none;
 }
 </style>
 </head>
 
 <body>
 
-<section class="hero">
-  <h1>Gemeinsam etwas bewegen.</h1>
-  <p>Deine Spende schenkt Hilfe, wo sie gebraucht wird.</p>
-</section>
+<header>
+  <h1>💛 Spenden</h1>
+  <p>Helfen. Hoffnung geben. Gemeinsam etwas bewegen.</p>
+</header>
 
-<main>
+<div class="wir">
+  Ein WIR für Mensch &amp; Tier. 🐾❤️
+</div>
 
-<div class="card">
+<div class="content">
 
   <div class="intro">
-    <strong>Deine Hilfe zählt.</strong>
-    <span>Für Menschen. Für Tiere. Gemeinsam.</span>
-  </div>
+    <h2>💛 Deine Hilfe kommt an</h2>
 
-  <div class="amounts">
-    <button class="amount" onclick="chooseAmount(this)">5 €</button>
-    <button class="amount" onclick="chooseAmount(this)">10 €</button>
-    <button class="amount" onclick="chooseAmount(this)">25 €</button>
-    <button class="amount" onclick="chooseAmount(this)">50 €</button>
-    <button class="amount custom" onclick="ownAmount(this)">
-      Eigener Betrag
-    </button>
-  </div>
-<div id="customAmount" style="display:none;">
-  <input type="number" min="1" step="1" placeholder="Spendenbetrag in €">
-</div>
-  <div class="frequency">
-    <button class="selected" onclick="chooseFrequency(this)">Einmalig</button>
-    <button onclick="chooseFrequency(this)">Monatlich</button>
-    <button onclick="chooseFrequency(this)">Jährlich</button>
-  </div>
-
-  <button class="donate" onclick="showPayment()">
-    Jetzt spenden →
-  </button>
-
-  <div class="payment" id="payment">
-
-    <div class="payment-title">Zahlungsart wählen</div>
-
-    <button class="pay" onclick="showBank()">
-      <span class="pay-icon">🏦</span>
-      <span>
-        <strong>Banküberweisung</strong>
-        <small>Direkt auf unser Vereinskonto</small>
-      </span>
-      <span class="pay-arrow">›</span>
-    </button>
-    <div id="bankInfo" style="display:none;">
-  <div class="bank-info">
-    <strong>🏦 Bankverbindung</strong>
-    <p>Lebensbrücke Deutschland – Mensch & Tier e. V.</p>
-    <p><b>IBAN:</b> wird ergänzt</p>
-    <p><b>BIC:</b> wird ergänzt</p>
-    <p><b>Verwendungszweck:</b> Spende</p>
-  </div>
-    </div>
-
-  <button class="pay" onclick="showSepa()">
-      <span class="pay-icon">↻</span>
-      <span>
-        <strong>SEPA-Lastschrift</strong>
-        <small>Einmalig oder regelmäßig</small>
-      </span>
-      <span class="pay-arrow">›</span>
-    </button>
-<div id="sepaInfo" style="display:none;">
-  <div class="bank-info">
-    <strong>🔄 SEPA-Lastschrift</strong>
-
-    <input type="text" placeholder="Vor- und Nachname">
-    <input type="text" placeholder="IBAN">
-    <input type="number" placeholder="Spendenbetrag in €">
-
-    <select>
-      <option>Einmalig</option>
-      <option>Monatlich</option>
-      <option>Jährlich</option>
-    </select>
-
-    <button type="button" onclick="prepareSepa()">SEPA-Mandat vorbereiten</button>
-
-    <small>Dies ist derzeit noch ein Testformular. Es erfolgt keine Abbuchung.</small>
- <div id="sepaSuccess" style="display:none; margin-top:20px; padding:20px; border-radius:20px; background:#eef8f6; text-align:center;">
-  <strong style="font-size:21px; color:#15546a;">✓ SEPA-Mandat vorbereitet</strong>
-  <p style="margin:10px 0 0; color:#15546a;">
-    Vielen Dank für deine Unterstützung. 💚
-  </p>
- </div>
-  </div>
-</div>
-    <button class="pay paypal" onclick="showPaypal()">
-      <span class="pay-icon">P</span>
-      <span>
-        <strong>PayPal</strong>
-        <small>Schnell und unkompliziert</small>
-      </span>
-      <span class="pay-arrow">›</span>
-    </button>
-<div id="paypalInfo" style="display:none; margin-top:18px; padding:24px; background:#eef8f8; border-radius:22px; text-align:center;">
-  <strong style="font-size:22px; color:#15546a;">
-    💙 PayPal
-  </strong>
-  <p style="margin:12px 0 0; font-size:18px; color:#15546a; line-height:1.5;">
-    PayPal-Spenden sind in Kürze möglich.
-  </p>
-</div>
-
-  </div>
-
-  <div class="message">
-    ❤️ Viele kleine Beiträge können gemeinsam Großes bewirken.
-  </div>
-
-</div>
-
-<div class="thanks">
-  <strong>Danke, dass du Teil unserer Lebensbrücke bist.</strong>
-  <p>Gemeinsam für Mensch & Tier.</p>
-</div>
-
-<a class="back" href="index.html">← Zurück zur Startseite</a>
-
-</main>
-
-<script>
-function chooseAmount(btn){
-  document.querySelectorAll('.amount').forEach(b =>
-    b.classList.remove('selected')
-  );
-  btn.classList.add('selected');
-}
-
-function ownAmount(btn){
-  chooseAmount(btn);
-  const box = document.getElementById('customAmount');
-  box.style.display = 'block';
-  box.querySelector('input').focus();
-}
-
-function chooseFrequency(btn){
-  document.querySelectorAll('.frequency button').forEach(b =>
-    b.classList.remove('selected')
-  );
-  btn.classList.add('selected');
-}
-
-function showPayment(){
-  document.getElementById('payment').style.display='block';
-  document.getElementById('payment').scrollIntoView({
-    behavior:'smooth',
-    block:'center'
-  });
-}
-function showBank(){
-  const bank = document.getElementById('bankInfo');
-  bank.style.display = bank.style.display === 'none' ? 'block' : 'none';
-}  
-  function showSepa(){
-  const sepa = document.getElementById('sepaInfo');
-  sepa.style.display = sepa.style.display === 'block' ? 'none' : 'block';
-  }
-  function showPaypal(){
-  const paypal = document.getElementById('paypalInfo');
-  paypal.style.display = paypal.style.display === 'block' ? 'none' : 'block';
-  if(paypal.style.display === 'block'){
-    paypal.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-  }
-
-function prepareSepa() {
-  const box = document.getElementById('sepaSuccess');
-
-  box.innerHTML = `
-    <strong style="font-size:21px; color:#15546a;">
-      ✅ Angaben erfolgreich geprüft
-    </strong>
-    <p style="margin:10px 0 0; color:#15546a;">
-      Vielen Dank für deine Unterstützung. 💚<br>
-      Es wurde noch keine Lastschrift ausgelöst.
+    <p>
+      Mit deiner Spende können wir Menschen und Tiere
+      in schwierigen Situationen unterstützen.
     </p>
-  `;
 
-  box.style.display = 'block';
-  box.scrollIntoView({ behavior: 'smooth', block: 'center' });
-}
-  
-</script>
+    <p>
+      Jeder Betrag zählt – egal ob einmalig oder regelmäßig.
+    </p>
+
+    <div class="amounts">
+      <a class="amount" href="#">5 €</a>
+      <a class="amount" href="#">10 €</a>
+      <a class="amount" href="#">25 €</a>
+      <a class="amount" href="#">50 €</a>
+    </div>
+  </div>
+
+  <div class="intro">
+    <h2>🤲 Gemeinsam helfen</h2>
+
+    <p>
+      Du möchtest unsere Arbeit regelmäßig unterstützen?
+      Auch eine monatliche Spende kann langfristig helfen,
+      wichtige Unterstützung möglich zu machen.
+    </p>
+  </div>
+
+</div>
+
+<div class="help">
+  <h2>🐾❤️ Ein WIR für Mensch &amp; Tier</h2>
+  <p>
+    Danke, dass du hilfst, wenn Hilfe gebraucht wird.
+  </p>
+</div>
+
+<div class="info">
+  <strong>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</strong>
+  <p>
+    Jeder Beitrag hilft, Menschen und Tieren eine
+    bessere Perspektive zu geben.
+  </p>
+</div>
+
+<div class="back">
+  <a href="index.html">← Zur Startseite</a>
+</div>
 
 </body>
 </html>
