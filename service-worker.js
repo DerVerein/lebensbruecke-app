@@ -1,4 +1,4 @@
-const CACHE_NAME = "lebensbruecke-v10";
+const CACHE_NAME = "lebensbruecke-v11";
 
 const FILES_TO_CACHE = [
   "./",
