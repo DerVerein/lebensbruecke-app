@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hilfe für Menschen beantragen – Lebensbrücke</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff8f2;
+  color: #333;
+}
+
+header {
+  background: #d94f4f;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+header p {
+  margin: 10px 0 0;
+  font-size: 17px;
+}
+
+.wir {
+  background: #ffe3d6;
+  color: #9f4141;
+  text-align: center;
+  padding: 17px;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.content {
+  padding: 25px 20px;
+  max-width: 650px;
+  margin: auto;
+}
+
+.intro {
+  font-size: 18px;
+  line-height: 1.5;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+form {
+  background: white;
+  padding: 22px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+label {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 7px;
+  font-weight: bold;
+  color: #b04444;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 13px;
+  border: 2px solid #f0d8ce;
+  border-radius: 10px;
+  font-size: 16px;
+  font-family: Arial, sans-serif;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+.checkbox {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+  margin-top: 20px;
+  font-weight: normal;
+  color: #333;
+}
+
+.checkbox input {
+  width: auto;
+  margin-top: 4px;
+}
+
+button {
+  width: 100%;
+  margin-top: 25px;
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background: #f0a900;
+  color: white;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.hinweis {
+  margin-top: 20px;
+  padding: 15px;
+  background: #fff4d6;
+  border-radius: 12px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.back {
+  text-align: center;
+  padding: 25px;
+}
+
+.back a {
+  color: #9f4141;
+  text-decoration: none;
+  font-weight: bold;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>❤️ Hilfe für Menschen</h1>
+  <p>Niemand sollte mit seiner Not allein bleiben.</p>
+</header>
+
+<div class="wir">
+  Ein WIR für Mensch &amp; Tier. 🐾❤️
+</div>
+
+<div class="content">
+
+  <div class="intro">
+    Bitte beschreibe uns deine Situation möglichst genau.
+    Wir schauen uns dein Anliegen an und prüfen,
+    welche Unterstützung möglich ist.
+  </div>
+
+  <form action="mailto:lebensbruecke-deutschland@example.de"
+        method="post"
+        enctype="text/plain">
+
+    <label for="name">Dein Name *</label>
+    <input type="text" id="name" name="Name" required>
+
+    <label for="email">E-Mail-Adresse *</label>
+    <input type="email" id="email" name="E-Mail" required>
+
+    <label for="telefon">Telefonnummer</label>
+    <input type="tel" id="telefon" name="Telefon">
+
+    <label for="hilfe">Wobei wird Hilfe benötigt? *</label>
+    <select id="hilfe" name="Benötigte Hilfe" required>
+      <option value="">Bitte auswählen</option>
+      <option>Finanzielle Notlage</option>
+      <option>Lebensmittel &amp; Alltag</option>
+      <option>Wohnen</option>
+      <option>Mobilität</option>
+      <option>Unterstützung im Alltag</option>
+      <option>Sonstige Hilfe</option>
+    </select>
+
+    <label for="beschreibung">Beschreibung der Situation *</label>
+    <textarea id="beschreibung"
+              name="Beschreibung"
+              placeholder="Beschreibe bitte deine Situation und wobei du Unterstützung benötigst."
+              required></textarea>
+
+    <label for="betrag">Falls es um finanzielle Hilfe geht: benötigter Betrag</label>
+    <input type="text" id="betrag" name="Benötigter Betrag" placeholder="z. B. 250 €">
+
+    <label for="weitere">Weitere Informationen</label>
+    <textarea id="weitere"
+              name="Weitere Informationen"
+              placeholder="Gibt es noch etwas, das wir wissen sollten?"></textarea>
+
+    <label class="checkbox">
+      <input type="checkbox" required>
+      <span>Ich bestätige, dass meine Angaben nach bestem Wissen und Gewissen richtig sind.</span>
+    </label>
+
+    <button type="submit">
+      ❤️ Hilfeanfrage absenden
+    </button>
+
+    <div class="hinweis">
+      Bitte beachte: Das Absenden einer Anfrage bedeutet nicht automatisch
+      eine Zusage von Unterstützung. Wir prüfen jedes Anliegen individuell.
+    </div>
+
+  </form>
+
+</div>
+
+<div class="back">
+  <a href="mensch.html">← Zurück zu Hilfe für Menschen</a>
+</div>
+
+</body>
+</html>
