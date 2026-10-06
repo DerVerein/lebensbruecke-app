@@ -3,80 +3,85 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Hilfe für Tiere und Menschen – Lebensbrücke Deutschland</title>
+<title>Ich brauche Hilfe – Lebensbrücke</title>
 
 <style>
-* {
-    box-sizing: border-box;
-}
-
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f4f8fb;
-    color: #174f72;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fffaf5;
+  color: #333;
 }
 
 header {
-    background: white;
-    text-align: center;
-    padding: 40px 20px;
+  background: #d94f4f;
+  color: white;
+  text-align: center;
+  padding: 32px 20px;
 }
 
-h1 {
-    font-size: 36px;
-    margin: 0 0 12px;
+header h1 {
+  margin: 0;
+  font-size: 32px;
 }
 
 header p {
-    font-size: 20px;
-    color: #666;
-    margin: 0;
+  margin: 10px 0 0;
+  font-size: 18px;
 }
 
-main {
-    max-width: 700px;
-    margin: auto;
-    padding: 30px 20px;
+.wir {
+  background: #ffe3d6;
+  color: #9f4141;
+  text-align: center;
+  padding: 18px;
+  font-size: 20px;
+  font-weight: bold;
 }
 
-.section-title {
-    font-size: 30px;
-    margin: 10px 0 20px;
+.content {
+  padding: 25px 20px;
 }
 
-.box {
-    background: white;
-    border-radius: 20px;
-    padding: 24px;
-    margin-bottom: 18px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+.card {
+  display: block;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+  padding: 28px 20px;
+  margin-bottom: 18px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
 }
 
-.box h2 {
-    margin: 0 0 10px;
-    font-size: 25px;
+.card h2 {
+  margin: 0;
+  font-size: 27px;
 }
 
-.box p {
-    margin: 0;
-    color: #555;
-    font-size: 18px;
-    line-height: 1.5;
+.card p {
+  margin: 10px 0 0;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.tiere {
+  background: #3f8f5b;
+}
+
+.menschen {
+  background: #d94f4f;
 }
 
 .back {
-    display: block;
-    text-align: center;
-    margin: 35px 0;
-    font-size: 20px;
-    color: #555;
-    text-decoration: none;
+  text-align: center;
+  padding: 25px;
 }
 
-.back:hover {
-    text-decoration: underline;
+.back a {
+  color: #555;
+  text-decoration: none;
+  font-weight: bold;
 }
 </style>
 </head>
@@ -84,59 +89,31 @@ main {
 <body>
 
 <header>
-    <h1>🐾 Hilfe für Tiere</h1>
-    <p>Welche Unterstützung wird benötigt?</p>
+  <h1>🆘 Ich brauche Hilfe</h1>
+  <p>Wobei wird Unterstützung benötigt?</p>
 </header>
 
-<main>
+<div class="wir">
+  Ein WIR für Mensch &amp; Tier. 🐾❤️
+</div>
 
-    <div class="box">
-        <h2>🏥 Tierarztkosten</h2>
-        <p>
-            Unterstützung bei notwendigen Tierarzt- und Behandlungskosten.
-        </p>
-    </div>
+<div class="content">
 
-    <div class="box">
-        <h2>🥣 Futterhilfe</h2>
-        <p>
-            Unterstützung mit Tierfutter, wenn die Versorgung nicht mehr gesichert ist.
-        </p>
-    </div>
+  <a class="card tiere" href="tier.html">
+    <h2>🐾 Hilfe für Tiere</h2>
+    <p>Tierarztkosten · Futterhilfe · Sonstige Hilfe für Tiere</p>
+  </a>
 
-    <div class="box">
-        <h2>🐾 Sonstige Hilfe für Tiere</h2>
-        <p>
-            Wenn ein Tier oder mehrere Tiere andere Unterstützung benötigen.
-        </p>
-    </div>
+  <a class="card menschen" href="mensch.html">
+    <h2>❤️ Hilfe für Menschen</h2>
+    <p>Finanzielle Notlage · Behörden &amp; Anträge · Sonstige Hilfe</p>
+  </a>
 
-    <h1 class="section-title">❤️ Hilfe für Menschen</h1>
+</div>
 
-    <div class="box">
-        <h2>💶 Finanzielle Notlage</h2>
-        <p>
-            Unterstützung bei einer finanziellen Notlage oder einem dringenden Engpass.
-        </p>
-    </div>
-
-    <div class="box">
-        <h2>📄 Behörden &amp; Anträge</h2>
-        <p>
-            Hilfe bei Behörden, Anträgen und wichtigen Formalitäten.
-        </p>
-    </div>
-
-    <div class="box">
-        <h2>❤️ Sonstige Hilfe für Menschen</h2>
-        <p>
-            Wenn Menschen oder Familien eine andere Form von Unterstützung benötigen.
-        </p>
-    </div>
-
-    <a class="back" href="hilfe.html">← Zurück</a>
-
-</main>
+<div class="back">
+  <a href="index.html">← Zur Startseite</a>
+</div>
 
 </body>
 </html>
