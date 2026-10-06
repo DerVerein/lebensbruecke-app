@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spenden – Lebensbrücke</title>
+
+<title>Spenden – Lebensbrücke Deutschland</title>
 
 <style>
 body {
@@ -14,110 +15,185 @@ body {
 }
 
 header {
-  background: #e3a900;
+  background: #f0b400;
   color: white;
   text-align: center;
-  padding: 32px 20px;
+  padding: 38px 20px;
 }
 
 header h1 {
   margin: 0;
-  font-size: 34px;
+  font-size: 36px;
 }
 
 header p {
-  font-size: 18px;
-  margin: 10px 0 0;
+  margin: 12px 0 0;
+  font-size: 19px;
+  line-height: 1.4;
 }
 
 .wir {
   background: #fff0bd;
+  color: #987000;
   text-align: center;
-  padding: 18px;
-  font-size: 20px;
+  padding: 20px;
+  font-size: 21px;
   font-weight: bold;
-  color: #9a7000;
 }
 
 .content {
-  padding: 25px 20px;
+  max-width: 700px;
+  margin: auto;
+  padding: 25px 18px 40px;
+}
+
+.card {
+  background: white;
+  border-radius: 22px;
+  padding: 28px 22px;
+  margin-bottom: 22px;
+  box-shadow: 0 5px 16px rgba(0,0,0,0.10);
+}
+
+.card h2 {
+  color: #b88a00;
+  text-align: center;
+  margin: 0 0 18px;
+  font-size: 28px;
 }
 
 .intro {
-  background: white;
-  border-radius: 18px;
-  padding: 22px;
-  margin-bottom: 20px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
   text-align: center;
-}
-
-.intro h2 {
-  color: #c58c00;
-  margin-top: 0;
-}
-
-.intro p {
-  font-size: 17px;
-  line-height: 1.5;
+  font-size: 18px;
+  line-height: 1.55;
 }
 
 .amounts {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
-  margin-top: 20px;
+  margin-top: 22px;
 }
 
 .amount {
-  background: #f0b400;
+  border: none;
+  border-radius: 18px;
+  padding: 20px 10px;
+  background: #f2b500;
   color: white;
-  text-decoration: none;
-  text-align: center;
-  padding: 18px 10px;
-  border-radius: 15px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 .amount:hover {
-  background: #d99d00;
+  opacity: 0.9;
 }
 
-.help {
-  background: #e3a900;
-  color: white;
-  text-align: center;
-  padding: 28px 20px;
-  margin-top: 25px;
+.custom {
+  grid-column: 1 / -1;
+  background: #fff0bd;
+  color: #9a7300;
 }
 
-.help h2 {
-  margin-top: 0;
-  font-size: 25px;
+.frequency {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-top: 20px;
 }
 
-.help p {
+.frequency button {
+  border: 2px solid #f0b400;
+  border-radius: 16px;
+  padding: 16px 10px;
+  background: white;
+  color: #9a7300;
   font-size: 17px;
+  font-weight: bold;
+}
+
+.frequency button.active {
+  background: #f0b400;
+  color: white;
+}
+
+.payment {
+  display: grid;
+  gap: 14px;
+}
+
+.payment-box {
+  border-radius: 18px;
+  padding: 20px;
+  background: #fff4d0;
+  text-align: center;
+}
+
+.payment-box h3 {
+  margin: 0 0 8px;
+  color: #a77c00;
+  font-size: 22px;
+}
+
+.payment-box p {
+  margin: 0;
+  line-height: 1.5;
+}
+
+.receipt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.receipt input {
+  width: 20px;
+  height: 20px;
+}
+
+.cta {
+  display: block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: 20px;
+  padding: 21px;
+  margin-top: 22px;
+  background: #e89f00;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
 }
 
 .info {
-  background: #fff0bd;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 16px;
   text-align: center;
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+.thanks {
+  text-align: center;
+  color: #987000;
+  font-size: 22px;
+  line-height: 1.5;
+  font-weight: bold;
 }
 
 .back {
   text-align: center;
-  padding: 25px;
+  padding: 10px 20px 35px;
 }
 
 .back a {
-  color: #a87800;
-  font-weight: bold;
+  color: #987000;
   text-decoration: none;
+  font-weight: bold;
+  font-size: 17px;
 }
 </style>
 </head>
@@ -126,7 +202,10 @@ header p {
 
 <header>
   <h1>💛 Spenden</h1>
-  <p>Helfen. Hoffnung geben. Gemeinsam etwas bewegen.</p>
+  <p>
+    Gemeinsam mehr bewirken.<br>
+    Jede Spende hilft – für Menschen und Tiere.
+  </p>
 </header>
 
 <div class="wir">
@@ -135,51 +214,92 @@ header p {
 
 <div class="content">
 
-  <div class="intro">
-    <h2>💛 Deine Hilfe kommt an</h2>
+  <div class="card">
+    <h2>💛 Deine Spende kommt an</h2>
 
-    <p>
-      Mit deiner Spende können wir Menschen und Tiere
-      in schwierigen Situationen unterstützen.
-    </p>
-
-    <p>
-      Jeder Betrag zählt – egal ob einmalig oder regelmäßig.
-    </p>
+    <div class="intro">
+      Mit deiner Spende können wir Menschen und Tieren
+      dort helfen, wo Unterstützung gebraucht wird.
+      <br><br>
+      <strong>Jeder Beitrag zählt.</strong>
+    </div>
 
     <div class="amounts">
-      <a class="amount" href="#">5 €</a>
-      <a class="amount" href="#">10 €</a>
-      <a class="amount" href="#">25 €</a>
-      <a class="amount" href="#">50 €</a>
+      <button class="amount">5 €</button>
+      <button class="amount">10 €</button>
+      <button class="amount">25 €</button>
+      <button class="amount">50 €</button>
+      <button class="amount custom">✏️ Eigener Betrag</button>
     </div>
   </div>
 
-  <div class="intro">
-    <h2>🤲 Gemeinsam helfen</h2>
+  <div class="card">
+    <h2>🔄 Wie möchtest du helfen?</h2>
 
-    <p>
-      Du möchtest unsere Arbeit regelmäßig unterstützen?
-      Auch eine monatliche Spende kann langfristig helfen,
-      wichtige Unterstützung möglich zu machen.
-    </p>
+    <div class="frequency">
+      <button class="active">Einmalig</button>
+      <button>Regelmäßig</button>
+    </div>
   </div>
 
-</div>
+  <div class="card">
+    <h2>💳 Deine Spendenmöglichkeit</h2>
 
-<div class="help">
-  <h2>🐾❤️ Ein WIR für Mensch &amp; Tier</h2>
-  <p>
-    Danke, dass du hilfst, wenn Hilfe gebraucht wird.
-  </p>
-</div>
+    <div class="payment">
 
-<div class="info">
-  <strong>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</strong>
-  <p>
-    Jeder Beitrag hilft, Menschen und Tieren eine
-    bessere Perspektive zu geben.
-  </p>
+      <div class="payment-box">
+        <h3>🅿️ PayPal</h3>
+        <p>
+          Schnell und einfach online spenden.
+          <br>
+          <strong>PayPal-Link wird noch ergänzt.</strong>
+        </p>
+      </div>
+
+      <div class="payment-box">
+        <h3>🏦 Überweisung / SEPA</h3>
+        <p>
+          Die Bankverbindung und SEPA-Daten
+          werden hier ergänzt.
+        </p>
+      </div>
+
+    </div>
+
+    <label class="receipt">
+      <input type="checkbox">
+      Ich wünsche eine Spendenquittung.
+    </label>
+
+    <div class="cta">
+      💛 JETZT SPENDEN
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>❤️ Wofür deine Spende hilft</h2>
+
+    <div class="info">
+      🐾 Unterstützung für Tiere
+      <br><br>
+      ❤️ Hilfe für Menschen
+      <br><br>
+      🤝 Unterstützung in schwierigen Situationen
+      <br><br>
+      🌱 Aufbau und Weiterentwicklung unserer Hilfsangebote
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="thanks">
+      Jeder Beitrag zählt. 💛
+      <br><br>
+      Ein WIR für Mensch &amp; Tier. 🐾❤️
+      <br>
+      <em>Danke, dass du Teil davon bist.</em>
+    </div>
+  </div>
+
 </div>
 
 <div class="back">
