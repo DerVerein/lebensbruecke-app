@@ -29,7 +29,7 @@ header h1 {
 header p {
   margin: 12px 0 0;
   font-size: 19px;
-  line-height: 1.4;
+  line-height: 1.5;
 }
 
 .wir {
@@ -49,36 +49,36 @@ header p {
 
 .card {
   background: white;
-  border-radius: 22px;
-  padding: 28px 22px;
-  margin-bottom: 22px;
-  box-shadow: 0 5px 16px rgba(0,0,0,0.10);
+  border-radius: 24px;
+  padding: 30px 22px;
+  margin-bottom: 24px;
+  box-shadow: 0 5px 18px rgba(0,0,0,0.10);
 }
 
 .card h2 {
   color: #b88a00;
   text-align: center;
   margin: 0 0 18px;
-  font-size: 28px;
+  font-size: 29px;
 }
 
 .intro {
   text-align: center;
   font-size: 18px;
-  line-height: 1.55;
+  line-height: 1.6;
 }
 
 .amounts {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 14px;
-  margin-top: 22px;
+  margin-top: 25px;
 }
 
 .amount {
   border: none;
   border-radius: 18px;
-  padding: 20px 10px;
+  padding: 21px 10px;
   background: #f2b500;
   color: white;
   font-size: 25px;
@@ -86,8 +86,9 @@ header p {
   cursor: pointer;
 }
 
-.amount:hover {
-  opacity: 0.9;
+.amount.selected {
+  background: #d89200;
+  box-shadow: inset 0 0 0 4px white;
 }
 
 .custom {
@@ -100,13 +101,13 @@ header p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin-top: 20px;
+  margin-top: 22px;
 }
 
 .frequency button {
   border: 2px solid #f0b400;
-  border-radius: 16px;
-  padding: 16px 10px;
+  border-radius: 18px;
+  padding: 17px 10px;
   background: white;
   color: #9a7300;
   font-size: 17px;
@@ -118,22 +119,18 @@ header p {
   color: white;
 }
 
-.payment {
-  display: grid;
-  gap: 14px;
-}
-
 .payment-box {
-  border-radius: 18px;
-  padding: 20px;
-  background: #fff4d0;
+  border-radius: 20px;
+  padding: 22px;
+  margin-top: 15px;
+  background: #fff5d8;
   text-align: center;
 }
 
 .payment-box h3 {
-  margin: 0 0 8px;
+  margin: 0 0 9px;
   color: #a77c00;
-  font-size: 22px;
+  font-size: 23px;
 }
 
 .payment-box p {
@@ -145,7 +142,7 @@ header p {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 22px;
   font-size: 16px;
 }
 
@@ -154,34 +151,17 @@ header p {
   height: 20px;
 }
 
-.cta {
-  display: block;
-  width: 100%;
-  box-sizing: border-box;
-  text-align: center;
-  text-decoration: none;
-  border: none;
-  border-radius: 20px;
-  padding: 21px;
-  margin-top: 22px;
-  background: #e89f00;
-  color: white;
-  font-size: 24px;
-  font-weight: bold;
-}
-
 .info {
   text-align: center;
-  font-size: 17px;
-  line-height: 1.55;
+  font-size: 18px;
+  line-height: 1.65;
 }
 
 .thanks {
   text-align: center;
   color: #987000;
-  font-size: 22px;
-  line-height: 1.5;
-  font-weight: bold;
+  font-size: 23px;
+  line-height: 1.55;
 }
 
 .back {
@@ -215,84 +195,100 @@ header p {
 <div class="content">
 
   <div class="card">
-    <h2>💛 Deine Spende kommt an</h2>
+    <h2>💛 Deine Hilfe kommt an</h2>
 
     <div class="intro">
-      Mit deiner Spende können wir Menschen und Tieren
-      dort helfen, wo Unterstützung gebraucht wird.
+      Mit deiner Spende können wir Menschen und Tiere
+      in schwierigen Situationen unterstützen.
       <br><br>
-      <strong>Jeder Beitrag zählt.</strong>
+      <strong>Jeder Betrag zählt – egal ob einmalig oder regelmäßig.</strong>
     </div>
 
     <div class="amounts">
-      <button class="amount">5 €</button>
-      <button class="amount">10 €</button>
-      <button class="amount">25 €</button>
-      <button class="amount">50 €</button>
-      <button class="amount custom">✏️ Eigener Betrag</button>
+      <button class="amount" onclick="selectAmount(this)">5 €</button>
+      <button class="amount" onclick="selectAmount(this)">10 €</button>
+      <button class="amount" onclick="selectAmount(this)">25 €</button>
+      <button class="amount" onclick="selectAmount(this)">50 €</button>
+      <button class="amount custom" onclick="selectAmount(this)">
+        ✏️ Eigener Betrag
+      </button>
     </div>
   </div>
 
   <div class="card">
-    <h2>🔄 Wie möchtest du helfen?</h2>
+    <h2>🤝 Gemeinsam helfen</h2>
+
+    <div class="intro">
+      Du möchtest unsere Arbeit regelmäßig unterstützen?
+      Auch eine regelmäßige Spende kann langfristig helfen
+      und wichtige Unterstützung möglich machen.
+    </div>
 
     <div class="frequency">
-      <button class="active">Einmalig</button>
-      <button>Regelmäßig</button>
+      <button class="active" onclick="selectFrequency(this)">
+        💛 Einmalig
+      </button>
+
+      <button onclick="selectFrequency(this)">
+        🔄 Regelmäßig
+      </button>
     </div>
   </div>
 
   <div class="card">
-    <h2>💳 Deine Spendenmöglichkeit</h2>
+    <h2>💳 Spendenmöglichkeiten</h2>
 
-    <div class="payment">
+    <div class="payment-box">
+      <h3>🅿️ PayPal</h3>
+      <p>
+        Schnell und bequem online spenden.
+        <br><br>
+        <strong>PayPal wird eingerichtet.</strong>
+      </p>
+    </div>
 
-      <div class="payment-box">
-        <h3>🅿️ PayPal</h3>
-        <p>
-          Schnell und einfach online spenden.
-          <br>
-          <strong>PayPal-Link wird noch ergänzt.</strong>
-        </p>
-      </div>
-
-      <div class="payment-box">
-        <h3>🏦 Überweisung / SEPA</h3>
-        <p>
-          Die Bankverbindung und SEPA-Daten
-          werden hier ergänzt.
-        </p>
-      </div>
-
+    <div class="payment-box">
+      <h3>🏦 Überweisung / SEPA</h3>
+      <p>
+        Deine Spende kann auch per Überweisung
+        oder SEPA erfolgen.
+        <br><br>
+        <strong>Bankverbindung wird ergänzt.</strong>
+      </p>
     </div>
 
     <label class="receipt">
       <input type="checkbox">
       Ich wünsche eine Spendenquittung.
     </label>
-
-    <div class="cta">
-      💛 JETZT SPENDEN
-    </div>
   </div>
 
   <div class="card">
     <h2>❤️ Wofür deine Spende hilft</h2>
 
     <div class="info">
-      🐾 Unterstützung für Tiere
+      🐾 <strong>Hilfe für Tiere</strong>
+      <br>
+      Unterstützung bei Tierarztkosten, Futter und weiteren
+      notwendigen Hilfen.
       <br><br>
-      ❤️ Hilfe für Menschen
+
+      ❤️ <strong>Hilfe für Menschen</strong>
+      <br>
+      Unterstützung für Menschen in schwierigen
+      Lebenssituationen.
       <br><br>
-      🤝 Unterstützung in schwierigen Situationen
-      <br><br>
-      🌱 Aufbau und Weiterentwicklung unserer Hilfsangebote
+
+      🤝 <strong>Gemeinsam mehr möglich machen</strong>
+      <br>
+      Deine Unterstützung hilft uns, unsere Hilfsangebote
+      weiter aufzubauen.
     </div>
   </div>
 
   <div class="card">
     <div class="thanks">
-      Jeder Beitrag zählt. 💛
+      <strong>Jeder Beitrag zählt. 💛</strong>
       <br><br>
       Ein WIR für Mensch &amp; Tier. 🐾❤️
       <br>
@@ -305,6 +301,24 @@ header p {
 <div class="back">
   <a href="index.html">← Zur Startseite</a>
 </div>
+
+<script>
+function selectAmount(button) {
+  document.querySelectorAll(".amount").forEach(function(item) {
+    item.classList.remove("selected");
+  });
+
+  button.classList.add("selected");
+}
+
+function selectFrequency(button) {
+  document.querySelectorAll(".frequency button").forEach(function(item) {
+    item.classList.remove("active");
+  });
+
+  button.classList.add("active");
+}
+</script>
 
 </body>
 </html>
