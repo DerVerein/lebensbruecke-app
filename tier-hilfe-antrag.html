@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Hilfe für ein Tier beantragen – Lebensbrücke</title>
 
 <style>
@@ -28,6 +29,7 @@ header h1 {
 header p {
   margin: 10px 0 0;
   font-size: 17px;
+  line-height: 1.5;
 }
 
 .wir {
@@ -73,7 +75,7 @@ textarea {
   width: 100%;
   box-sizing: border-box;
   padding: 13px;
-  border: 2px solid #d8eadc;
+  border: 2px solid #d8eadd;
   border-radius: 10px;
   font-size: 16px;
   font-family: Arial, sans-serif;
@@ -119,6 +121,16 @@ button {
   line-height: 1.5;
 }
 
+.email-hinweis {
+  margin-top: 18px;
+  padding: 14px;
+  background: #eef8f0;
+  border-radius: 12px;
+  color: #36774b;
+  text-align: center;
+  font-size: 14px;
+}
+
 .back {
   text-align: center;
   padding: 25px;
@@ -136,7 +148,9 @@ button {
 
 <header>
   <h1>🐾 Hilfe für ein Tier</h1>
-  <p>Gemeinsam helfen, wenn ein Tier Unterstützung braucht.</p>
+  <p>
+    Gemeinsam helfen, wenn ein Tier Unterstützung braucht.
+  </p>
 </header>
 
 <div class="wir">
@@ -151,56 +165,113 @@ button {
     welche Unterstützung möglich ist.
   </div>
 
-  <form action="mailto:lebensbruecke-deutschland@example.de"
-        method="post"
-        enctype="text/plain">
+  <form
+    action="mailto:info@lebensbrücke-deutschland.de"
+    method="post"
+    enctype="text/plain"
+  >
 
     <label for="name">Dein Name *</label>
-    <input type="text" id="name" name="Name" required>
+    <input
+      type="text"
+      id="name"
+      name="Name"
+      required
+    >
 
     <label for="email">E-Mail-Adresse *</label>
-    <input type="email" id="email" name="E-Mail" required>
+    <input
+      type="email"
+      id="email"
+      name="E-Mail-Adresse"
+      required
+    >
 
     <label for="telefon">Telefonnummer</label>
-    <input type="tel" id="telefon" name="Telefon">
+    <input
+      type="tel"
+      id="telefon"
+      name="Telefonnummer"
+    >
 
     <label for="tier">Um welches Tier geht es? *</label>
-    <input type="text" id="tier" name="Tier" placeholder="z. B. Hund, Katze, Kaninchen" required>
+    <input
+      type="text"
+      id="tier"
+      name="Tier"
+      placeholder="z. B. Hund, Katze, Kaninchen"
+      required
+    >
 
     <label for="hilfe">Welche Hilfe wird benötigt? *</label>
-    <select id="hilfe" name="Benötigte Hilfe" required>
+    <select
+      id="hilfe"
+      name="Benötigte Hilfe"
+      required
+    >
       <option value="">Bitte auswählen</option>
       <option>Tierarztkosten</option>
       <option>Futterhilfe</option>
       <option>Sonstige Hilfe</option>
     </select>
 
-    <label for="beschreibung">Beschreibung der Situation *</label>
-    <textarea id="beschreibung"
-              name="Beschreibung"
-              placeholder="Was ist passiert und wobei wird Hilfe benötigt?"
-              required></textarea>
+    <label for="beschreibung">
+      Beschreibung der Situation *
+    </label>
 
-    <label for="kosten">Voraussichtliche Kosten</label>
-    <input type="text" id="kosten" name="Voraussichtliche Kosten" placeholder="z. B. 350 €">
+    <textarea
+      id="beschreibung"
+      name="Beschreibung"
+      placeholder="Was ist passiert und wobei wird Hilfe benötigt?"
+      required
+    ></textarea>
 
-    <label for="unterlagen">Weitere Informationen</label>
-    <textarea id="unterlagen"
-              name="Weitere Informationen"
-              placeholder="Weitere wichtige Informationen zu deinem Anliegen"></textarea>
+    <label for="kosten">
+      Voraussichtliche Kosten
+    </label>
+
+    <input
+      type="text"
+      id="kosten"
+      name="Voraussichtliche Kosten"
+      placeholder="z. B. 250 €"
+    >
+
+    <label for="unterlagen">
+      Weitere Informationen
+    </label>
+
+    <textarea
+      id="unterlagen"
+      name="Weitere Informationen"
+      placeholder="Weitere wichtige Informationen zu deiner Situation"
+    ></textarea>
 
     <label class="checkbox">
-      <input type="checkbox" required>
-      <span>Ich bestätige, dass meine Angaben nach bestem Wissen und Gewissen richtig sind.</span>
+      <input
+        type="checkbox"
+        required
+      >
+      <span>
+        Ich bestätige, dass meine Angaben nach bestem Wissen
+        und Gewissen richtig sind.
+      </span>
     </label>
 
     <button type="submit">
       🐾 Hilfeanfrage absenden
     </button>
 
+    <div class="email-hinweis">
+      Deine Anfrage wird an<br>
+      <strong>info@lebensbrücke-deutschland.de</strong>
+      gesendet.
+    </div>
+
     <div class="hinweis">
-      Bitte beachte: Das Absenden einer Anfrage bedeutet nicht automatisch
-      eine Zusage von Unterstützung. Wir prüfen jedes Anliegen individuell.
+      Bitte beachte: Das Absenden einer Anfrage bedeutet
+      keine automatische Zusage von Unterstützung.
+      Wir prüfen jedes Anliegen individuell.
     </div>
 
   </form>
