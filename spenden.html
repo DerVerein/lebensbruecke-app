@@ -18,70 +18,70 @@ header {
   background: #f0b400;
   color: white;
   text-align: center;
-  padding: 38px 20px;
+  padding: 30px 20px;
 }
 
 header h1 {
   margin: 0;
-  font-size: 36px;
+  font-size: 34px;
 }
 
 header p {
-  margin: 12px 0 0;
-  font-size: 19px;
-  line-height: 1.5;
+  margin: 10px 0 0;
+  font-size: 18px;
+  line-height: 1.4;
 }
 
 .wir {
   background: #fff0bd;
   color: #987000;
   text-align: center;
-  padding: 20px;
-  font-size: 21px;
+  padding: 16px;
+  font-size: 20px;
   font-weight: bold;
 }
 
 .content {
-  max-width: 700px;
+  max-width: 680px;
   margin: auto;
-  padding: 25px 18px 40px;
+  padding: 20px 16px 30px;
 }
 
 .card {
   background: white;
-  border-radius: 24px;
-  padding: 30px 22px;
-  margin-bottom: 24px;
-  box-shadow: 0 5px 18px rgba(0,0,0,0.10);
+  border-radius: 22px;
+  padding: 24px 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
 }
 
 .card h2 {
   color: #b88a00;
   text-align: center;
-  margin: 0 0 18px;
-  font-size: 29px;
+  margin: 0 0 14px;
+  font-size: 27px;
 }
 
 .intro {
   text-align: center;
-  font-size: 18px;
-  line-height: 1.6;
+  font-size: 17px;
+  line-height: 1.55;
 }
 
 .amounts {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 14px;
-  margin-top: 25px;
+  gap: 12px;
+  margin-top: 20px;
 }
 
 .amount {
   border: none;
-  border-radius: 18px;
-  padding: 21px 10px;
+  border-radius: 17px;
+  padding: 18px 10px;
   background: #f2b500;
   color: white;
-  font-size: 25px;
+  font-size: 23px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -101,16 +101,16 @@ header p {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 12px;
-  margin-top: 22px;
+  margin-top: 18px;
 }
 
 .frequency button {
   border: 2px solid #f0b400;
-  border-radius: 18px;
-  padding: 17px 10px;
+  border-radius: 16px;
+  padding: 15px 8px;
   background: white;
   color: #9a7300;
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bold;
 }
 
@@ -120,53 +120,47 @@ header p {
 }
 
 .payment-box {
-  border-radius: 20px;
-  padding: 22px;
-  margin-top: 15px;
   background: #fff5d8;
+  border-radius: 17px;
+  padding: 18px;
+  margin-top: 12px;
   text-align: center;
 }
 
 .payment-box h3 {
-  margin: 0 0 9px;
+  margin: 0 0 7px;
   color: #a77c00;
-  font-size: 23px;
+  font-size: 21px;
 }
 
 .payment-box p {
   margin: 0;
-  line-height: 1.5;
+  line-height: 1.45;
 }
 
 .receipt {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-top: 22px;
-  font-size: 16px;
+  gap: 9px;
+  margin-top: 17px;
+  font-size: 15px;
 }
 
 .receipt input {
-  width: 20px;
-  height: 20px;
-}
-
-.info {
-  text-align: center;
-  font-size: 18px;
-  line-height: 1.65;
+  width: 19px;
+  height: 19px;
 }
 
 .thanks {
   text-align: center;
   color: #987000;
-  font-size: 23px;
-  line-height: 1.55;
+  font-size: 21px;
+  line-height: 1.5;
 }
 
 .back {
   text-align: center;
-  padding: 10px 20px 35px;
+  padding: 5px 20px 30px;
 }
 
 .back a {
@@ -201,7 +195,7 @@ header p {
       Mit deiner Spende können wir Menschen und Tiere
       in schwierigen Situationen unterstützen.
       <br><br>
-      <strong>Jeder Betrag zählt – egal ob einmalig oder regelmäßig.</strong>
+      <strong>Jeder Betrag zählt.</strong>
     </div>
 
     <div class="amounts">
@@ -209,6 +203,7 @@ header p {
       <button class="amount" onclick="selectAmount(this)">10 €</button>
       <button class="amount" onclick="selectAmount(this)">25 €</button>
       <button class="amount" onclick="selectAmount(this)">50 €</button>
+
       <button class="amount custom" onclick="selectAmount(this)">
         ✏️ Eigener Betrag
       </button>
@@ -220,8 +215,8 @@ header p {
 
     <div class="intro">
       Du möchtest unsere Arbeit regelmäßig unterstützen?
-      Auch eine regelmäßige Spende kann langfristig helfen
-      und wichtige Unterstützung möglich machen.
+      Auch eine regelmäßige Spende hilft dabei,
+      unsere Arbeit langfristig zu ermöglichen.
     </div>
 
     <div class="frequency">
@@ -236,7 +231,7 @@ header p {
   </div>
 
   <div class="card">
-    <h2>💳 Spendenmöglichkeiten</h2>
+    <h2>💳 Spendenmöglichkeit</h2>
 
     <div class="payment-box">
       <h3>🅿️ PayPal</h3>
@@ -261,29 +256,6 @@ header p {
       <input type="checkbox">
       Ich wünsche eine Spendenquittung.
     </label>
-  </div>
-
-  <div class="card">
-    <h2>❤️ Wofür deine Spende hilft</h2>
-
-    <div class="info">
-      🐾 <strong>Hilfe für Tiere</strong>
-      <br>
-      Unterstützung bei Tierarztkosten, Futter und weiteren
-      notwendigen Hilfen.
-      <br><br>
-
-      ❤️ <strong>Hilfe für Menschen</strong>
-      <br>
-      Unterstützung für Menschen in schwierigen
-      Lebenssituationen.
-      <br><br>
-
-      🤝 <strong>Gemeinsam mehr möglich machen</strong>
-      <br>
-      Deine Unterstützung hilft uns, unsere Hilfsangebote
-      weiter aufzubauen.
-    </div>
   </div>
 
   <div class="card">
