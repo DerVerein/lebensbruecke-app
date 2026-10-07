@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Hilfe für Menschen beantragen – Lebensbrücke</title>
 
 <style>
@@ -28,6 +29,7 @@ header h1 {
 header p {
   margin: 10px 0 0;
   font-size: 17px;
+  line-height: 1.5;
 }
 
 .wir {
@@ -119,6 +121,16 @@ button {
   line-height: 1.5;
 }
 
+.email-hinweis {
+  margin-top: 18px;
+  padding: 14px;
+  background: #fff0eb;
+  border-radius: 12px;
+  color: #a04444;
+  text-align: center;
+  font-size: 14px;
+}
+
 .back {
   text-align: center;
   padding: 25px;
@@ -136,7 +148,9 @@ button {
 
 <header>
   <h1>❤️ Hilfe für Menschen</h1>
-  <p>Niemand sollte mit seiner Not allein bleiben.</p>
+  <p>
+    Niemand sollte mit seiner Not allein bleiben.
+  </p>
 </header>
 
 <div class="wir">
@@ -151,21 +165,41 @@ button {
     welche Unterstützung möglich ist.
   </div>
 
-  <form action="mailto:lebensbruecke-deutschland@example.de"
-        method="post"
-        enctype="text/plain">
+  <form
+    action="mailto:info@lebensbrücke-deutschland.de"
+    method="post"
+    enctype="text/plain"
+  >
 
     <label for="name">Dein Name *</label>
-    <input type="text" id="name" name="Name" required>
+    <input
+      type="text"
+      id="name"
+      name="Name"
+      required
+    >
 
     <label for="email">E-Mail-Adresse *</label>
-    <input type="email" id="email" name="E-Mail" required>
+    <input
+      type="email"
+      id="email"
+      name="E-Mail-Adresse"
+      required
+    >
 
     <label for="telefon">Telefonnummer</label>
-    <input type="tel" id="telefon" name="Telefon">
+    <input
+      type="tel"
+      id="telefon"
+      name="Telefonnummer"
+    >
 
     <label for="hilfe">Wobei wird Hilfe benötigt? *</label>
-    <select id="hilfe" name="Benötigte Hilfe" required>
+    <select
+      id="hilfe"
+      name="Benötigte Hilfe"
+      required
+    >
       <option value="">Bitte auswählen</option>
       <option>Finanzielle Notlage</option>
       <option>Lebensmittel &amp; Alltag</option>
@@ -175,32 +209,64 @@ button {
       <option>Sonstige Hilfe</option>
     </select>
 
-    <label for="beschreibung">Beschreibung der Situation *</label>
-    <textarea id="beschreibung"
-              name="Beschreibung"
-              placeholder="Beschreibe bitte deine Situation und wobei du Unterstützung benötigst."
-              required></textarea>
+    <label for="beschreibung">
+      Beschreibung der Situation *
+    </label>
 
-    <label for="betrag">Falls es um finanzielle Hilfe geht: benötigter Betrag</label>
-    <input type="text" id="betrag" name="Benötigter Betrag" placeholder="z. B. 250 €">
+    <textarea
+      id="beschreibung"
+      name="Beschreibung"
+      placeholder="Beschreibe bitte deine Situation und wobei du Hilfe benötigst."
+      required
+    ></textarea>
 
-    <label for="weitere">Weitere Informationen</label>
-    <textarea id="weitere"
-              name="Weitere Informationen"
-              placeholder="Gibt es noch etwas, das wir wissen sollten?"></textarea>
+    <label for="betrag">
+      Falls es um finanzielle Hilfe geht:
+      benötigter Betrag
+    </label>
+
+    <input
+      type="text"
+      id="betrag"
+      name="Benötigter Betrag"
+      placeholder="z. B. 250 €"
+    >
+
+    <label for="weitere">
+      Weitere Informationen
+    </label>
+
+    <textarea
+      id="weitere"
+      name="Weitere Informationen"
+      placeholder="Gibt es noch etwas, das wir wissen sollten?"
+    ></textarea>
 
     <label class="checkbox">
-      <input type="checkbox" required>
-      <span>Ich bestätige, dass meine Angaben nach bestem Wissen und Gewissen richtig sind.</span>
+      <input
+        type="checkbox"
+        required
+      >
+      <span>
+        Ich bestätige, dass meine Angaben nach bestem Wissen
+        und Gewissen richtig sind.
+      </span>
     </label>
 
     <button type="submit">
       ❤️ Hilfeanfrage absenden
     </button>
 
+    <div class="email-hinweis">
+      Deine Anfrage wird an<br>
+      <strong>info@lebensbrücke-deutschland.de</strong>
+      gesendet.
+    </div>
+
     <div class="hinweis">
-      Bitte beachte: Das Absenden einer Anfrage bedeutet nicht automatisch
-      eine Zusage von Unterstützung. Wir prüfen jedes Anliegen individuell.
+      Bitte beachte: Das Absenden einer Anfrage bedeutet
+      keine automatische Zusage von Unterstützung.
+      Wir prüfen jedes Anliegen individuell.
     </div>
 
   </form>
