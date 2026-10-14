@@ -1,10 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hilfe für Tiere</title>
-
 <style>
 body {
   margin: 0;
@@ -12,24 +12,20 @@ body {
   background: #f7fff8;
   color: #333;
 }
-
 header {
   background: #3f8f5b;
   color: white;
   text-align: center;
   padding: 30px 20px;
 }
-
 header h1 {
   margin: 0;
   font-size: 32px;
 }
-
 header p {
   font-size: 18px;
   margin: 10px 0 0;
 }
-
 .wir {
   background: #dff2e4;
   text-align: center;
@@ -38,43 +34,44 @@ header p {
   font-weight: bold;
   color: #327348;
 }
-
 .content {
   padding: 25px 20px;
 }
-
 .card {
+  display: block;
   background: white;
   border-radius: 18px;
   padding: 20px;
   margin-bottom: 16px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  color: #333;
+  text-decoration: none;
+  border-left: 5px solid #3f8f5b;
 }
-
 .card h2 {
   margin-top: 0;
   color: #3f8f5b;
   font-size: 22px;
 }
-
 .card p {
   font-size: 17px;
   line-height: 1.5;
+  margin-bottom: 0;
 }
-
-.help {
+.card:active {
+  transform: scale(0.99);
+}
+.hilfe {
   background: #f0a900;
   color: white;
   text-align: center;
   padding: 25px 20px;
   margin-top: 10px;
 }
-
-.help h2 {
+.hilfe h2 {
   margin-top: 0;
 }
-
-.help a {
+.hilfe a {
   display: inline-block;
   background: white;
   color: #b87900;
@@ -84,12 +81,10 @@ header p {
   font-weight: bold;
   margin-top: 10px;
 }
-
 .back {
   text-align: center;
   padding: 25px;
 }
-
 .back a {
   color: #3f8f5b;
   font-weight: bold;
@@ -97,7 +92,6 @@ header p {
 }
 </style>
 </head>
-
 <body>
 
 <header>
@@ -111,36 +105,27 @@ header p {
 
 <div class="content">
 
-  <div class="card">
+  <a class="card" href="tier-hilfe-antrag.html">
     <h2>🏥 Tierarztkosten</h2>
-    <p>
-      Wenn notwendige tierärztliche Behandlungen finanziell
-      nicht möglich sind, möchten wir gemeinsam nach einer
-      Unterstützungsmöglichkeit suchen.
-    </p>
-  </div>
+    <p>Wenn notwendige tierärztliche Behandlungen finanziell nicht möglich sind, möchten wir gemeinsam nach einer Unterstützungsmöglichkeit suchen.</p>
+    <p><strong>Hier Hilfe anfragen →</strong></p>
+  </a>
 
-  <div class="card">
-    <h2>🥣 Futterhilfe</h2>
-    <p>
-      Unterstützung mit Futter kann helfen, wenn Menschen
-      vorübergehend nicht genug Geld für die Versorgung
-      ihrer Tiere haben.
-    </p>
-  </div>
+  <a class="card" href="tier-hilfe-antrag.html">
+    <h2>🦴 Futterhilfe</h2>
+    <p>Unterstützung mit Futter kann helfen, wenn Menschen vorübergehend nicht genug Geld für die Versorgung ihrer Tiere haben.</p>
+    <p><strong>Hier Hilfe anfragen →</strong></p>
+  </a>
 
-  <div class="card">
+  <a class="card" href="tier-hilfe-antrag.html">
     <h2>🐾 Sonstige Hilfe für Tiere</h2>
-    <p>
-      Du brauchst Hilfe für dein Tier und findest dein Anliegen
-      hier nicht? Beschreibe uns einfach deine Situation.
-      Gemeinsam schauen wir, was möglich ist.
-    </p>
-  </div>
+    <p>Du brauchst Hilfe für dein Tier und findest dein Anliegen hier nicht? Beschreibe uns einfach deine Situation. Gemeinsam schauen wir, was möglich ist.</p>
+    <p><strong>Hier Hilfe anfragen →</strong></p>
+  </a>
 
 </div>
 
-<div class="help">
+<div class="hilfe">
   <h2>💛 Du möchtest helfen?</h2>
   <p>Jeder Beitrag kann einem Tier und seinem Menschen helfen.</p>
   <a href="spenden.html">💛 Jetzt helfen &amp; spenden</a>
