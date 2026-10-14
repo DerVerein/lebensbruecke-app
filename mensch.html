@@ -1,222 +1,168 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Hilfe für Menschen – Lebensbrücke Deutschland</title>
-
+<title>Hilfe für Menschen</title>
 <style>
-* {
-    box-sizing: border-box;
-}
-
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #fff8f2;
-    color: #333333;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #fff8f6;
+  color: #333;
 }
-
 header {
-    background: #d94f4f;
-    color: white;
-    text-align: center;
-    padding: 42px 20px 35px;
+  background: #e97868;
+  color: white;
+  text-align: center;
+  padding: 30px 20px;
 }
-
 header h1 {
-    margin: 0 0 12px;
-    font-size: 38px;
+  margin: 0;
+  font-size: 32px;
 }
-
 header p {
-    margin: 0;
-    font-size: 20px;
+  font-size: 18px;
+  margin: 10px 0 0;
 }
-
 .wir {
-    text-align: center;
-    padding: 22px 20px;
-    background: #ffe3d6;
-    color: #a93636;
-    font-size: 22px;
-    font-weight: bold;
+  background: #ffe7e1;
+  text-align: center;
+  padding: 18px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #a94e43;
 }
-
-main {
-    max-width: 700px;
-    margin: auto;
-    padding: 28px 20px 40px;
+.content {
+  padding: 25px 20px;
 }
-
 .intro {
-    text-align: center;
-    font-size: 21px;
-    line-height: 1.5;
-    margin-bottom: 25px;
+  text-align: center;
+  font-size: 17px;
+  line-height: 1.5;
+  margin: 0 0 25px;
 }
-
-.box {
-    background: white;
-    border-radius: 22px;
-    margin-bottom: 18px;
-    padding: 24px;
-    box-shadow: 0 5px 14px rgba(150,70,50,0.12);
-    border-left: 8px solid #d94f4f;
+.card {
+  display: block;
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+  border-left: 5px solid #e97868;
+  color: #333;
+  text-decoration: none;
 }
-
-.box:nth-of-type(2) {
-    border-left-color: #e56752;
+.card h2 {
+  margin-top: 0;
+  color: #c85e51;
+  font-size: 22px;
 }
-
-.box:nth-of-type(3) {
-    border-left-color: #ed7b62;
+.card p {
+  font-size: 17px;
+  line-height: 1.5;
+  margin-bottom: 0;
 }
-
-.box:nth-of-type(4) {
-    border-left-color: #ef927c;
+.card:active {
+  transform: scale(0.99);
 }
-
-.box:nth-of-type(5) {
-    border-left-color: #f2a996;
+.hilfe {
+  background: #f0a900;
+  color: white;
+  text-align: center;
+  padding: 25px 20px;
+  margin-top: 10px;
 }
-
-.box:nth-of-type(6) {
-    border-left-color: #f5c0b2;
+.hilfe h2 {
+  margin-top: 0;
 }
-
-.box h2 {
-    margin: 0 0 10px;
-    font-size: 25px;
-    color: #a93636;
+.hilfe a {
+  display: inline-block;
+  background: white;
+  color: #b87900;
+  text-decoration: none;
+  padding: 13px 22px;
+  border-radius: 12px;
+  font-weight: bold;
+  margin-top: 10px;
 }
-
-.box p {
-    margin: 0;
-    color: #555555;
-    font-size: 18px;
-    line-height: 1.5;
-}
-
-.help {
-    margin-top: 30px;
-    padding: 28px 22px;
-    border-radius: 24px;
-    background: #f0a900;
-    color: #3d2b00;
-    text-align: center;
-    box-shadow: 0 6px 16px rgba(170,120,0,0.20);
-}
-
-.help h2 {
-    margin: 0 0 10px;
-    font-size: 29px;
-}
-
-.help p {
-    margin: 0 0 20px;
-    font-size: 18px;
-    line-height: 1.5;
-}
-
-.help a {
-    display: inline-block;
-    background: #ffffff;
-    color: #8a5a00;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 19px;
-    padding: 14px 25px;
-    border-radius: 30px;
-}
-
 .back {
-    display: block;
-    text-align: center;
-    margin-top: 30px;
-    color: #a93636;
-    font-size: 19px;
-    text-decoration: none;
+  text-align: center;
+  padding: 25px;
+}
+.back a {
+  color: #c85e51;
+  font-weight: bold;
+  text-decoration: none;
 }
 </style>
 </head>
-
 <body>
 
 <header>
-    <h1>❤️ Hilfe für Menschen</h1>
-    <p>Niemand sollte mit seiner Not allein bleiben.</p>
+  <h1>❤️ Hilfe für Menschen</h1>
+  <p>Niemand sollte mit seiner Not allein bleiben.</p>
 </header>
 
 <div class="wir">
-    Ein WIR für Mensch &amp; Tier. 🐾❤️
+  Ein WIR für Mensch &amp; Tier. 🐾❤️
 </div>
 
-<main>
+<div class="content">
 
-    <div class="intro">
-        Gemeinsam können wir Menschen in schwierigen Situationen
-        unterstützen und neue Hoffnung geben.
-    </div>
+  <p class="intro">
+    Gemeinsam können wir Menschen in schwierigen Situationen
+    unterstützen und neue Hoffnung geben.
+  </p>
 
-    <div class="box">
-        <h2>💶 Finanzielle Notlage</h2>
-        <p>
-            Unterstützung bei einer finanziellen Notlage oder einem
-            dringenden finanziellen Engpass.
-        </p>
-    </div>
+  <a class="card" href="finanzielle-notlage.html">
+    <h2>💶 Finanzielle Notlage</h2>
+    <p>Wenn das Geld nicht mehr für das Nötigste reicht, schauen wir gemeinsam nach möglichen Hilfen.</p>
+    <p><strong>Mehr erfahren →</strong></p>
+  </a>
 
-    <div class="box">
-        <h2>🛒 Lebensmittel &amp; Alltag</h2>
-        <p>
-            Hilfe, wenn Lebensmittel oder wichtige Dinge des täglichen
-            Lebens fehlen.
-        </p>
-    </div>
+  <a class="card" href="menschen-hilfe-antrag.html?hilfe=Lebensmittel%20%26%20Alltag">
+    <h2>🛒 Lebensmittel &amp; Alltag</h2>
+    <p>Unterstützung bei Lebensmitteln und wichtigen Dingen des täglichen Lebens.</p>
+    <p><strong>Hilfe anfragen →</strong></p>
+  </a>
 
-    <div class="box">
-        <h2>🏠 Wohnen</h2>
-        <p>
-            Unterstützung bei Problemen rund um Wohnung und Wohnen.
-        </p>
-    </div>
+  <a class="card" href="menschen-hilfe-antrag.html?hilfe=Wohnen">
+    <h2>🏠 Wohnen</h2>
+    <p>Wenn Schwierigkeiten rund ums Wohnen entstehen, kannst du uns deine Situation schildern.</p>
+    <p><strong>Hilfe anfragen →</strong></p>
+  </a>
 
-    <div class="box">
-        <h2>🚗 Mobilität</h2>
-        <p>
-            Hilfe, wenn notwendige Mobilität im Alltag nicht mehr
-            gewährleistet ist.
-        </p>
-    </div>
+  <a class="card" href="menschen-hilfe-antrag.html?hilfe=Mobilit%C3%A4t">
+    <h2>🚗 Mobilität</h2>
+    <p>Wenn notwendige Wege zum Problem werden, prüfen wir, welche Unterstützung möglich sein könnte.</p>
+    <p><strong>Hilfe anfragen →</strong></p>
+  </a>
 
-    <div class="box">
-        <h2>🤝 Unterstützung im Alltag</h2>
-        <p>
-            Hilfe für Menschen, die im Alltag Unterstützung benötigen.
-        </p>
-    </div>
+  <a class="card" href="menschen-hilfe-antrag.html?hilfe=Unterst%C3%BCtzung%20im%20Alltag">
+    <h2>🤝 Unterstützung im Alltag</h2>
+    <p>Manchmal helfen schon praktische Unterstützung und Menschen, die zuhören.</p>
+    <p><strong>Hilfe anfragen →</strong></p>
+  </a>
 
-    <div class="box">
-        <h2>➕ Sonstige Hilfe</h2>
-        <p>
-            Du benötigst eine andere Form der Unterstützung?
-            Teile uns deine Situation mit.
-        </p>
-    </div>
+  <a class="card" href="menschen-hilfe-antrag.html?hilfe=Sonstige%20Hilfe">
+    <h2>❤️ Sonstige Hilfe</h2>
+    <p>Dein Anliegen passt in keine Kategorie? Beschreibe uns, wobei du Unterstützung brauchst.</p>
+    <p><strong>Hilfe anfragen →</strong></p>
+  </a>
 
-    <div class="help">
-        <h2>💛 Du möchtest helfen?</h2>
-        <p>
-            Jeder Beitrag kann etwas bewegen – für Menschen und Tiere.
-        </p>
-        <a href="spenden.html">💛 Jetzt helfen &amp; spenden</a>
-    </div>
+</div>
 
-    <a class="back" href="hilfe.html">← Zurück</a>
+<div class="hilfe">
+  <h2>💛 Du möchtest helfen?</h2>
+  <p>Gemeinsam können wir Menschen und Tieren neue Hoffnung geben.</p>
+  <a href="spenden.html">💛 Jetzt helfen &amp; spenden</a>
+</div>
 
-</main>
+<div class="back">
+  <a href="hilfe.html">← Zurück zu Hilfe</a>
+</div>
 
 </body>
 </html>
