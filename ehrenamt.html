@@ -2,79 +2,136 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ehrenamtlich helfen – Lebensbrücke Deutschland</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mitmachen – Lebensbrücke Deutschland</title>
 <style>
+:root{
+  --bg:#f7f1e9;--surface:#fffaf5;--text:#292b2d;--muted:#62666a;
+  --accent:#f06455;--accent-dark:#d94e42;--line:#e7dcd1;--nav:#292b2d;
+  --shadow:0 12px 34px rgba(40,32,27,.10);
+}
+body.dark{
+  --bg:#202225;--surface:#2c2f33;--text:#f7f3ee;--muted:#c5c6c8;
+  --accent:#ff7768;--accent-dark:#ff9387;--line:#44474c;--nav:#17191b;
+  --shadow:0 12px 34px rgba(0,0,0,.22);
+}
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f8f5ed;color:#343a35;line-height:1.6}
-header{background:#e4eddf;text-align:center;padding:30px 18px;border-bottom:4px solid #78966e}
-header h1{margin:0 0 8px;color:#42633c;font-size:29px}
-main{max-width:760px;margin:25px auto;padding:0 16px}
-.card{background:#fff;border-radius:16px;padding:22px;margin-bottom:18px;box-shadow:0 3px 12px #0000000d}
-h2,h3{color:#42633c}
-.intro{text-align:center;border-top:5px solid #78966e}
-.notice{background:#fff2d6;border-left:5px solid #e4b34f;border-radius:10px;padding:15px;margin:18px 0}
-.button{display:block;text-align:center;text-decoration:none;border-radius:12px;padding:14px 18px;margin:12px 0;font-weight:bold}
-.primary{background:#e9b84f;color:#3d3219}
-.secondary{background:#e4eddf;color:#355431}
-footer{text-align:center;padding:22px 15px;font-size:13px;color:#666}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.6;transition:background .2s,color .2s}
+.topbar{background:var(--nav);color:#fff;padding:13px 5%;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.brand{font-weight:800;letter-spacing:.2px}.brand small{display:block;font-weight:400;font-size:.8rem;color:#e5e5e5}
+.actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.mode,.navdonate{border:1px solid #666;border-radius:999px;padding:9px 14px;background:transparent;color:white;font-weight:700;cursor:pointer;text-decoration:none}
+.navdonate{background:var(--accent);border-color:var(--accent);color:#241f1e}
+.hero{min-height:400px;display:grid;align-items:end;background:linear-gradient(90deg,rgba(20,22,24,.83),rgba(20,22,24,.24)),url('https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1800&q=85') center 42%/cover;color:white}
+.hero-inner{max-width:1100px;width:100%;margin:auto;padding:60px 24px 48px}
+.eyebrow{display:inline-block;background:rgba(240,100,85,.18);border:1px solid rgba(255,255,255,.35);padding:6px 12px;border-radius:999px;font-size:.82rem;font-weight:700;letter-spacing:.6px;text-transform:uppercase}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.3rem,6vw,4.5rem);line-height:1.08;margin:17px 0 14px;max-width:760px}
+.hero p{font-size:1.1rem;max-width:620px;color:#f5f3f1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--accent);color:#211e1d;padding:13px 20px;border-radius:12px;font-weight:800;text-decoration:none;border:0;cursor:pointer;box-shadow:0 5px 16px rgba(240,100,85,.24)}
+.btn:hover,.navdonate:hover{background:var(--accent-dark);color:white}
+.btn.secondary{background:transparent;color:inherit;border:1px solid var(--line);box-shadow:none}
+main{max-width:1100px;margin:auto;padding:36px 22px 70px}
+.intro{text-align:center;max-width:760px;margin:0 auto 28px}
+h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.8rem,4vw,2.6rem);line-height:1.15;margin:0 0 12px}
+.intro p,.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin:26px 0 38px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+.card img{display:block;width:100%;height:180px;object-fit:cover}
+.card-body{padding:21px}
+.card h3{margin:0 0 8px;font-size:1.22rem}
+.card p{margin:0 0 16px;color:var(--muted)}
+.text-link{color:var(--accent-dark);font-weight:800;text-decoration:none}
+.callout{background:var(--nav);color:white;border-radius:20px;padding:28px;display:flex;align-items:center;justify-content:space-between;gap:22px;flex-wrap:wrap;margin:35px 0}
+.callout p{margin:6px 0 0;color:#dedede}
+.callout h2{font-size:clamp(1.6rem,3vw,2.2rem)}
+.donate-strip{border:2px solid var(--accent);background:var(--surface);border-radius:18px;padding:23px;display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.donate-strip p{margin:5px 0 0;color:var(--muted)}
+footer{background:var(--nav);color:white;text-align:center;padding:24px 16px}
+footer a{color:#ff9b90}
+@media(max-width:760px){.grid{grid-template-columns:1fr}.hero{min-height:440px}.card img{height:210px}.topbar{padding:13px 17px}.hero-inner{padding:45px 20px 36px}.callout{padding:23px}}
 </style>
 </head>
 <body>
-<header>
-<h1>🤝 Ehrenamtlich helfen</h1>
-<p>Deine Zeit kann einen Unterschied machen.</p>
+<header class="topbar">
+  <div class="brand">Lebensbrücke Deutschland – Mensch &amp; Tier e. V.<small>Ein WIR für Mensch &amp; Tier.</small></div>
+  <div class="actions">
+    <button class="mode" id="modeToggle" type="button" aria-label="Darstellung wechseln">☀ Hell / ☾ Dunkel</button>
+    <a class="navdonate" href="spenden.html">Jetzt spenden</a>
+  </div>
 </header>
 
+<section class="hero">
+  <div class="hero-inner">
+    <span class="eyebrow">Gemeinsam etwas bewegen</span>
+    <h1>Mitmachen. Nähe schenken. Hoffnung geben.</h1>
+    <p>Jede helfende Hand zählt – für Menschen, die Unterstützung brauchen, und für Tiere, die auf uns angewiesen sind.</p>
+    <a class="btn" href="#wege">So kannst du mitmachen&nbsp; ↓</a>
+  </div>
+</section>
+
 <main>
-<section class="card intro">
-<div style="font-size:36px">💚 🐾 ❤️</div>
-<h2>Werde Teil unseres WIR</h2>
-<p>Gemeinsam möchten wir Menschen in schwierigen Situationen unterstützen und Tieren helfen. Dafür zählt jede helfende Hand – ganz gleich, wie viel Zeit du mitbringst.</p>
-</section>
+  <section class="intro" id="wege">
+    <h2>Dein Einsatz macht einen Unterschied.</h2>
+    <p>Du musst nicht viel Zeit haben und auch nicht alles allein schaffen. Schau, was zu dir passt – gemeinsam finden wir einen Weg.</p>
+  </section>
 
-<section class="card">
-<h3>🐾 Hilfe für Tiere</h3>
-<ul>
-<li>Unterstützung bei Futter- und Sachspenden</li>
-<li>Hilfe bei der Versorgung und Vermittlung von Hilfsangeboten</li>
-<li>Unterstützung bei Aktionen für Tiere</li>
-</ul>
-</section>
+  <section class="grid" aria-label="Möglichkeiten mitzumachen">
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=900&q=80" alt="Menschen engagieren sich gemeinsam">
+      <div class="card-body">
+        <h3>Aktiv mithelfen</h3>
+        <p>Hilf bei Aktionen, begleite Menschen oder unterstütze unsere Vereinsarbeit – so, wie es für dich möglich ist.</p>
+        <a class="text-link" href="mailto:kontakt@lebensbruecke-deutschland.de?subject=Ich%20m%C3%B6chte%20aktiv%20mithelfen">Ich möchte mithelfen →</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=900&q=80" alt="Hund freut sich über Zuwendung">
+      <div class="card-body">
+        <h3>Mensch und Tier unterstützen</h3>
+        <p>Hilf dabei, dass ältere Menschen und andere Hilfsbedürftige ihre tierischen Begleiter behalten können.</p>
+        <a class="text-link" href="hilfe.html">Unsere Hilfe ansehen →</a>
+      </div>
+    </article>
+    <article class="card">
+      <img src="https://images.unsplash.com/photo-1601758123927-196c7b1c9f6e?auto=format&fit=crop&w=900&q=80" alt="Hund wird liebevoll versorgt">
+      <div class="card-body">
+        <h3>Sachspenden sammeln</h3>
+        <p>Tierfutter und gut erhaltene benötigte Dinge können im Alltag einen echten Unterschied machen.</p>
+        <a class="text-link" href="sachspenden.html">Sachspenden entdecken →</a>
+      </div>
+    </article>
+  </section>
 
-<section class="card">
-<h3>❤️ Hilfe für Menschen</h3>
-<ul>
-<li>Unterstützung bei der Sammlung und Ausgabe von Sachspenden</li>
-<li>Hilfe bei Aktionen und Begegnungsangeboten</li>
-<li>Praktische Unterstützung nach gemeinsamer Absprache</li>
-</ul>
-</section>
+  <section class="callout">
+    <div>
+      <h2>Du möchtest lieber finanziell helfen?</h2>
+      <p>Auch ein kleiner Beitrag kann etwas bewegen. Jeder Euro hilft dort, wo Unterstützung gebraucht wird.</p>
+    </div>
+    <a class="btn" href="spenden.html">Zur Spendenseite&nbsp; →</a>
+  </section>
 
-<section class="card">
-<h3>📣 Organisation und Mitmachen</h3>
-<ul>
-<li>Hilfe bei Veranstaltungen und Spendenaktionen</li>
-<li>Unterstützung bei Öffentlichkeitsarbeit und Social Media</li>
-<li>Eigene Ideen und Fähigkeiten einbringen</li>
-</ul>
-</section>
-
-<div class="notice">
-<strong>Wichtig:</strong> Du musst nicht alles können und auch nicht ständig verfügbar sein. Wir besprechen gemeinsam, welche Unterstützung möglich ist und zu dir passt.
-</div>
-
-<section class="card">
-<h2>📩 Du möchtest mitmachen?</h2>
-<p>Schreib uns, wer du bist, wobei du gerne helfen möchtest und wie viel Zeit du ungefähr mitbringen kannst.</p>
-<a class="button primary" href="mailto:info@lebensbruecke-deutschland.de?subject=Ehrenamtlich%20helfen">Interesse anmelden</a>
-<a class="button secondary" href="helfen.html">← Zurück zu „Ich möchte helfen“</a>
-</section>
+  <section class="donate-strip">
+    <div>
+      <strong>Gemeinsam geht mehr.</strong>
+      <p>Teile unsere Arbeit, erzähle anderen vom Verein oder werde Teil unserer Gemeinschaft.</p>
+    </div>
+    <a class="btn" href="mailto:kontakt@lebensbruecke-deutschland.de?subject=Kontakt%20%E2%80%93%20Lebensbr%C3%BCcke%20Deutschland">Kontakt aufnehmen</a>
+  </section>
 </main>
 
 <footer>
-Lebensbrücke Deutschland – Mensch &amp; Tier e. V.<br>
-Ein WIR für Mensch &amp; Tier.
+  <strong>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</strong><br>
+  <span>Ein WIR für Mensch &amp; Tier.</span><br>
+  <a href="spenden.html">Spenden</a> &nbsp;·&nbsp; <a href="index.html">Startseite</a>
+  <p style="font-size:.82rem;color:#d5d5d5;margin:12px 0 0">Hinweis: Die Kontakt-E-Mail muss vor Veröffentlichung mit der tatsächlich genutzten Vereinsadresse abgeglichen werden.</p>
 </footer>
+<script>
+const toggle = document.getElementById('modeToggle');
+toggle.addEventListener('click', () => {
+  document.body.classList.toggle('dark');
+  toggle.textContent = document.body.classList.contains('dark') ? '☀ Hell / ☾ Dunkel' : '☀ Hell / ☾ Dunkel';
+});
+</script>
 </body>
 </html>
