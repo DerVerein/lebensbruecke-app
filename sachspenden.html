@@ -1,78 +1,132 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Sachspenden – Lebensbrücke Deutschland</title>
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#f8f5ed;color:#343a35;line-height:1.6}
-header{background:#e4eddf;text-align:center;padding:30px 18px;border-bottom:4px solid #78966e}
-header h1{margin:0 0 8px;color:#42633c;font-size:29px}
-header p{margin:0}
-main{max-width:760px;margin:25px auto;padding:0 16px}
-.intro,.card,.contact{background:#fff;border-radius:16px;padding:20px;margin-bottom:18px;box-shadow:0 3px 12px #0000000d}
-.intro{text-align:center;border-top:5px solid #78966e}
-h2{color:#42633c;margin-top:0}
-.card h3{margin-top:0;color:#42633c}
-.icon{font-size:30px}
-.notice{background:#fff2d6;border-left:5px solid #e4b34f;border-radius:10px;padding:15px;margin:18px 0}
-.button{display:block;text-align:center;text-decoration:none;border-radius:12px;padding:14px 18px;margin:12px 0;font-weight:bold}
-.primary{background:#e9b84f;color:#3d3219}
-.secondary{background:#e4eddf;color:#355431}
-footer{text-align:center;padding:22px 15px;font-size:13px;color:#666}
+:root{
+  --bg:#fff8f0;--surface:#fffdf9;--soft:#f9e7df;--text:#292a2c;
+  --muted:#68696d;--accent:#c45b55;--accent-bright:#ff7768;
+  --line:#e8ddd2;--header:#fffdf9;--header-text:#292a2c;
+}
+body.dark{
+  --bg:#1d2927;--surface:#263532;--soft:#33433f;--text:#f8f4ed;
+  --muted:#d0d2ce;--accent:#ff9a8c;--accent-bright:#ff8a7b;
+  --line:#465650;--header:#263532;--header-text:#f8f4ed;
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.65;transition:background .2s,color .2s}
+header{background:var(--header);color:var(--header-text);padding:17px 6%;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.brand{font-weight:800;font-size:1.05rem;line-height:1.3}.brand small{display:block;font-weight:400;color:var(--muted);font-size:.92rem;margin-top:3px}
+.actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mode,.donate-top{border:1px solid var(--line);border-radius:999px;padding:10px 15px;background:transparent;color:var(--header-text);font-weight:700;font-size:.95rem;cursor:pointer;text-decoration:none}
+.donate-top{background:var(--accent-bright);border-color:var(--accent-bright);color:#292321}
+.hero{min-height:410px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(24,28,27,.68),rgba(24,28,27,.22)),url('https://images.unsplash.com/photo-1601758123927-196c7b1c9f6e?auto=format&fit=crop&w=1800&q=85') center 45%/cover;color:#fff}
+.hero-inner{max-width:1050px;width:100%;margin:auto;padding:58px 24px}
+.kicker{display:inline-block;color:#ffd2c9;font-weight:800;font-size:.86rem;letter-spacing:2px;text-transform:uppercase}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.05;max-width:760px;margin:16px 0}
+.hero p{font-size:clamp(1.05rem,2.5vw,1.35rem);max-width:760px;margin:0;color:#f6f3f0}
+main{max-width:1050px;margin:auto;padding:42px 24px 68px}
+.intro{text-align:center;max-width:800px;margin:0 auto 32px}
+.intro h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2rem,5vw,3rem);line-height:1.12;margin:0 0 15px}
+.intro p{font-size:clamp(1.05rem,2.4vw,1.28rem);color:var(--muted);margin:0}
+.item{display:grid;grid-template-columns: minmax(0, .95fr) minmax(0,1.05fr);gap:30px;align-items:center;padding:30px 0;border-bottom:1px solid var(--line)}
+.item:nth-of-type(even) .photo{order:2}
+.photo{width:100%;height:290px;object-fit:cover;border-radius:6px 70px 6px 70px;display:block;background:var(--soft)}
+.item h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.8rem,4vw,2.5rem);line-height:1.13;margin:0 0 14px}
+.item p{color:var(--muted);font-size:1.08rem;margin:0 0 14px}
+.item ul{padding-left:22px;color:var(--muted);margin:8px 0 0}
+.item li{margin:6px 0}
+.notice{background:var(--soft);border-radius:0 60px 0 60px;padding:28px;margin:38px 0 0}
+.notice h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.7rem,4vw,2.3rem);margin:0 0 10px}
+.notice p{color:var(--muted);margin:0 0 20px;font-size:1.05rem}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 23px;border-radius:999px;background:var(--accent-bright);color:#292321;text-decoration:none;font-weight:800;font-size:1.05rem}
+.btn:hover,.donate-top:hover{filter:brightness(.96)}
+.donate-line{text-align:center;margin:35px 0 0;padding:25px 0;border-top:1px solid var(--line)}
+.donate-line p{color:var(--muted);margin:0 0 18px}
+.back{text-align:center;padding:34px 0 8px}.back a{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:13px 22px;text-decoration:none;color:var(--text);font-weight:700;background:var(--surface)}
+footer{text-align:center;padding:24px 16px 34px;background:var(--surface);border-top:1px solid var(--line);color:var(--muted)}
+footer a{color:var(--accent);font-weight:700;text-decoration:none}
+@media(max-width:720px){header{padding:15px 18px;align-items:flex-start}.brand{max-width:100%}.actions{width:100%}.mode,.donate-top{flex:1;text-align:center}.hero{min-height:430px;background-position:60% center}.hero-inner{padding:48px 22px}main{padding:30px 22px 50px}.item{grid-template-columns:1fr;gap:18px;padding:27px 0}.item:nth-of-type(even) .photo{order:0}.photo{height:230px;border-radius:6px 55px 6px 55px}.notice{padding:26px 22px;border-radius:0 48px 0 48px}}
 </style>
 </head>
 <body>
 <header>
-<h1>📦 Sachspenden</h1>
-<p>Gemeinsam Gutes weitergeben – für Mensch und Tier.</p>
+  <div class="brand">Lebensbrücke Deutschland – Mensch &amp; Tier e. V.<small>Ein WIR für Mensch &amp; Tier.</small></div>
+  <div class="actions">
+    <button class="mode" id="modeToggle" type="button">☾ Dunkel</button>
+    <a class="donate-top" href="spenden.html">Jetzt spenden</a>
+  </div>
 </header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="kicker">Hilfe, die im Alltag ankommt</div>
+    <h1>Sachspenden, die wirklich helfen.</h1>
+    <p>Mit Futter und gut erhaltenen Dingen können wir Menschen entlasten und Tiere versorgen. Jede passende Spende zählt.</p>
+  </div>
+</section>
+
 <main>
-<section class="intro">
-<div class="icon">💚 🐾</div>
-<h2>Jede Sachspende kann helfen</h2>
-<p>Manchmal braucht es keine großen Geldbeträge, sondern ganz praktische Dinge. Mit gut erhaltenen Sachspenden möchten wir Menschen unterstützen und gleichzeitig Tieren helfen.</p>
-</section>
+  <section class="intro">
+    <h2>Aus Dingen wird Unterstützung.</h2>
+    <p>Du möchtest etwas abgeben? Vielen Dank. Wir stimmen vorher gemeinsam ab, was gerade gebraucht wird und wie die Übergabe möglich ist.</p>
+  </section>
 
-<section class="card">
-<h3>🐶 Sachspenden für Tiere</h3>
-<ul>
-<li>Tierfutter und Leckerlis in ungeöffneter Verpackung</li>
-<li>Decken, Handtücher und saubere Tierbetten</li>
-<li>Leinen, Halsbänder und Geschirre in gutem Zustand</li>
-<li>Transportboxen und geeignetes Tierzubehör</li>
-<li>Katzenstreu und weiteres benötigtes Tiermaterial</li>
-</ul>
-</section>
+  <section class="item">
+    <img class="photo" src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1000&q=85" alt="Hundefutter und Näpfe für die Versorgung von Tieren" loading="lazy">
+    <div>
+      <h2>Tierfutter und Zubehör</h2>
+      <p>Futter und nützliches Zubehör können helfen, wenn die Versorgung eines geliebten Tieres finanziell schwierig wird.</p>
+      <ul><li>Ungeöffnete, haltbare Futterpackungen</li><li>Saubere Näpfe, Leinen und Halsbänder</li><li>Transportboxen und gut erhaltene Decken</li></ul>
+    </div>
+  </section>
 
-<section class="card">
-<h3>❤️ Sachspenden für Menschen</h3>
-<ul>
-<li>Saubere, gut erhaltene Kleidung</li>
-<li>Hygieneartikel und Pflegeprodukte</li>
-<li>Haushaltsgegenstände in brauchbarem Zustand</li>
-<li>Alltagsbedarf für Menschen in schwierigen Situationen</li>
-<li>Weitere Dinge nach vorheriger Absprache</li>
-</ul>
-</section>
+  <section class="item">
+    <img class="photo" src="https://images.unsplash.com/photo-1601758123927-196c7b1c9f6e?auto=format&fit=crop&w=1000&q=85" alt="Hund wird liebevoll versorgt" loading="lazy">
+    <div>
+      <h2>Gut erhaltene Tierartikel</h2>
+      <p>Auch praktische Dinge können wertvoll sein. Wichtig ist, dass sie sauber, sicher und noch gut nutzbar sind.</p>
+      <ul><li>Spielzeug in gutem Zustand</li><li>Bürsten und Pflegezubehör</li><li>Katzenkörbchen oder Kratzbretter in gutem Zustand</li></ul>
+    </div>
+  </section>
 
-<div class="notice">
-<strong>Bitte vorher abstimmen:</strong>
-Nicht jeder Gegenstand wird gerade benötigt. Melde dich deshalb bitte vor der Übergabe bei uns. So können wir klären, was gebraucht wird und wie die Sachspende übergeben werden kann. Bitte bringe nichts unangekündigt vorbei.
-</div>
+  <section class="item">
+    <img class="photo" src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?auto=format&fit=crop&w=1000&q=85" alt="Menschen packen Hilfsgüter gemeinsam" loading="lazy">
+    <div>
+      <h2>Hilfe für Menschen</h2>
+      <p>Wenn es passt, können auch gut erhaltene Alltagsgegenstände Menschen in einer schwierigen Lebenslage unterstützen.</p>
+      <ul><li>Nur saubere und funktionsfähige Dinge</li><li>Bitte vorab abstimmen, was gebraucht wird</li><li>Keine ungefragte Abgabe vor einer Übergabe</li></ul>
+    </div>
+  </section>
 
-<section class="contact">
-<h2>📩 Du möchtest etwas spenden?</h2>
-<p>Schreib uns kurz, was du abgeben möchtest. Wir stimmen dann die weiteren Schritte mit dir ab.</p>
-<a class="button primary" href="mailto:info@lebensbruecke-deutschland.de?subject=Sachspende">Sachspende anbieten</a>
-<a class="button secondary" href="helfen.html">← Zurück zu „Ich möchte helfen“</a>
-</section>
+  <section class="notice">
+    <h2>Du möchtest etwas spenden?</h2>
+    <p>Schreib uns bitte zuerst, welche Dinge du abgeben möchtest. So können wir klären, ob sie aktuell benötigt werden und eine passende Übergabe vereinbaren.</p>
+    <a class="btn" href="mailto:kontakt@lebensbruecke-deutschland.de?subject=Sachspende%20%E2%80%93%20Lebensbr%C3%BCcke%20Deutschland">Sachspende anbieten&nbsp; →</a>
+  </section>
+
+  <section class="donate-line">
+    <p>Du möchtest lieber finanziell helfen? Auch dafür sind wir dankbar.</p>
+    <a class="btn" href="spenden.html">♥ Jetzt helfen &amp; spenden&nbsp; →</a>
+  </section>
+
+  <div class="back"><a href="index.html">← Zur Startseite</a></div>
 </main>
+
 <footer>
-Lebensbrücke Deutschland – Mensch &amp; Tier e. V.<br>
-Ein WIR für Mensch &amp; Tier.
+  <strong>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</strong><br>
+  <span>Ein WIR für Mensch &amp; Tier.</span><br>
+  <a href="index.html">Startseite</a> &nbsp;·&nbsp; <a href="spenden.html">Spenden</a>
+  <p style="font-size:.82rem;margin:12px 0 0">Bitte vor Veröffentlichung die Kontakt-E-Mail prüfen.</p>
 </footer>
+<script>
+const modeToggle=document.getElementById('modeToggle');
+modeToggle.addEventListener('click',()=>{
+  const dark=document.body.classList.toggle('dark');
+  modeToggle.textContent=dark?'☀ Hell':'☾ Dunkel';
+});
+</script>
 </body>
 </html>
