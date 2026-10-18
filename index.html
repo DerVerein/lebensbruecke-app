@@ -1,220 +1,147 @@
 <!DOCTYPE html>
 <html lang="de" data-theme="light">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f0e5">
-  <meta name="description" content="Lebensbrücke Deutschland – Mensch & Tier e. V. Ein WIR für Mensch & Tier.">
-  <link rel="manifest" href="manifest.json">
-  <link rel="icon" type="image/png" href="VereinsIcon.png">
-  <title>Lebensbrücke Deutschland – Mensch & Tier e. V.</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --bg:#f7f0e5; --paper:#fffaf1; --sand:#e9decc;
-      --ink:#2c211c; --muted:#756960; --line:#d9cbb9;
-      --accent:#f36d57; --accent-ink:#271b17; --dark:#2b201b;
-      --shadow:0 10px 28px rgba(45,31,22,.09);
-    }
-    html[data-theme="dark"] {
-      color-scheme:dark;
-      --bg:#201b18; --paper:#2d2520; --sand:#40342c;
-      --ink:#fff5e9; --muted:#d1c2b4; --line:#514239;
-      --accent:#ff765f; --accent-ink:#241915; --dark:#171311;
-      --shadow:0 10px 28px rgba(0,0,0,.2);
-    }
-    *{box-sizing:border-box}
-    html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.5}
-    a{color:inherit}
-    .wrap{width:min(100%,980px);margin:auto;padding:15px}
-    .topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:4px 0 18px}
-    .brand{display:flex;align-items:center;gap:11px;min-width:0}
-    .logo{width:58px;height:58px;object-fit:contain;flex-shrink:0}
-    .brand-name{font-weight:800;font-size:clamp(15px,3.6vw,19px);line-height:1.18}
-    .brand-sub{font-size:13px;color:var(--muted);white-space:nowrap;margin-top:4px}
-    .themes{display:flex;align-items:center;gap:3px;padding:4px;border:1px solid var(--line);border-radius:28px;background:var(--paper);flex-shrink:0}
-    .theme{border:0;background:transparent;color:var(--ink);border-radius:22px;min-width:34px;min-height:36px;font-size:17px;cursor:pointer}
-    .theme[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}
-    .hero{overflow:hidden;border-radius:25px;background:var(--dark);box-shadow:var(--shadow)}
-    .hero-image{display:block;width:100%;height:clamp(245px,72vw,430px);object-fit:cover;object-position:center}
-    .hero-copy{padding:25px 24px 27px;color:#fff5e9;border-top:4px solid var(--accent)}
-    .eyebrow{margin:0 0 9px;color:#ff8a75;font-weight:800;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
-    h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
-    h1{font-size:clamp(34px,8vw,53px);line-height:1.04;letter-spacing:-.03em;margin:0 0 13px}
-    h1 em{color:#ff7b64;font-style:normal}
-    .hero-copy p:not(.eyebrow){font-size:17px;line-height:1.55;color:#f0e2d4;margin:0 0 22px;max-width:620px}
-    .button{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:51px;padding:14px 22px;border-radius:28px;border:2px solid var(--accent);background:var(--accent);color:var(--accent-ink);font-weight:800;text-decoration:none;cursor:pointer}
-    .button.secondary{background:transparent;border-color:#e7d8c8;color:#fff5e9}
-    .button:focus-visible,.field:focus-visible,.theme:focus-visible,.accordion:focus-visible{outline:3px solid #2474a8;outline-offset:3px}
-    .section{margin-top:30px}
-    .section-head{margin:0 2px 14px}
-    .section-head h2{font-size:clamp(26px,6vw,34px);line-height:1.12;margin:0 0 6px}
-    .section-head p{margin:0;color:var(--muted)}
-    .fields{display:grid;grid-template-columns:1fr;gap:12px}
-    .field{position:relative;display:flex;align-items:center;gap:15px;min-height:108px;padding:18px;border:1px solid var(--line);border-radius:18px;background:var(--paper);text-decoration:none;box-shadow:var(--shadow);transition:transform .15s,border-color .15s}
-    .field:hover{transform:translateY(-2px);border-color:var(--accent)}
-    .field-icon{display:grid;place-items:center;width:53px;height:53px;flex-shrink:0;border-radius:16px;background:var(--sand);font-size:27px}
-    .field-copy{min-width:0;flex:1}
-    .field-title{display:block;font-size:18px;font-weight:800;line-height:1.25;margin-bottom:4px}
-    .field-desc{display:block;color:var(--muted);font-size:14px;line-height:1.4}
-    .arrow{color:var(--accent);font-size:25px;font-weight:700;margin-left:auto}
-    .cases{margin-top:23px;padding:23px;border-radius:22px;background:var(--sand);border-left:5px solid var(--accent)}
-    .cases h2{font-size:clamp(25px,6vw,32px);line-height:1.12;margin:0 0 8px}
-    .cases p{margin:0 0 17px;color:var(--muted)}
-    .donation{margin-top:18px;padding:22px;border-radius:22px;background:var(--paper);border:1px solid var(--line)}
-    .donation h2{font-size:clamp(25px,6vw,32px);line-height:1.12;margin:0 0 8px}
-    .donation p{margin:0 0 17px;color:var(--muted)}
-    .donation-actions{display:flex;flex-wrap:wrap;gap:10px}
-    .donation .button.secondary{color:var(--ink);border-color:var(--line)}
-    .why-panel{display:none;margin-top:13px;padding:16px;border-radius:14px;background:var(--sand);color:var(--ink)}
-    .why-panel.open{display:block}
-    .why-panel p{margin:0}
-    footer{padding:27px 8px 30px;text-align:center;color:var(--muted);font-size:13px}
-    footer strong{display:block;color:var(--ink);font-size:15px;margin-bottom:5px}
-    footer p{margin:5px 0}
-    footer a{color:var(--muted)}
-    @media(min-width:620px){
-      .wrap{padding:22px}
-      .hero-copy{padding:32px}
-      .fields{grid-template-columns:repeat(2,minmax(0,1fr))}
-      .field{min-height:128px;padding:20px}
-    }
-    @media(max-width:370px){
-      .wrap{padding:10px}
-      .logo{width:48px;height:48px}
-      .brand-name{font-size:14px}
-      .brand-sub{font-size:11px}
-      .theme{min-width:30px}
-      .hero-copy{padding:21px 18px 23px}
-      .field{gap:11px;padding:14px}
-      .field-icon{width:45px;height:45px;font-size:23px}
-      .field-title{font-size:16px}
-    }
-    @media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;transition:none!important}}
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fbf5eb">
+<meta name="description" content="Lebensbrücke Deutschland – Mensch & Tier e. V. Ein WIR für Mensch & Tier.">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" type="image/png" href="VereinsIcon.png">
+<title>Lebensbrücke Deutschland – Mensch & Tier e. V.</title>
+<style>
+:root{
+ --bg:#fbf5eb;--paper:#fffaf2;--ink:#29211d;--muted:#74685e;--line:#e7d9c8;
+ --accent:#f16f5b;--accent-ink:#251b17;--soft:#f5e7d5;--green:#477b4d;--orange:#f6a23b;
+ --shadow:0 5px 18px rgba(53,36,24,.08);color-scheme:light
+}
+html[data-theme="warm"]{
+ --bg:#fff0e8;--paper:#fff8f2;--ink:#33221e;--muted:#816b61;--line:#f0d3c6;
+ --accent:#f36f5b;--accent-ink:#281b17;--soft:#ffe0d3;--green:#4e8051;--orange:#f6a044;color-scheme:light
+}
+html[data-theme="dark"]{
+ --bg:#211b18;--paper:#302621;--ink:#fff6ed;--muted:#d0bfb1;--line:#514239;
+ --accent:#ff7964;--accent-ink:#271a16;--soft:#44352d;--green:#53825a;--orange:#f6a23b;
+ --shadow:0 5px 18px rgba(0,0,0,.2);color-scheme:dark
+}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Arial,Helvetica,sans-serif}
+a{color:inherit;text-decoration:none}.wrap{max-width:1100px;margin:auto;padding:14px}
+.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:3px 0 15px}
+.brand{display:flex;align-items:center;gap:10px;min-width:0}.logo{width:55px;height:55px;object-fit:contain;flex-shrink:0}
+.brand-name{display:block;font-size:clamp(14px,3.3vw,20px);font-weight:800;line-height:1.15;white-space:nowrap}
+.brand-sub{display:block;color:var(--muted);font-size:13px;margin-top:3px;white-space:nowrap}
+.themes{display:flex;align-items:center;gap:3px;padding:4px;border:1px solid var(--line);border-radius:28px;background:var(--paper);flex-shrink:0}
+.theme{border:0;background:transparent;color:var(--ink);border-radius:22px;min-width:34px;min-height:36px;font-size:18px;cursor:pointer}
+.theme[aria-pressed=true]{background:var(--accent);color:var(--accent-ink)}
+.hero{overflow:hidden;border-radius:22px;background:var(--paper);box-shadow:var(--shadow);border:1px solid var(--line)}
+.hero-image{display:block;width:100%;height:auto;max-height:540px;object-fit:cover;object-position:center}
+.hero-copy{padding:23px clamp(18px,4vw,38px) 25px;border-top:4px solid var(--accent)}
+.eyebrow{margin:0 0 8px;color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif}
+h1{font-size:clamp(34px,7vw,58px);line-height:1.02;letter-spacing:-.03em;margin:0 0 12px}
+h1 em{color:var(--accent);font-style:normal}
+.hero-copy p:not(.eyebrow){font-size:17px;max-width:680px;margin:0 0 17px;color:var(--muted)}
+.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;min-height:46px;padding:12px 20px;border:1px solid var(--accent);border-radius:25px;background:var(--accent);color:var(--accent-ink);font-weight:800}
+.button.secondary{background:var(--paper);color:var(--ink);border-color:var(--line)}
+.section{margin-top:27px}.section-head{display:flex;align-items:end;justify-content:space-between;gap:12px;margin:0 2px 13px}
+.section-head h2{font-size:clamp(25px,5vw,34px);line-height:1.12;margin:0}.section-head p{margin:4px 0 0;color:var(--muted)}
+.tile-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}
+.tile{overflow:hidden;background:var(--paper);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);min-width:0}
+.tile img{display:block;width:100%;height:112px;object-fit:cover}
+.tile-link{display:flex;align-items:center;gap:8px;min-height:60px;padding:11px 12px;font-weight:800;font-size:15px;line-height:1.2}
+.tile-link span:last-child{color:var(--accent);font-size:22px;margin-left:auto}
+.split{display:grid;grid-template-columns:1fr;gap:12px;margin-top:25px}
+.feature{position:relative;min-height:210px;overflow:hidden;border-radius:18px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow)}
+.feature img{width:100%;height:150px;display:block;object-fit:cover}
+.feature-copy{padding:15px 17px 17px}.feature h2{font-size:26px;line-height:1.1;margin:0 0 6px}.feature p{color:var(--muted);margin:0 0 12px}
+.focus-list{display:grid;gap:9px}
+.focus{display:flex;align-items:center;gap:12px;overflow:hidden;border:1px solid var(--line);border-radius:14px;background:var(--paper);box-shadow:var(--shadow);min-height:82px}
+.focus img{width:95px;height:82px;object-fit:cover;flex-shrink:0}.focus-copy{padding:8px 8px 8px 0;flex:1;min-width:0}
+.focus-copy strong{display:block;line-height:1.2}.focus-copy small{display:block;color:var(--muted);margin-top:4px}.focus .arrow{font-size:23px;color:var(--accent);padding:0 12px}
+.donate-banner{display:flex;align-items:center;gap:14px;overflow:hidden;margin-top:24px;border-radius:17px;background:var(--soft);border:1px solid var(--line)}
+.donate-banner img{width:34%;height:125px;object-fit:cover}.donate-copy{padding:12px 12px 12px 0;flex:1}.donate-copy h2{font-size:24px;line-height:1.1;margin:0 0 5px}.donate-copy p{margin:0 0 10px;color:var(--muted);font-size:14px}
+footer{padding:28px 8px 18px;text-align:center;color:var(--muted);font-size:13px}footer strong{display:block;color:var(--ink);font-size:15px;margin-bottom:5px}footer p{margin:5px 0}
+@media(min-width:620px){.wrap{padding:22px}.hero-copy{padding:28px 34px}.hero-image{max-height:570px}.tile-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}.tile img{height:155px}.tile-link{font-size:16px;min-height:66px}.split{grid-template-columns:1.1fr .9fr}.feature img{height:180px}.focus img{width:112px;height:86px}.donate-banner img{height:150px}}
+@media(max-width:370px){.wrap{padding:9px}.logo{width:45px;height:45px}.brand-name{font-size:13px}.brand-sub{font-size:11px}.theme{min-width:29px}.tile img{height:92px}.tile-link{font-size:13px;padding:9px}.hero-copy{padding:19px 16px}.donate-copy h2{font-size:20px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
 </head>
 <body>
 <main class="wrap">
-  <header class="topbar">
-    <a class="brand" href="index.html" aria-label="Zur Startseite">
-      <img class="logo" src="VereinsIcon.png" alt="Logo Lebensbrücke Deutschland">
-      <span>
-        <span class="brand-name">Lebensbrücke Deutschland</span>
-        <span class="brand-sub">Mensch &amp; Tier e. V.</span>
-      </span>
-    </a>
-    <div class="themes" aria-label="Farbschema wählen">
-      <button class="theme" type="button" data-mode="light" aria-label="Hell" aria-pressed="true">☀️</button>
-      <button class="theme" type="button" data-mode="dark" aria-label="Dunkel" aria-pressed="false">🌙</button>
-      <button class="theme" type="button" data-mode="auto" aria-label="Automatisch" aria-pressed="false">◐</button>
-    </div>
-  </header>
+<header class="topbar">
+<a class="brand" href="index.html" aria-label="Zur Startseite">
+<img class="logo" src="VereinsIcon.png" alt="Logo Lebensbrücke Deutschland">
+<span><span class="brand-name">Lebensbrücke Deutschland</span><span class="brand-sub">Mensch &amp; Tier e. V.</span></span>
+</a>
+<div class="themes" aria-label="Farbmodus auswählen">
+<button class="theme" type="button" data-mode="light" aria-label="Heller Modus" aria-pressed="true">☀️</button>
+<button class="theme" type="button" data-mode="warm" aria-label="Warmer Modus" aria-pressed="false">🌙</button>
+<button class="theme" type="button" data-mode="dark" aria-label="Dunkler Modus" aria-pressed="false">◐</button>
+</div>
+</header>
 
-  <section class="hero" aria-labelledby="welcome-title">
-    <img class="hero-image" src="file_00000000b5788210a59bc98b3a8234b5.png" alt="Das Vereinsmotiv von Lebensbrücke Deutschland mit Menschen und Tieren">
-    <div class="hero-copy">
-      <p class="eyebrow">Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</p>
-      <h1 id="welcome-title">Ein <em>WIR</em> für Mensch &amp; Tier.</h1>
-      <p>Wir stehen Menschen und Tieren zur Seite, wenn sie Unterstützung brauchen.</p>
-      <a class="button" href="hilfe.html">Hilfe finden <span aria-hidden="true">→</span></a>
-      <a class="button secondary" href="helfen.html">Mehr über uns <span aria-hidden="true">↗</span></a>
-    </div>
-  </section>
+<section class="hero" aria-labelledby="welcome-title">
+<img class="hero-image" src="file_00000000b5788210a59bc98b3a8234b5.png" alt="Originales Vereinsmotiv mit Menschen und Tieren">
+<div class="hero-copy">
+<p class="eyebrow">Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</p>
+<h1 id="welcome-title">Ein <em>WIR</em> für Mensch &amp; Tier.</h1>
+<p>Wir stehen Menschen und Tieren zur Seite, wenn sie Unterstützung brauchen.</p>
+<a class="button" href="hilfe.html">Hilfe finden <span aria-hidden="true">→</span></a>
+</div>
+</section>
 
-  <section class="section" aria-labelledby="ways-title">
-    <div class="section-head">
-      <h2 id="ways-title">So kannst du helfen</h2>
-      <p>Wähle aus, was du suchst – und komm direkt zum passenden Bereich.</p>
-    </div>
-    <div class="fields">
-      <a class="field" href="hilfe.html">
-        <span class="field-icon" aria-hidden="true">♡</span>
-        <span class="field-copy"><span class="field-title">Ich brauche Hilfe</span><span class="field-desc">Informationen zur Unterstützung und zum weiteren Vorgehen.</span></span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="field" href="finanzielle-notlage.html">
-        <span class="field-icon" aria-hidden="true">🐾</span>
-        <span class="field-copy"><span class="field-title">Aktuelle Hilfsfälle</span><span class="field-desc">Hier erfährst du, wo Hilfe gebraucht wird.</span></span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="field" href="spenden.html">
-        <span class="field-icon" aria-hidden="true">♡</span>
-        <span class="field-copy"><span class="field-title">Spenden</span><span class="field-desc">Unsere Arbeit für Menschen und Tiere unterstützen.</span></span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-      <a class="field" href="ehrenamt.html">
-        <span class="field-icon" aria-hidden="true">🤝</span>
-        <span class="field-copy"><span class="field-title">Mitmachen</span><span class="field-desc">Zeit, Ideen und Fähigkeiten einbringen.</span></span>
-        <span class="arrow" aria-hidden="true">→</span>
-      </a>
-    </div>
-  </section>
+<section class="section" aria-labelledby="direct-title">
+<div class="section-head"><div><h2 id="direct-title">Direkt zum passenden Bereich</h2><p>Wähle, was du gerade suchst.</p></div></div>
+<div class="tile-grid">
+<a class="tile" href="hilfe.html"><img loading="lazy" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=700&q=80" alt="Hund und Mensch"><span class="tile-link">Ich brauche Hilfe <span>→</span></span></a>
+<a class="tile" href="tier.html"><img loading="lazy" src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&fit=crop&w=700&q=80" alt="Katze"><span class="tile-link">Tieren helfen <span>→</span></span></a>
+<a class="tile" href="mensch.html"><img loading="lazy" src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=700&q=80" alt="Menschen halten zusammen"><span class="tile-link">Menschen helfen <span>→</span></span></a>
+<a class="tile" href="spenden.html"><img loading="lazy" src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=700&q=80" alt="Spenden und helfen"><span class="tile-link">Spenden <span>→</span></span></a>
+<a class="tile" href="sachspenden.html"><img loading="lazy" src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=700&q=80" alt="Hund wird versorgt"><span class="tile-link">Sachspenden <span>→</span></span></a>
+<a class="tile" href="ehrenamt.html"><img loading="lazy" src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=700&q=80" alt="Freiwillige helfen gemeinsam"><span class="tile-link">Mitmachen <span>→</span></span></a>
+</div>
+</section>
 
-  <section class="cases" aria-labelledby="cases-title">
-    <h2 id="cases-title">Hilfe, die ankommt.</h2>
-    <p>Gemeinsam können wir etwas bewegen – für Menschen und Tiere, die Unterstützung brauchen.</p>
-    <a class="button" href="finanzielle-notlage.html">Hilfsfälle ansehen <span aria-hidden="true">→</span></a>
-  </section>
+<section class="split">
+<article class="feature">
+<img loading="lazy" src="https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1000&q=80" alt="Hund schaut aufmerksam in die Kamera">
+<div class="feature-copy"><h2>Hilfe, die ankommt.</h2><p>Aktuelle Hilfsfälle und Projekte brauchen manchmal genau jetzt Unterstützung.</p><a class="button" href="finanzielle-notlage.html">Hilfsfälle ansehen →</a></div>
+</article>
+<div>
+<div class="section-head"><div><h2>Unsere Schwerpunkte</h2><p>Für Mensch und Tier da sein.</p></div></div>
+<div class="focus-list">
+<a class="focus" href="tier.html"><img loading="lazy" src="https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=400&q=80" alt="Katze in Nahaufnahme"><span class="focus-copy"><strong>Tiere unterstützen</strong><small>Für Tiere und ihre Menschen.</small></span><span class="arrow">›</span></a>
+<a class="focus" href="mensch.html"><img loading="lazy" src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=400&q=80" alt="Menschen unterstützen einander"><span class="focus-copy"><strong>Menschen unterstützen</strong><small>Wenn das Leben schwer wird.</small></span><span class="arrow">›</span></a>
+<a class="focus" href="ehrenamt.html"><img loading="lazy" src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&w=400&q=80" alt="Gemeinsam ehrenamtlich helfen"><span class="focus-copy"><strong>Gemeinsam mehr bewegen</strong><small>Mit Zeit, Ideen und Sachspenden.</small></span><span class="arrow">›</span></a>
+</div>
+</div>
+</section>
 
-  <section class="donation" aria-labelledby="donation-title">
-    <p class="eyebrow">Dein Beitrag macht einen Unterschied</p>
-    <h2 id="donation-title">Jede Unterstützung zählt.</h2>
-    <p>Mit Geldspenden hilfst du dort, wo Unterstützung gerade gebraucht wird. Ein WIR für Mensch &amp; Tier.</p>
-    <div class="donation-actions">
-      <a class="button" href="spenden.html">Jetzt spenden <span aria-hidden="true">→</span></a>
-      <button class="button secondary" id="whyToggle" type="button" aria-expanded="false" aria-controls="whyPanel">Warum spenden? <span aria-hidden="true">＋</span></button>
-    </div>
-    <div class="why-panel" id="whyPanel">
-      <p>Deine Spende kann konkrete Hilfe für Menschen und Tiere ermöglichen. Spenden können unter den jeweils geltenden gesetzlichen Voraussetzungen steuerlich berücksichtigt werden. Ob und welcher Nachweis nötig ist, hängt vom Einzelfall ab.</p>
-    </div>
-  </section>
+<section class="donate-banner">
+<img loading="lazy" src="https://images.unsplash.com/photo-1541599540903-216a46ca1dc0?auto=format&fit=crop&w=600&q=80" alt="Hund wird liebevoll umsorgt">
+<div class="donate-copy"><h2>Jede Hilfe zählt.</h2><p>Mit deiner Unterstützung können wir Menschen und Tieren helfen.</p><a class="button" href="spenden.html">Jetzt spenden →</a></div>
+</section>
 
-  <footer>
-    <strong>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</strong>
-    <p>Ein WIR für Mensch &amp; Tier.</p>
-    <p><a href="spenden.html">Spenden</a> · <a href="hilfe.html">Hilfe finden</a> · <a href="ehrenamt.html">Mitmachen</a></p>
-  </footer>
+<footer><strong>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</strong><p>Ein WIR für Mensch &amp; Tier.</p><p><a href="hilfe.html">Hilfe finden</a> · <a href="spenden.html">Spenden</a> · <a href="ehrenamt.html">Mitmachen</a></p></footer>
 </main>
 <script>
-  const root = document.documentElement;
-  const themeButtons = document.querySelectorAll("[data-mode]");
-  const themeColor = document.querySelector('meta[name="theme-color"]');
-
-  function applyTheme(mode) {
-    const dark = mode === "dark" || (mode === "auto" && window.matchMedia("(prefers-color-scheme: dark)").matches);
-    root.dataset.theme = dark ? "dark" : "light";
-    themeColor.content = dark ? "#201b18" : "#f7f0e5";
-    themeButtons.forEach(button => button.setAttribute("aria-pressed", String(button.dataset.mode === mode)));
-  }
-
-  let savedMode = "light";
-  try { savedMode = localStorage.getItem("lebensbruecke-theme") || "light"; } catch (error) {}
-  applyTheme(savedMode);
-  themeButtons.forEach(button => button.addEventListener("click", () => {
-    const mode = button.dataset.mode;
-    try { localStorage.setItem("lebensbruecke-theme", mode); } catch (error) {}
-    applyTheme(mode);
-  }));
-  window.matchMedia("(prefers-color-scheme: dark)").addEventListener?.("change", () => {
-    let mode = "light";
-    try { mode = localStorage.getItem("lebensbruecke-theme") || "light"; } catch (error) {}
-    if (mode === "auto") applyTheme("auto");
-  });
-
-  const whyToggle = document.getElementById("whyToggle");
-  const whyPanel = document.getElementById("whyPanel");
-  whyToggle.addEventListener("click", () => {
-    const open = whyPanel.classList.toggle("open");
-    whyToggle.setAttribute("aria-expanded", String(open));
-    whyToggle.querySelector("span").textContent = open ? "−" : "＋";
-  });
-
-  if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("service-worker.js").catch(() => {});
-    });
-  }
+const root=document.documentElement;
+const buttons=document.querySelectorAll("[data-mode]");
+const themeColor=document.querySelector('meta[name="theme-color"]');
+function applyTheme(mode){
+ root.dataset.theme=mode;
+ themeColor.content=mode==="dark"?"#211b18":mode==="warm"?"#fff0e8":"#fbf5eb";
+ buttons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));
+}
+let saved="light";
+try{saved=localStorage.getItem("lebensbruecke-theme-v2")||"light"}catch(e){}
+applyTheme(saved);
+buttons.forEach(b=>b.addEventListener("click",()=>{
+ const mode=b.dataset.mode;
+ try{localStorage.setItem("lebensbruecke-theme-v2",mode)}catch(e){}
+ applyTheme(mode);
+}));
+if("serviceWorker" in navigator){window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js").catch(()=>{}));}
 </script>
 </body>
 </html>
