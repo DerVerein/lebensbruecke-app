@@ -17,12 +17,15 @@ main section{margin-top:23px}.panel{padding:20px;background:var(--paper);border:
 </style></head>
 <body><div class="wrap">
 <header><a class="brand" href="index.html"><img class="logo" src="VereinsIcon.png" alt="Vereinslogo"><span><strong>Lebensbrücke Deutschland</strong><small>Mensch &amp; Tier e. V.</small></span></a>
-<div class="themes" aria-label="Farbmodus"><button class="theme" data-mode="light" aria-label="Heller Modus" aria-pressed="true">☀️</button><button class="theme" data-mode="warm" aria-label="Warmer Modus" aria-pressed="false">🌤️</button><button class="theme" data-mode="dark" aria-label="Dunkler Modus" aria-pressed="false">◐</button></div></header>
+<div class="themes" aria-label="Farbmodus"><button class="theme" data-mode="light" aria-label="Heller Modus" aria-pressed="true">☀️</button><button class="theme" data-mode="dark" aria-label="Dunkler Modus" aria-pressed="false">◐</button></div></header>
 <section class="hero"><img src="file_00000000b5788210a59bc98b3a8234b5.png" alt="Originales Vereinsmotiv mit Menschen und Tieren"><div class="intro"><p class="eyebrow">Gemeinsam helfen</p><h1>Jede Hilfe <em>zählt.</em></h1><p>Deine Spende hilft dabei, Menschen und Tiere in schwierigen Situationen zu unterstützen.</p></div></section>
 <main>
 <section class="panel"><h2>Wie viel möchtest du spenden?</h2><p class="muted">Wähle deinen Wunschbetrag ganz flexibel.</p>
 <div class="amount-row"><label for="donationAmount">Dein Spendenbetrag</label><output class="amount" id="amountOutput" for="donationAmount">25 €</output></div>
 <input class="range" type="range" id="donationAmount" min="1" max="10000" step="1" value="25" aria-label="Spendenbetrag von 1 bis 10.000 Euro">
+<label for="manualAmount" style="display:block;margin-top:14px;font-weight:800">Oder Betrag direkt eingeben (€)</label>
+<input id="manualAmount" type="number" min="1" max="10000" step="1" value="25" inputmode="numeric" style="display:block;width:100%;margin-top:7px;padding:13px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg);color:var(--ink);font:inherit;font-size:18px" aria-describedby="manualHint">
+<p class="note" id="manualHint">Bitte einen Betrag zwischen 1 € und 10.000 € eingeben.</p>
 <div class="range-labels"><span>1 €</span><span>10.000 €</span></div>
 <div class="options" role="group" aria-label="Spendenrhythmus"><button class="choice" type="button" data-frequency="once" aria-pressed="true">♡ Einmalig</button><button class="choice" type="button" data-frequency="monthly" aria-pressed="false">↻ Monatlich</button></div>
 </section>
@@ -42,10 +45,12 @@ main section{margin-top:23px}.panel{padding:20px;background:var(--paper);border:
 <script>
 const root=document.documentElement;const themeButtons=document.querySelectorAll("[data-mode]");
 function setTheme(mode){root.dataset.theme=mode;document.querySelector('meta[name="theme-color"]').content=mode==="dark"?"#211b18":mode==="warm"?"#fff0e8":"#fbf5eb";themeButtons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));try{localStorage.setItem("lebensbruecke-theme-v2",mode)}catch(e){}}
-let initial="light";try{initial=localStorage.getItem("lebensbruecke-theme-v2")||"light"}catch(e){}root.dataset.theme=initial;themeButtons.forEach(b=>b.addEventListener("click",()=>setTheme(b.dataset.mode)));
-const slider=document.getElementById("donationAmount"),output=document.getElementById("amountOutput"),pay=document.getElementById("payButton");let frequency="once";
-function updateAmount(){const value=Number(slider.value);output.textContent=value.toLocaleString("de-DE")+" €";pay.textContent="Spende vorbereiten · "+value.toLocaleString("de-DE")+" €";}
-slider.addEventListener("input",updateAmount);
+let initial="light";try{initial=localStorage.getItem("lebensbruecke-theme-v2")||"light"}catch(e){}if(initial==="warm")initial="light";root.dataset.theme=initial;themeButtons.forEach(b=>b.addEventListener("click",()=>setTheme(b.dataset.mode)));
+const slider=document.getElementById("donationAmount"),manual=document.getElementById("manualAmount"),output=document.getElementById("amountOutput"),pay=document.getElementById("payButton");let frequency="once";
+function showAmount(value){output.textContent=value.toLocaleString("de-DE")+" €";pay.textContent="Spende vorbereiten · "+value.toLocaleString("de-DE")+" €";}
+slider.addEventListener("input",()=>{manual.value=slider.value;showAmount(Number(slider.value));});
+manual.addEventListener("input",()=>{if(manual.value===""){output.textContent="Betrag wählen";pay.textContent="Spende vorbereiten";return;}let value=Math.round(Number(manual.value));if(value<1||value>10000){output.textContent="1–10.000 €";pay.textContent="Bitte gültigen Betrag wählen";return;}slider.value=String(value);showAmount(value);});
+manual.addEventListener("change",()=>{let value=Math.round(Number(manual.value));if(!Number.isFinite(value)||value<1)value=1;if(value>10000)value=10000;manual.value=String(value);slider.value=String(value);showAmount(value);});
 document.querySelectorAll("[data-frequency]").forEach(b=>b.addEventListener("click",()=>{frequency=b.dataset.frequency;document.querySelectorAll("[data-frequency]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));updateAmount();}));
-pay.addEventListener("click",()=>{document.getElementById("paymentNote").textContent="Deine Auswahl: "+output.textContent+(frequency==="monthly"?" monatlich":" einmalig")+". Die Zahlung ist noch nicht aktiviert; es wurde nichts abgebucht.";});
+pay.addEventListener("click",()=>{const value=Number(manual.value);if(!Number.isFinite(value)||value<1||value>10000){document.getElementById("paymentNote").textContent="Bitte gib einen Betrag zwischen 1 € und 10.000 € ein.";return;}document.getElementById("paymentNote").textContent="Deine Auswahl: "+value.toLocaleString("de-DE")+" €"+(frequency==="monthly"?" monatlich":" einmalig")+". Die Zahlung ist noch nicht aktiviert; es wurde nichts abgebucht.";});
 </script></body></html>
