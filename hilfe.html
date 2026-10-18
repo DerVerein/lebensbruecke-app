@@ -1,119 +1,183 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ich brauche Hilfe – Lebensbrücke</title>
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ich brauche Hilfe – Lebensbrücke Deutschland</title>
 <style>
+:root {
+  color-scheme: light;
+  --bg: #fff8f2;
+  --text: #30343b;
+  --card: #ffffff;
+  --accent: #d94f62;
+  --soft: #ffe7df;
+  --green: #e4f3e8;
+  --shadow: 0 6px 20px #00000012;
+}
+body.dark {
+  color-scheme: dark;
+  --bg: #20262b;
+  --text: #f7f3ef;
+  --card: #30383e;
+  --accent: #ff8290;
+  --soft: #49343a;
+  --green: #293f36;
+  --shadow: 0 6px 20px #00000030;
+}
+* { box-sizing: border-box; }
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background: #fffaf5;
-  color: #333;
+  background: var(--bg);
+  color: var(--text);
+  transition: background .2s, color .2s;
 }
-
 header {
-  background: #d94f4f;
+  background: linear-gradient(135deg, #d94f62, #f18b75);
   color: white;
   text-align: center;
-  padding: 32px 20px;
+  padding: 34px 18px;
+  border-radius: 0 0 28px 28px;
 }
-
-header h1 {
-  margin: 0;
-  font-size: 32px;
+header h1 { font-size: clamp(28px, 7vw, 40px); margin: 0 0 10px; }
+header p { font-size: 17px; line-height: 1.5; margin: 0; }
+.mode {
+  display: block;
+  margin: 16px auto;
+  padding: 11px 18px;
+  border: 2px solid var(--accent);
+  border-radius: 30px;
+  background: var(--card);
+  color: var(--text);
+  font-weight: bold;
+  cursor: pointer;
 }
-
-header p {
-  margin: 10px 0 0;
-  font-size: 18px;
-}
-
 .wir {
-  background: #ffe3d6;
-  color: #9f4141;
+  margin: 18px 16px 0;
+  padding: 17px;
+  border-radius: 18px;
+  background: var(--soft);
+  color: var(--text);
   text-align: center;
-  padding: 18px;
-  font-size: 20px;
+  font-size: 19px;
   font-weight: bold;
 }
-
-.content {
-  padding: 25px 20px;
+.intro {
+  max-width: 760px;
+  margin: 20px auto;
+  padding: 0 18px;
+  text-align: center;
+  line-height: 1.6;
 }
-
+.content {
+  max-width: 850px;
+  margin: auto;
+  padding: 8px 16px 26px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 18px;
+}
 .card {
   display: block;
+  overflow: hidden;
+  color: var(--text);
   text-decoration: none;
+  background: var(--card);
+  border-radius: 22px;
+  box-shadow: var(--shadow);
+  border: 1px solid #8882;
+  transition: transform .2s;
+}
+.card:hover { transform: translateY(-3px); }
+.card .picture {
+  min-height: 105px;
+  display: grid;
+  place-items: center;
+  font-size: 56px;
+}
+.tiere .picture { background: var(--green); }
+.menschen .picture { background: var(--soft); }
+.card .details { padding: 20px; }
+.card h2 { margin: 0 0 9px; font-size: 24px; }
+.card p { margin: 0; line-height: 1.55; }
+.card .go {
+  display: inline-block;
+  margin-top: 15px;
+  padding: 10px 16px;
+  border-radius: 25px;
+  background: var(--accent);
   color: white;
-  border-radius: 20px;
-  padding: 30px 20px;
-  margin-bottom: 18px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+  font-weight: bold;
 }
-
-.card h2 {
-  margin: 0;
-  font-size: 28px;
-}
-
-.card p {
-  margin: 10px 0 0;
-  font-size: 16px;
-  line-height: 1.4;
-}
-
-.tiere {
-  background: #3f8f5b;
-}
-
-.menschen {
-  background: #d94f4f;
-}
-
 .back {
   text-align: center;
-  padding: 25px;
+  padding: 10px 16px 35px;
 }
-
 .back a {
-  color: #555;
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 25px;
+  background: var(--card);
+  color: var(--text);
   text-decoration: none;
+  box-shadow: var(--shadow);
   font-weight: bold;
+}
+@media (min-width: 650px) {
+  .content { grid-template-columns: 1fr 1fr; }
 }
 </style>
 </head>
-
 <body>
-
 <header>
   <h1>🆘 Ich brauche Hilfe</h1>
-  <p>Wobei wird Unterstützung benötigt?</p>
+  <p>Gemeinsam finden wir heraus, welche Unterstützung gebraucht wird.</p>
 </header>
 
-<div class="wir">
-  Ein WIR für Mensch &amp; Tier. 🐾❤️
+<button class="mode" id="mode" type="button" onclick="toggleMode()">
+  🌙 Dunkelmodus einschalten
+</button>
+
+<div class="wir">Ein WIR für Mensch &amp; Tier. 🐾💗</div>
+
+<div class="intro">
+  Niemand soll mit Sorgen allein bleiben. Wähle aus, ob du Unterstützung
+  für ein Tier oder für einen Menschen suchst.
 </div>
 
-<div class="content">
-
+<main class="content">
   <a class="card tiere" href="tier.html">
-    <h2>🐾 Hilfe für Tiere</h2>
-    <p>Tierarztkosten · Futterhilfe · Sonstige Hilfe für Tiere</p>
+    <div class="picture" aria-hidden="true">🐾 🐶 🐱</div>
+    <div class="details">
+      <h2>🐾 Hilfe für Tiere</h2>
+      <p>Tierarztkosten, Futterhilfe und weitere Unterstützung für Tiere und ihre Menschen.</p>
+      <span class="go">Hilfe für Tiere finden →</span>
+    </div>
   </a>
 
   <a class="card menschen" href="mensch.html">
-    <h2>❤️ Hilfe für Menschen</h2>
-    <p>Finanzielle Notlage · Behörden &amp; Anträge · Sonstige Hilfe</p>
+    <div class="picture" aria-hidden="true">🤝 ❤️</div>
+    <div class="details">
+      <h2>❤️ Hilfe für Menschen</h2>
+      <p>Unterstützung bei finanzieller Notlage, im Alltag oder bei Fragen zu Behörden.</p>
+      <span class="go">Hilfe für Menschen finden →</span>
+    </div>
   </a>
-
-</div>
+</main>
 
 <div class="back">
   <a href="index.html">← Zur Startseite</a>
 </div>
 
+<script>
+function toggleMode() {
+  const dark = document.body.classList.toggle("dark");
+  document.getElementById("mode").textContent = dark
+    ? "☀️ Hellmodus einschalten"
+    : "🌙 Dunkelmodus einschalten";
+}
+</script>
 </body>
 </html>
