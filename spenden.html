@@ -19,12 +19,12 @@ main{max-width:960px;margin:auto;padding:52px 24px 68px}.intro{text-align:center
 h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2rem,5vw,3rem);line-height:1.12;margin:0 0 15px}
 .intro p{font-size:clamp(1.1rem,2.5vw,1.4rem);color:var(--muted);margin:0}
 .donation-card{background:var(--surface);border:2px solid var(--line);border-top:5px solid var(--coral);border-radius:30px;padding:clamp(24px,5vw,46px);box-shadow:0 12px 34px rgba(80,54,45,.08)}
-.card-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.card-heading{display:block;margin-bottom:4px}
 .card-heading h2{margin-bottom:7px}.card-heading p{margin:0;color:var(--muted);font-size:1.08rem}
-.heart-mark{font-size:2.6rem;color:var(--accent);line-height:1}
+
 .segment{display:grid;grid-template-columns:1fr 1fr;gap:7px;background:var(--bg);border:1px solid var(--line);padding:7px;border-radius:18px;margin:28px 0}
-.segment button{padding:14px 10px;border:0;border-radius:13px;background:transparent;color:var(--text);font-size:1.05rem;font-weight:800;cursor:pointer}
-.segment button.active{background:var(--coral);color:#292321;box-shadow:0 4px 12px rgba(190,85,75,.18)}
+.segment button{padding:13px 10px;border:0;border-radius:12px;background:transparent;color:var(--text);font-size:1.02rem;font-weight:800;cursor:pointer}
+.segment button.active{background:var(--coral);color:#292321;box-shadow:none}
 .amount-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:24px 0 12px}
 .amount-label{font-size:1.15rem;font-weight:800}.amount{font-family:Georgia,'Times New Roman',serif;color:var(--accent);font-size:clamp(2.7rem,7vw,4rem);font-weight:800;line-height:1.1}
 input[type=range]{width:100%;accent-color:var(--accent);height:28px;cursor:pointer;margin:12px 0 0}
@@ -51,7 +51,7 @@ footer{text-align:center;padding:26px 16px 34px;background:var(--surface);border
 <main>
  <section class="intro"><h2>Ein WIR für Mensch &amp; Tier.</h2><p>Wähle deinen Wunschbetrag ganz frei. Ob einmalig oder monatlich – deine Unterstützung hilft dabei, Hoffnung weiterzugeben.</p></section>
  <section class="donation-card" aria-label="Spendenbetrag auswählen">
-  <div class="card-heading"><div><h2>Deine Spende</h2><p>Wähle den Betrag, der für dich passt.</p></div><div class="heart-mark" aria-hidden="true">♥</div></div>
+  <div class="card-heading"><div><h2>Deine Spende</h2><p>Wähle den Betrag, der für dich passt.</p></div></div>
   <div class="segment" role="group" aria-label="Spendenrhythmus"><button id="once" class="active" type="button" aria-pressed="true">Einmalig</button><button id="monthly" type="button" aria-pressed="false">Monatlich</button></div>
   <div class="amount-row"><span class="amount-label">Dein Wunschbetrag</span><output class="amount" id="amountDisplay">25 €</output></div>
   <input id="amountRange" type="range" min="1" max="10000" value="25" step="1" aria-label="Spendenbetrag zwischen 1 und 10.000 Euro">
