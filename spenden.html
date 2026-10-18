@@ -1,323 +1,51 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="light">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Spenden – Lebensbrücke Deutschland</title>
-
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fbf5eb">
+<title>Spenden – Lebensbrücke Deutschland – Mensch & Tier e. V.</title>
+<link rel="icon" href="VereinsIcon.png">
 <style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fffaf0;
-  color: #333;
-}
-
-header {
-  background: #f0b400;
-  color: white;
-  text-align: center;
-  padding: 30px 18px;
-}
-
-header h1 {
-  margin: 0;
-  font-size: 35px;
-}
-
-header p {
-  margin: 10px 0 0;
-  font-size: 18px;
-  line-height: 1.45;
-}
-
-.wir {
-  background: #fff0bd;
-  color: #987000;
-  text-align: center;
-  padding: 16px;
-  font-size: 20px;
-  font-weight: bold;
-}
-
-.content {
-  max-width: 680px;
-  margin: auto;
-  padding: 20px 16px 35px;
-}
-
-.card {
-  background: white;
-  border-radius: 22px;
-  padding: 24px 20px;
-  margin-bottom: 18px;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
-}
-
-.card h2 {
-  color: #b88a00;
-  text-align: center;
-  margin: 0 0 14px;
-  font-size: 27px;
-}
-
-.intro {
-  text-align: center;
-  font-size: 17px;
-  line-height: 1.55;
-}
-
-.amounts {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.amount {
-  border: none;
-  border-radius: 17px;
-  padding: 19px 10px;
-  background: #f2b500;
-  color: white;
-  font-size: 23px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.amount.selected {
-  background: #d89200;
-  box-shadow: inset 0 0 0 4px white;
-}
-
-.custom {
-  grid-column: 1 / -1;
-  background: #fff0bd;
-  color: #9a7300;
-}
-
-.frequency {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
-  margin-top: 18px;
-}
-
-.frequency button {
-  border: 2px solid #f0b400;
-  border-radius: 16px;
-  padding: 15px 8px;
-  background: white;
-  color: #9a7300;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.frequency button.active {
-  background: #f0b400;
-  color: white;
-}
-
-.payment-box {
-  background: #fff5d8;
-  border-radius: 17px;
-  padding: 18px;
-  margin-top: 12px;
-  text-align: center;
-}
-
-.payment-box h3 {
-  margin: 0 0 7px;
-  color: #a77c00;
-  font-size: 21px;
-}
-
-.payment-box p {
-  margin: 0;
-  line-height: 1.45;
-}
-
-.receipt {
-  display: flex;
-  align-items: center;
-  gap: 9px;
-  margin-top: 17px;
-  font-size: 15px;
-}
-
-.receipt input {
-  width: 19px;
-  height: 19px;
-}
-
-.final {
-  text-align: center;
-  padding: 8px 5px 5px;
-}
-
-.final h2 {
-  color: #987000;
-  font-size: 25px;
-  margin: 0 0 12px;
-}
-
-.final p {
-  font-size: 18px;
-  line-height: 1.5;
-}
-
-.donate-final {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 19px 32px;
-  border-radius: 20px;
-  background: #e5a900;
-  color: white;
-  text-decoration: none;
-  font-size: 23px;
-  font-weight: bold;
-  box-shadow: 0 5px 14px rgba(0,0,0,0.15);
-}
-
-.back {
-  text-align: center;
-  padding: 5px 20px 30px;
-}
-
-.back a {
-  color: #987000;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 17px;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-  <h1>💛 Spenden</h1>
-  <p>
-    Gemeinsam mehr bewirken.<br>
-    Jede Spende hilft – für Menschen und Tiere.
-  </p>
-</header>
-
-<div class="wir">
-  Ein WIR für Mensch &amp; Tier. 🐾❤️
+:root{--bg:#fbf5eb;--paper:#fffaf2;--ink:#29211d;--muted:#74685e;--line:#e7d9c8;--accent:#f16f5b;--accentink:#251b17;--soft:#f5e7d5;--shadow:0 5px 18px #35241812;color-scheme:light}
+html[data-theme=warm]{--bg:#fff0e8;--paper:#fff8f2;--ink:#33221e;--muted:#816b61;--line:#f0d3c6;--accent:#f36f5b;--accentink:#281b17;--soft:#ffe0d3;color-scheme:light}
+html[data-theme=dark]{--bg:#211b18;--paper:#302621;--ink:#fff6ed;--muted:#d0bfb1;--line:#514239;--accent:#ff7964;--accentink:#271a16;--soft:#44352d;--shadow:0 5px 18px #0004;color-scheme:dark}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 Arial,sans-serif}.wrap{max-width:900px;margin:auto;padding:15px}a{color:inherit;text-decoration:none}
+header{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:16px}.brand{display:flex;align-items:center;gap:10px;min-width:0}.logo{width:52px;height:52px;object-fit:contain}.brand strong{display:block;font-size:clamp(13px,3.5vw,19px);line-height:1.15;white-space:nowrap}.brand small{color:var(--muted)}.themes{display:flex;gap:3px;border:1px solid var(--line);background:var(--paper);border-radius:25px;padding:4px}.theme{border:0;background:transparent;color:var(--ink);border-radius:50%;width:34px;height:34px;font-size:17px;cursor:pointer}.theme[aria-pressed=true]{background:var(--accent);color:var(--accentink)}
+.hero{overflow:hidden;border-radius:20px;background:var(--paper);border:1px solid var(--line);box-shadow:var(--shadow)}.hero img{width:100%;height:auto;max-height:390px;object-fit:cover;display:block}.intro{padding:22px clamp(16px,4vw,32px);border-top:4px solid var(--accent)}.eyebrow{color:var(--accent);font-size:12px;letter-spacing:.1em;font-weight:800;text-transform:uppercase;margin:0 0 7px}h1,h2{font-family:Georgia,serif}h1{font-size:clamp(35px,7vw,53px);line-height:1.02;margin:0 0 10px;letter-spacing:-.03em}h1 em{font-style:normal;color:var(--accent)}.intro p:not(.eyebrow){color:var(--muted);font-size:17px;margin:0;max-width:650px}
+main section{margin-top:23px}.panel{padding:20px;background:var(--paper);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}h2{font-size:28px;line-height:1.1;margin:0 0 8px}.muted{color:var(--muted);margin:0 0 16px}.amount-row{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin:16px 0 4px}.amount-row label{font-weight:800}.amount{font-size:clamp(30px,7vw,42px);font-weight:800;color:var(--accent);font-variant-numeric:tabular-nums}.range{width:100%;accent-color:var(--accent);margin:14px 0 5px;cursor:pointer}.range-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}.options{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:20px}.choice{display:flex;align-items:center;justify-content:center;gap:8px;min-height:50px;border:1px solid var(--line);border-radius:13px;background:var(--bg);color:var(--ink);font-weight:800;cursor:pointer}.choice[aria-pressed=true]{background:var(--accent);color:var(--accentink);border-color:var(--accent)}.methods{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:15px 0}.method{border:1px solid var(--line);border-radius:13px;padding:12px 5px;background:var(--bg);text-align:center;font-size:14px;font-weight:700}.method span{display:block;font-size:23px;margin-bottom:3px}.pay{width:100%;min-height:52px;border:0;border-radius:28px;background:var(--accent);color:var(--accentink);font-size:16px;font-weight:800;cursor:pointer}.note{font-size:13px;color:var(--muted);margin:12px 0 0}.info-grid{display:grid;grid-template-columns:1fr;gap:12px}.info-card{display:flex;gap:13px;align-items:flex-start;background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:16px}.info-card img{width:96px;height:94px;object-fit:cover;border-radius:11px}.info-card h3{font-size:21px;margin:0 0 5px;font-family:Georgia,serif}.info-card p{color:var(--muted);margin:0;font-size:14px}.notice{background:var(--soft);border-radius:14px;padding:15px 17px;font-size:14px;color:var(--ink)}footer{text-align:center;color:var(--muted);font-size:13px;padding:25px 6px 12px}footer a{color:var(--ink);text-decoration:underline}
+@media(min-width:650px){.wrap{padding:22px}.info-grid{grid-template-columns:1fr 1fr}.panel{padding:26px}.hero img{max-height:430px}}
+</style></head>
+<body><div class="wrap">
+<header><a class="brand" href="index.html"><img class="logo" src="VereinsIcon.png" alt="Vereinslogo"><span><strong>Lebensbrücke Deutschland</strong><small>Mensch &amp; Tier e. V.</small></span></a>
+<div class="themes" aria-label="Farbmodus"><button class="theme" data-mode="light" aria-label="Heller Modus" aria-pressed="true">☀️</button><button class="theme" data-mode="warm" aria-label="Warmer Modus" aria-pressed="false">🌤️</button><button class="theme" data-mode="dark" aria-label="Dunkler Modus" aria-pressed="false">◐</button></div></header>
+<section class="hero"><img src="file_00000000b5788210a59bc98b3a8234b5.png" alt="Originales Vereinsmotiv mit Menschen und Tieren"><div class="intro"><p class="eyebrow">Gemeinsam helfen</p><h1>Jede Hilfe <em>zählt.</em></h1><p>Deine Spende hilft dabei, Menschen und Tiere in schwierigen Situationen zu unterstützen.</p></div></section>
+<main>
+<section class="panel"><h2>Wie viel möchtest du spenden?</h2><p class="muted">Wähle deinen Wunschbetrag ganz flexibel.</p>
+<div class="amount-row"><label for="donationAmount">Dein Spendenbetrag</label><output class="amount" id="amountOutput" for="donationAmount">25 €</output></div>
+<input class="range" type="range" id="donationAmount" min="1" max="10000" step="1" value="25" aria-label="Spendenbetrag von 1 bis 10.000 Euro">
+<div class="range-labels"><span>1 €</span><span>10.000 €</span></div>
+<div class="options" role="group" aria-label="Spendenrhythmus"><button class="choice" type="button" data-frequency="once" aria-pressed="true">♡ Einmalig</button><button class="choice" type="button" data-frequency="monthly" aria-pressed="false">↻ Monatlich</button></div>
+</section>
+<section class="panel"><h2>Deine Zahlungsmöglichkeit</h2><p class="muted">Die Zahlungsarten sind vorgesehen und werden nach Einrichtung des Vereinskontos verbunden.</p>
+<div class="methods"><div class="method"><span>🅿️</span>PayPal</div><div class="method"><span>🏦</span>SEPA-Lastschrift</div><div class="method"><span>💳</span>Kreditkarte</div></div>
+<button class="pay" id="payButton" type="button">Spende vorbereiten · 25 €</button>
+<p class="note" id="paymentNote" role="status">Noch keine Zahlung eingerichtet. Dieser Button löst aktuell keine Zahlung aus.</p>
+</section>
+<section class="info-grid">
+<article class="info-card"><img loading="lazy" src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Hund und Mensch"><div><h3>Hilfe für Mensch und Tier</h3><p>Deine Unterstützung hilft dort, wo sie dringend gebraucht wird.</p></div></article>
+<article class="info-card"><img loading="lazy" src="https://images.unsplash.com/photo-1573865526739-10659fec78a5?auto=format&amp;fit=crop&amp;w=400&amp;q=80" alt="Katze"><div><h3>Spendenquittung</h3><p>Ob eine Zuwendungsbestätigung ausgestellt werden kann, hängt unter anderem vom steuerlichen Status des Vereins ab.</p></div></article>
+</section>
+<section class="notice"><strong>Gut zu wissen:</strong> Die Zahlungsabwicklung ist noch nicht aktiviert. Sobald das Vereinskonto und der Zahlungsanbieter eingerichtet sind, können wir die echten Zahlungslinks ergänzen.</section>
+</main>
+<footer><strong>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</strong><p><a href="index.html">Zur Startseite</a> · <a href="hilfe.html">Hilfe finden</a></p><p>Ein WIR für Mensch &amp; Tier.</p></footer>
 </div>
-
-<div class="content">
-
-  <div class="card">
-    <h2>💛 Deine Hilfe kommt an</h2>
-
-    <div class="intro">
-      Mit deiner Spende können wir Menschen und Tiere
-      in schwierigen Situationen unterstützen.
-      <br><br>
-      <strong>Jeder Betrag zählt.</strong>
-    </div>
-
-    <div class="amounts">
-      <button class="amount" onclick="selectAmount(this)">5 €</button>
-      <button class="amount" onclick="selectAmount(this)">10 €</button>
-      <button class="amount" onclick="selectAmount(this)">25 €</button>
-      <button class="amount" onclick="selectAmount(this)">50 €</button>
-
-      <button class="amount custom" onclick="selectAmount(this)">
-        ✏️ Eigener Betrag
-      </button>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>🤝 Gemeinsam helfen</h2>
-
-    <div class="intro">
-      Du möchtest unsere Arbeit regelmäßig unterstützen?
-      Auch eine regelmäßige Spende hilft dabei,
-      unsere Arbeit langfristig zu ermöglichen.
-    </div>
-
-    <div class="frequency">
-      <button class="active" onclick="selectFrequency(this)">
-        💛 Einmalig
-      </button>
-
-      <button onclick="selectFrequency(this)">
-        🔄 Regelmäßig
-      </button>
-    </div>
-  </div>
-
-  <div class="card">
-    <h2>💳 Spendenmöglichkeit</h2>
-
-    <div class="payment-box">
-      <h3>🅿️ PayPal</h3>
-      <p>
-        Schnell und bequem online spenden.
-        <br><br>
-        <strong>PayPal wird eingerichtet.</strong>
-      </p>
-    </div>
-
-    <div class="payment-box">
-      <h3>🏦 Überweisung / SEPA</h3>
-      <p>
-        Deine Spende kann auch per Überweisung
-        oder SEPA erfolgen.
-        <br><br>
-        <strong>Bankverbindung wird ergänzt.</strong>
-      </p>
-    </div>
-
-    <label class="receipt">
-      <input type="checkbox">
-      Ich wünsche eine Spendenquittung.
-    </label>
-  </div>
-
-  <div class="final">
-    <h2>💛 Jeder Beitrag zählt</h2>
-
-    <p>
-      Ein WIR für Mensch &amp; Tier. 🐾❤️
-      <br>
-      <em>Danke, dass du Teil davon bist.</em>
-    </p>
-
-    <a class="donate-final" href="#">
-      💛 JETZT SPENDEN
-    </a>
-  </div>
-
-</div>
-
-<div class="back">
-  <a href="index.html">← Zur Startseite</a>
-</div>
-
 <script>
-function selectAmount(button) {
-  document.querySelectorAll(".amount").forEach(function(item) {
-    item.classList.remove("selected");
-  });
-
-  button.classList.add("selected");
-}
-
-function selectFrequency(button) {
-  document.querySelectorAll(".frequency button").forEach(function(item) {
-    item.classList.remove("active");
-  });
-
-  button.classList.add("active");
-}
-</script>
-
-</body>
-</html>
+const root=document.documentElement;const themeButtons=document.querySelectorAll("[data-mode]");
+function setTheme(mode){root.dataset.theme=mode;document.querySelector('meta[name="theme-color"]').content=mode==="dark"?"#211b18":mode==="warm"?"#fff0e8":"#fbf5eb";themeButtons.forEach(b=>b.setAttribute("aria-pressed",String(b.dataset.mode===mode)));try{localStorage.setItem("lebensbruecke-theme-v2",mode)}catch(e){}}
+let initial="light";try{initial=localStorage.getItem("lebensbruecke-theme-v2")||"light"}catch(e){}root.dataset.theme=initial;themeButtons.forEach(b=>b.addEventListener("click",()=>setTheme(b.dataset.mode)));
+const slider=document.getElementById("donationAmount"),output=document.getElementById("amountOutput"),pay=document.getElementById("payButton");let frequency="once";
+function updateAmount(){const value=Number(slider.value);output.textContent=value.toLocaleString("de-DE")+" €";pay.textContent="Spende vorbereiten · "+value.toLocaleString("de-DE")+" €";}
+slider.addEventListener("input",updateAmount);
+document.querySelectorAll("[data-frequency]").forEach(b=>b.addEventListener("click",()=>{frequency=b.dataset.frequency;document.querySelectorAll("[data-frequency]").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));updateAmount();}));
+pay.addEventListener("click",()=>{document.getElementById("paymentNote").textContent="Deine Auswahl: "+output.textContent+(frequency==="monthly"?" monatlich":" einmalig")+". Die Zahlung ist noch nicht aktiviert; es wurde nichts abgebucht.";});
+</script></body></html>
