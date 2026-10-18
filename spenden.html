@@ -1,127 +1,78 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fff8f1">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Spenden – Lebensbrücke Deutschland</title>
 <style>
-:root{--bg:#fff8f1;--paper:#fffdf9;--ink:#29312f;--muted:#626a66;--coral:#ef8273;--coral-dark:#bd5a4f;--soft:#fae6de;--sage:#e5f0e7;--line:#e9ddd4;--shadow:0 14px 40px rgba(57,41,33,.10)}
-body.dark{--bg:#1e2928;--paper:#293634;--ink:#f8f1ea;--muted:#d0d2cb;--coral:#ff9b8b;--coral-dark:#ffb4a7;--soft:#493633;--sage:#30443a;--line:#465451;--shadow:0 14px 40px rgba(0,0,0,.25)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.6;transition:background .2s,color .2s}
-a{color:inherit}.topbar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:15px clamp(18px,5vw,64px);background:var(--paper);border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:bold}.mark{width:44px;height:44px;border:2px solid var(--coral);border-radius:50%;display:grid;place-items:center;font-size:25px}.brand small{display:block;font-weight:normal;font-size:12px;color:var(--muted);margin-top:3px}
-.mode{border:1px solid var(--line);border-radius:99px;padding:10px 14px;background:transparent;color:var(--ink);font-weight:bold;cursor:pointer}
-.hero{min-height:430px;position:relative;display:flex;align-items:center;overflow:hidden;background:#51443c}.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 44%}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(23,27,24,.82),rgba(23,27,24,.48) 57%,rgba(23,27,24,.12))}
-.hero-copy{position:relative;z-index:1;color:white;padding:54px clamp(22px,7vw,90px);max-width:800px}.eyebrow{text-transform:uppercase;letter-spacing:.15em;font-size:12px;font-weight:bold;color:#ffd2c7}.hero h1{font-family:Georgia,serif;font-size:clamp(40px,7vw,72px);line-height:1.02;letter-spacing:-.03em;margin:14px 0 18px}.hero p{font-size:clamp(17px,2vw,20px);max-width:600px;margin:0}
-.intro{text-align:center;max-width:850px;margin:auto;padding:46px 22px 18px}.intro h2{font-family:Georgia,serif;font-size:clamp(29px,4vw,43px);line-height:1.1;margin:0 0 13px}.intro p{color:var(--muted);font-size:17px;margin:0}
-.main{max-width:1050px;margin:0 auto;padding:22px 18px 55px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:24px;align-items:start}
-.panel{background:var(--paper);border:1px solid var(--line);border-radius:28px;padding:clamp(22px,4vw,38px);box-shadow:var(--shadow)}
-.panel h2{font-family:Georgia,serif;font-size:clamp(27px,3vw,36px);line-height:1.12;margin:0 0 8px}.sub{color:var(--muted);margin:0 0 24px}
-.toggle{display:grid;grid-template-columns:1fr 1fr;gap:7px;background:var(--bg);border:1px solid var(--line);border-radius:16px;padding:6px;margin:18px 0 25px}
-.toggle button{border:0;background:transparent;color:var(--ink);padding:12px 8px;border-radius:11px;font-weight:bold;font-size:15px;cursor:pointer}.toggle button.active{background:var(--coral);color:#302421}
-.amount-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:10px}.amount-head label{font-weight:bold}.amount{font-family:Georgia,serif;font-size:30px;font-weight:bold;color:var(--coral-dark);white-space:nowrap}
-input[type=range]{width:100%;accent-color:var(--coral-dark);cursor:pointer;margin:12px 0 3px}
-.range-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:12px}
-.custom-amount{display:flex;align-items:center;gap:10px;margin-top:20px}.custom-amount label{font-weight:bold}.money-input{display:flex;align-items:center;border:1px solid var(--line);background:var(--bg);border-radius:12px;padding:0 12px;min-width:0}.money-input span{font-weight:bold;color:var(--muted)}.money-input input{width:100%;min-width:0;border:0;outline:0;background:transparent;color:var(--ink);font-size:17px;padding:12px 6px}
-.receipt{display:flex;gap:11px;align-items:flex-start;background:var(--sage);padding:14px 15px;border-radius:15px;margin-top:24px;font-size:14px}.receipt span{font-size:21px}.receipt p{margin:0}
-.summary{background:var(--soft);border-radius:22px;padding:22px;margin:22px 0}.summary .small{font-size:13px;color:var(--muted)}.summary .big{font-family:Georgia,serif;font-size:42px;line-height:1.1;font-weight:bold;margin:5px 0}.summary p{margin:7px 0 0;color:var(--muted);font-size:14px}
-.pay-title{font-weight:bold;margin:22px 0 10px}.payments{display:flex;flex-wrap:wrap;gap:8px}.payment{border:1px solid var(--line);border-radius:999px;padding:9px 12px;background:var(--bg);font-size:13px;font-weight:bold}
-.notice{font-size:13px;color:var(--muted);margin:18px 0 0}
-.primary{display:flex;justify-content:center;align-items:center;gap:10px;text-align:center;text-decoration:none;background:var(--coral);color:#2e211d;border-radius:999px;padding:15px 20px;font-size:16px;font-weight:bold;margin-top:18px}
-.primary.disabled{opacity:.72;cursor:default}
-.story{display:flex;flex-direction:column;gap:17px}.story-photo{height:230px;width:100%;object-fit:cover;border-radius:20px}.story h2{font-family:Georgia,serif;font-size:30px;line-height:1.15;margin:2px 0}.story p{color:var(--muted);margin:0}.promise{background:var(--sage);border-radius:20px;padding:19px}.promise strong{display:block;margin-bottom:5px}.promise p{font-size:14px}
-.footer{text-align:center;padding:28px 18px 38px;border-top:1px solid var(--line);background:var(--paper)}.footer a{display:inline-block;border:1px solid var(--line);padding:11px 18px;border-radius:99px;text-decoration:none;font-weight:bold}.footer p{font-size:13px;color:var(--muted);margin:13px 0 0}
-@media(max-width:760px){.hero{min-height:430px;align-items:flex-end}.hero:after{background:linear-gradient(0deg,rgba(23,27,24,.84),rgba(23,27,24,.18) 90%)}.hero-copy{padding:42px 23px 34px}.main{grid-template-columns:1fr;padding-inline:14px}.story-photo{height:210px}.panel{border-radius:23px}.topbar{padding:13px}.brand{font-size:14px}.mark{width:40px;height:40px}}
-</style>
-</head>
+:root{--bg:#fff8f0;--surface:#fffdf9;--soft:#f9e7df;--text:#292a2c;--muted:#68696d;--accent:#c45b55;--coral:#ef887b;--line:#e8ddd2;--header:#fffdf9;--green:#e6f1e8;--greenText:#2e4938}
+body.dark{--bg:#1d2927;--surface:#263532;--soft:#33433f;--text:#f8f4ed;--muted:#d0d2ce;--accent:#ff9a8c;--coral:#f39a8d;--line:#465650;--header:#263532;--green:#30453a;--greenText:#edf7ef}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.65;transition:background .25s,color .25s}
+header{padding:17px 26px;background:var(--header);display:flex;align-items:center;justify-content:space-between;gap:15px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:14px}.logo{width:62px;height:62px;flex:0 0 62px;border:3px solid #e88d80;border-radius:50%;display:grid;place-items:center;font-size:35px;color:var(--text)}
+.brand-name{font-size:clamp(1rem,2.5vw,1.4rem);font-weight:800;line-height:1.2}.brand-sub{font-size:.98rem;color:var(--muted);margin-top:4px}
+.mode{background:transparent;color:var(--text);border:1px solid var(--line);border-radius:999px;padding:12px 16px;font-size:1rem;font-weight:800;white-space:nowrap;cursor:pointer}
+.hero{min-height:650px;display:flex;align-items:center;color:white;background:linear-gradient(90deg,rgba(25,28,27,.58),rgba(25,28,27,.22)),url('https://images.unsplash.com/photo-1552053831-71594a27632d?auto=format&fit=crop&w=1800&q=85') center 45%/cover}
+.hero-inner{max-width:1050px;width:100%;padding:64px 44px;margin:auto}.kicker{font-weight:800;color:#ffd0c7;letter-spacing:2.5px;font-size:.88rem;text-transform:uppercase}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.8rem,7vw,4.8rem);line-height:1.06;max-width:760px;margin:20px 0}
+.hero p{font-size:clamp(1.1rem,2.7vw,1.5rem);line-height:1.6;max-width:780px;margin:0;color:#fff}
+main{max-width:960px;margin:auto;padding:52px 24px 68px}.intro{text-align:center;max-width:790px;margin:0 auto 35px}
+h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2rem,5vw,3rem);line-height:1.12;margin:0 0 15px}
+.intro p{font-size:clamp(1.1rem,2.5vw,1.4rem);color:var(--muted);margin:0}
+.donation-card{background:var(--surface);border:2px solid var(--line);border-top:5px solid var(--coral);border-radius:30px;padding:clamp(24px,5vw,46px);box-shadow:0 12px 34px rgba(80,54,45,.08)}
+.card-heading{display:flex;align-items:flex-start;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.card-heading h2{margin-bottom:7px}.card-heading p{margin:0;color:var(--muted);font-size:1.08rem}
+.heart-mark{font-size:2.6rem;color:var(--accent);line-height:1}
+.segment{display:grid;grid-template-columns:1fr 1fr;gap:7px;background:var(--bg);border:1px solid var(--line);padding:7px;border-radius:18px;margin:28px 0}
+.segment button{padding:14px 10px;border:0;border-radius:13px;background:transparent;color:var(--text);font-size:1.05rem;font-weight:800;cursor:pointer}
+.segment button.active{background:var(--coral);color:#292321;box-shadow:0 4px 12px rgba(190,85,75,.18)}
+.amount-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin:24px 0 12px}
+.amount-label{font-size:1.15rem;font-weight:800}.amount{font-family:Georgia,'Times New Roman',serif;color:var(--accent);font-size:clamp(2.7rem,7vw,4rem);font-weight:800;line-height:1.1}
+input[type=range]{width:100%;accent-color:var(--accent);height:28px;cursor:pointer;margin:12px 0 0}
+.range-labels{display:flex;justify-content:space-between;color:var(--muted);font-size:.92rem}
+.custom{display:grid;grid-template-columns:1fr minmax(120px,220px);align-items:center;gap:15px;margin:26px 0;font-weight:800}
+.custom input{width:100%;min-width:0;padding:15px;border:1px solid var(--line);border-radius:15px;background:var(--bg);color:var(--text);font:inherit}
+.receipt{display:flex;gap:15px;align-items:flex-start;background:var(--green);color:var(--greenText);padding:20px;border-radius:20px;margin:26px 0}
+.receipt .icon{font-size:1.8rem}.receipt strong{display:block;font-size:1.08rem}.receipt p{margin:4px 0 0}
+.summary{background:var(--soft);padding:23px;border-radius:20px;margin:24px 0;text-align:center}
+.summary .small{color:var(--muted);font-size:1rem}.summary .big{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2rem,6vw,3rem);font-weight:800;line-height:1.2;margin:5px 0}
+.primary{display:flex;width:100%;align-items:center;justify-content:center;text-align:center;padding:19px 20px;border-radius:999px;background:var(--coral);color:#292321;text-decoration:none;font-size:1.15rem;font-weight:900;border:0;cursor:pointer;box-shadow:0 8px 22px rgba(220,94,82,.25)}
+.primary:hover{filter:brightness(.96)}.fineprint{color:var(--muted);font-size:.86rem;text-align:center;margin:13px 0 0}
+.why{margin:42px 0 0;text-align:center}.why h2{font-size:clamp(1.8rem,4vw,2.5rem)}.why p{color:var(--muted);font-size:1.1rem;max-width:720px;margin:auto}
+.back{text-align:center;padding:35px 0 0}.back a{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:13px 22px;background:var(--surface);color:var(--text);font-weight:800;text-decoration:none}
+footer{text-align:center;padding:26px 16px 34px;background:var(--surface);border-top:1px solid var(--line);color:var(--muted)}footer a{color:var(--accent);font-weight:800;text-decoration:none}
+@media(max-width:600px){header{padding:15px 18px;align-items:center}.brand{gap:10px;flex:1}.logo{width:52px;height:52px;flex-basis:52px;font-size:29px}.brand-name{font-size:1rem}.brand-sub{font-size:.9rem}.mode{padding:10px 12px;font-size:.9rem}.hero{min-height:590px;background-position:57% center}.hero-inner{padding:45px 23px}main{padding:36px 18px 50px}.donation-card{border-radius:23px}.custom{grid-template-columns:1fr;gap:8px}.receipt{padding:17px}.primary{font-size:1.03rem}}
+</style></head>
 <body>
-<nav class="topbar">
-  <a class="brand" href="index.html"><span class="mark">♡</span><span>Lebensbrücke Deutschland<small>Mensch &amp; Tier e. V.</small></span></a>
-  <button class="mode" id="modeButton" type="button">🌙 Dunkel</button>
-</nav>
-<header class="hero">
-  <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1800&q=85" alt="Hunde laufen gemeinsam über eine Wiese">
-  <div class="hero-copy">
-    <div class="eyebrow">Von Herzen helfen</div>
-    <h1>Deine Hilfe macht einen Unterschied.</h1>
-    <p>Mit deiner Spende können wir Menschen und Tiere in schwierigen Situationen unterstützen. Jeder Beitrag ist ein Zeichen von Mitgefühl.</p>
-  </div>
+<header>
+ <div class="brand"><div class="logo" aria-hidden="true">♡</div><div><div class="brand-name">Lebensbrücke Deutschland</div><div class="brand-sub">Mensch &amp; Tier e. V.</div></div></div>
+ <button class="mode" id="modeToggle" type="button">🌙 Dunkel</button>
 </header>
-<section class="intro">
-  <h2>Ein WIR für Mensch &amp; Tier.</h2>
-  <p>Wähle deinen Wunschbetrag ganz frei. Ob einmalig oder monatlich – deine Unterstützung hilft dabei, Hoffnung weiterzugeben.</p>
-</section>
-<main class="main">
-  <section class="panel">
-    <h2>Deine Spende</h2>
-    <p class="sub">Stelle den Betrag ein, der für dich passt.</p>
-    <div class="toggle" role="group" aria-label="Spendenrhythmus">
-      <button type="button" id="once" class="active" aria-pressed="true">Einmalig</button>
-      <button type="button" id="monthly" aria-pressed="false">Monatlich</button>
-    </div>
-    <div class="amount-head"><label for="donationRange">Dein Wunschbetrag</label><output class="amount" id="amountOutput" for="donationRange">25 €</output></div>
-    <input type="range" id="donationRange" min="1" max="10000" step="1" value="25">
-    <div class="range-labels"><span>1 €</span><span>10.000 €</span></div>
-    <div class="custom-amount">
-      <label for="amountInput">Oder Betrag eingeben:</label>
-      <div class="money-input"><span>€</span><input id="amountInput" type="number" min="1" max="10000" step="1" value="25" inputmode="numeric" aria-label="Spendenbetrag in Euro"></div>
-    </div>
-    <div class="receipt"><span aria-hidden="true">🧾</span><p><strong>Spendenbescheinigung</strong><br>Informationen zur Zuwendungsbestätigung erhältst du vom Verein. Bitte bewahre deine Spendenunterlagen auf.</p></div>
-    <div class="summary">
-      <div class="small" id="summaryLabel">Deine einmalige Unterstützung</div>
-      <div class="big" id="summaryAmount">25 €</div>
-      <p id="summaryText">Ein Beitrag, der helfen kann, wenn Mensch und Tier Unterstützung brauchen.</p>
-    </div>
-    <div class="pay-title">Vorgesehene Zahlungsarten</div>
-    <div class="payments"><span class="payment">PayPal</span><span class="payment">SEPA-Lastschrift</span><span class="payment">Kreditkarte</span></div>
-    <p class="notice">Die Online-Zahlung ist noch nicht aktiviert. Sobald das Vereinskonto und der Zahlungsanbieter eingerichtet sind, kann dieser Bereich mit einer sicheren Zahlungsabwicklung verbunden werden.</p>
-    <a class="primary disabled" href="#zahlungsinfo" aria-disabled="true" onclick="return false">Zahlung wird bald verfügbar sein</a>
-  </section>
-  <aside class="story">
-    <img class="story-photo" src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1200&q=85" alt="Hund schaut freundlich und aufmerksam" loading="lazy">
-    <h2>Jede Hilfe zählt.</h2>
-    <p>Manchmal verändert schon eine kleine Unterstützung den Alltag. Gemeinsam möchten wir dazu beitragen, dass Menschen nicht allein bleiben und Tiere gut versorgt werden können.</p>
-    <div class="promise"><strong>💛 Mit Herz und Verantwortung</strong><p>Wir möchten Spenden für den Vereinszweck einsetzen und transparent über die Möglichkeiten der Unterstützung informieren.</p></div>
-    <p id="zahlungsinfo" class="notice">Du möchtest auf anderem Weg helfen? Nutze bitte die Kontaktmöglichkeiten auf der Vereinsseite, bis die Online-Spende eingerichtet ist.</p>
-  </aside>
+<section class="hero"><div class="hero-inner"><div class="kicker">GEMEINSAM FÜR MENSCH UND TIER</div><h1>Wo Mitgefühl zu Hilfe wird.</h1><p>Manchmal braucht es Unterstützung, damit der Alltag weitergehen kann – für Menschen und für die Tiere an ihrer Seite.</p></div></section>
+<main>
+ <section class="intro"><h2>Ein WIR für Mensch &amp; Tier.</h2><p>Wähle deinen Wunschbetrag ganz frei. Ob einmalig oder monatlich – deine Unterstützung hilft dabei, Hoffnung weiterzugeben.</p></section>
+ <section class="donation-card" aria-label="Spendenbetrag auswählen">
+  <div class="card-heading"><div><h2>Deine Spende</h2><p>Wähle den Betrag, der für dich passt.</p></div><div class="heart-mark" aria-hidden="true">♥</div></div>
+  <div class="segment" role="group" aria-label="Spendenrhythmus"><button id="once" class="active" type="button" aria-pressed="true">Einmalig</button><button id="monthly" type="button" aria-pressed="false">Monatlich</button></div>
+  <div class="amount-row"><span class="amount-label">Dein Wunschbetrag</span><output class="amount" id="amountDisplay">25 €</output></div>
+  <input id="amountRange" type="range" min="1" max="10000" value="25" step="1" aria-label="Spendenbetrag zwischen 1 und 10.000 Euro">
+  <div class="range-labels"><span>1 €</span><span>10.000 €</span></div>
+  <label class="custom" for="amountInput"><span>Oder Betrag eingeben:</span><input id="amountInput" type="number" min="1" max="10000" value="25" step="1"></label>
+  <div class="receipt"><span class="icon" aria-hidden="true">🧾</span><div><strong>Spendenbescheinigung</strong><p>Informationen zur Zuwendungsbestätigung erhältst du vom Verein. Bitte bewahre deine Spendenunterlagen auf.</p></div></div>
+  <div class="summary"><div class="small" id="summaryLabel">Deine einmalige Unterstützung</div><div class="big" id="summaryAmount">25 €</div><div class="small">Danke, dass du Mensch und Tier hilfst.</div></div>
+  <a class="primary" href="mailto:kontakt@lebensbruecke-deutschland.de?subject=Spendenanfrage%20%E2%80%93%20Lebensbr%C3%BCcke%20Deutschland" id="donateLink">♥ Ich möchte 25 € spenden&nbsp; →</a>
+  <p class="fineprint">Hinweis: Die Online-Zahlung ist noch nicht eingerichtet. Über diesen Button kannst du aktuell eine Spendenanfrage per E-Mail senden.</p>
+ </section>
+ <section class="why"><h2>Jeder Beitrag zählt.</h2><p>Mit deiner Unterstützung können wir dort helfen, wo Menschen und Tiere dringend Unterstützung brauchen. Danke, dass du Teil unseres WIR bist.</p></section>
+ <div class="back"><a href="index.html">← Zur Startseite</a></div>
 </main>
-<footer class="footer">
-  <a href="index.html">← Zurück zur Startseite</a>
-  <p>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</p>
-</footer>
+<footer><strong>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</strong><br><span>Ein WIR für Mensch &amp; Tier.</span><br><a href="index.html">Zur Startseite</a> &nbsp;·&nbsp; <a href="sachspenden.html">Sachspenden</a><p class="fineprint">Bitte vor Veröffentlichung die Kontakt-E-Mail prüfen.</p></footer>
 <script>
-const range=document.getElementById('donationRange');
-const input=document.getElementById('amountInput');
-const output=document.getElementById('amountOutput');
-const summaryAmount=document.getElementById('summaryAmount');
-const summaryLabel=document.getElementById('summaryLabel');
-const summaryText=document.getElementById('summaryText');
-const once=document.getElementById('once');
-const monthly=document.getElementById('monthly');
-let frequency='once';
-const euro=n=>new Intl.NumberFormat('de-DE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
-function updateAmount(v){
- let n=Math.round(Number(v));
- if(!Number.isFinite(n)) n=1;
- n=Math.max(1,Math.min(10000,n));
- range.value=n;input.value=n;output.textContent=euro(n);summaryAmount.textContent=euro(n)+(frequency==='monthly'?' / Monat':'');
- summaryLabel.textContent=frequency==='monthly'?'Deine monatliche Unterstützung':'Deine einmalige Unterstützung';
- summaryText.textContent=frequency==='monthly'?'Mit einem regelmäßigen Beitrag hilfst du dabei, Unterstützung besser planbar zu machen.':'Ein Beitrag, der helfen kann, wenn Mensch und Tier Unterstützung brauchen.';
-}
-range.addEventListener('input',()=>updateAmount(range.value));
-input.addEventListener('change',()=>updateAmount(input.value||1));
-function setFrequency(next){
- frequency=next;once.classList.toggle('active',next==='once');monthly.classList.toggle('active',next==='monthly');
- once.setAttribute('aria-pressed',String(next==='once'));monthly.setAttribute('aria-pressed',String(next==='monthly'));updateAmount(range.value);
-}
-once.addEventListener('click',()=>setFrequency('once'));
-monthly.addEventListener('click',()=>setFrequency('monthly'));
-const modeButton=document.getElementById('modeButton');
-function setMode(dark){document.body.classList.toggle('dark',dark);modeButton.textContent=dark?'☀️ Hell':'🌙 Dunkel';try{localStorage.setItem('lebensbruecke-mode',dark?'dark':'light')}catch(e){}}
-let saved='light';try{saved=localStorage.getItem('lebensbruecke-mode')||'light'}catch(e){}
-setMode(saved==='dark');modeButton.addEventListener('click',()=>setMode(!document.body.classList.contains('dark')));
-</script>
-</body>
-</html>
+const range=document.getElementById('amountRange'),input=document.getElementById('amountInput'),display=document.getElementById('amountDisplay'),summary=document.getElementById('summaryAmount'),label=document.getElementById('summaryLabel'),link=document.getElementById('donateLink'),once=document.getElementById('once'),monthly=document.getElementById('monthly');
+let cadence='Einmalig';
+function update(v){let n=Math.max(1,Math.min(10000,Math.round(Number(v)||1)));range.value=n;input.value=n;let formatted=n.toLocaleString('de-DE')+' €';display.textContent=formatted;summary.textContent=formatted;label.textContent='Deine '+(cadence==='Monatlich'?'monatliche':'einmalige')+' Unterstützung';link.href='mailto:kontakt@lebensbruecke-deutschland.de?subject='+encodeURIComponent('Spendenanfrage – '+formatted+' '+(cadence==='Monatlich'?'monatlich':'einmalig')+' – Lebensbrücke Deutschland');link.textContent='♥ Ich möchte '+formatted+(cadence==='Monatlich'?' monatlich':'')+' spenden  →';}
+range.addEventListener('input',()=>update(range.value));input.addEventListener('change',()=>update(input.value));
+function setCadence(c){cadence=c;once.classList.toggle('active',c==='Einmalig');monthly.classList.toggle('active',c==='Monatlich');once.setAttribute('aria-pressed',c==='Einmalig');monthly.setAttribute('aria-pressed',c==='Monatlich');update(range.value)}
+once.addEventListener('click',()=>setCadence('Einmalig'));monthly.addEventListener('click',()=>setCadence('Monatlich'));
+const mode=document.getElementById('modeToggle');mode.addEventListener('click',()=>{let dark=document.body.classList.toggle('dark');mode.textContent=dark?'☀ Hell':'🌙 Dunkel';});
+update(25);
+</script></body></html>
