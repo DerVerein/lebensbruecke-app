@@ -5,48 +5,69 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Finanzielle Notlage – Lebensbrücke Deutschland</title>
 <style>
-:root{--bg:#f7f1e9;--surface:#fffaf5;--text:#292b2d;--muted:#62666a;--accent:#f06455;--accent-dark:#d94e42;--line:#e7dcd1;--nav:#292b2d;--shadow:0 12px 34px rgba(40,32,27,.09)}
-body.dark{--bg:#202225;--surface:#2c2f33;--text:#f7f3ee;--muted:#c5c6c8;--accent:#ff7768;--accent-dark:#ff9387;--line:#44474c;--nav:#17191b;--shadow:0 12px 34px rgba(0,0,0,.22)}
-*{box-sizing:border-box}html{scroll-behavior:smooth}
+:root{
+  --bg:#fff8f0;--surface:#fffdf9;--soft:#f9e7df;--text:#292a2c;
+  --muted:#68696d;--accent:#c45b55;--accent-bright:#ff7768;
+  --line:#e8ddd2;--header:#fffdf9;--header-text:#292a2c;
+}
+body.dark{
+  --bg:#1d2927;--surface:#263532;--soft:#33433f;--text:#f8f4ed;
+  --muted:#d0d2ce;--accent:#ff9a8c;--accent-bright:#ff8a7b;
+  --line:#465650;--header:#263532;--header-text:#f8f4ed;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif;line-height:1.65;transition:background .2s,color .2s}
-header{background:var(--nav);color:#fff;padding:14px 5%;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
-.brand{font-weight:800}.brand small{display:block;font-size:.82rem;font-weight:400;color:#e3e3e3}
-.actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
-.mode,.donate-top{border:1px solid #6d6d6d;border-radius:999px;padding:9px 14px;color:white;background:transparent;font-weight:700;text-decoration:none;cursor:pointer}
-.donate-top{background:var(--accent);border-color:var(--accent);color:#241f1e}
-.hero{background:linear-gradient(115deg,rgba(36,37,39,.92),rgba(36,37,39,.65)),url('https://images.unsplash.com/photo-1516733968668-dbdce39c4651?auto=format&fit=crop&w=1800&q=85') center 45%/cover;color:#fff;padding:66px 22px 60px;text-align:center}
-.hero-inner{max-width:850px;margin:auto}
-.kicker{display:inline-block;border:1px solid rgba(255,255,255,.35);background:rgba(240,100,85,.18);border-radius:999px;padding:5px 13px;font-size:.83rem;font-weight:700;letter-spacing:.5px}
-h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.25rem,6vw,4rem);line-height:1.1;margin:17px 0 13px}
-.hero p{font-size:clamp(1.05rem,2.5vw,1.35rem);max-width:680px;margin:0 auto;color:#f2f1ef}
-main{max-width:920px;margin:auto;padding:34px 20px 60px}
-.motto{text-align:center;background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:17px 20px;margin:0 0 22px;color:var(--accent-dark);font-size:clamp(1.15rem,3vw,1.55rem);font-weight:800}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;padding:25px;margin:18px 0;box-shadow:var(--shadow)}
-h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.45rem,3.5vw,2rem);line-height:1.2;margin:0 0 12px}
-.card p{margin:0;color:var(--muted);font-size:1.06rem}
-.cta{background:var(--nav);color:#fff;text-align:center;padding:38px 22px;margin:30px 0 22px;border-radius:20px}
-.cta h2{font-size:clamp(1.7rem,4vw,2.3rem)}
-.cta p{max-width:650px;margin:0 auto 22px;color:#e2e2e2;font-size:1.08rem}
-.btn{display:inline-flex;align-items:center;justify-content:center;background:var(--accent);color:#231f1e;text-decoration:none;font-weight:800;padding:14px 23px;border-radius:12px;box-shadow:0 5px 16px rgba(240,100,85,.23)}
-.btn:hover,.donate-top:hover{background:var(--accent-dark);color:white}
-.back{text-align:center;margin:24px 0 0}.back a{color:var(--accent-dark);font-weight:800;text-decoration:none;font-size:1.05rem}
-footer{background:var(--nav);color:#fff;text-align:center;padding:22px 15px;font-size:.92rem}
-footer a{color:#ff9b90}
-@media(max-width:600px){header{padding:13px 16px}.hero{padding:50px 18px}.card{padding:21px}.cta{padding:30px 19px}}
+header{background:var(--header);color:var(--header-text);padding:17px 6%;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.brand{font-weight:800;font-size:1.05rem;line-height:1.3}
+.brand small{display:block;font-weight:400;color:var(--muted);font-size:.92rem;margin-top:3px}
+.actions{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mode,.donate-top{border:1px solid var(--line);border-radius:999px;padding:10px 15px;background:transparent;color:var(--header-text);font-weight:700;font-size:.95rem;cursor:pointer;text-decoration:none}
+.donate-top{background:var(--accent-bright);border-color:var(--accent-bright);color:#292321}
+.hero{min-height:390px;display:flex;align-items:center;background:linear-gradient(90deg,rgba(24,28,27,.72),rgba(24,28,27,.30)),url('https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1800&q=85') center 45%/cover;color:#fff}
+.hero-inner{max-width:1050px;width:100%;margin:auto;padding:58px 24px;text-align:left}
+.kicker{display:inline-block;color:#ffd2c9;font-weight:800;font-size:.86rem;letter-spacing:2px;text-transform:uppercase}
+h1{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2.6rem,7vw,4.6rem);line-height:1.05;max-width:720px;margin:16px 0}
+.hero p{font-size:clamp(1.05rem,2.5vw,1.35rem);max-width:760px;margin:0;color:#f6f3f0}
+main{max-width:1050px;margin:auto;padding:42px 24px 68px}
+.motto{text-align:center;border:1px solid var(--line);border-radius:24px;padding:24px 18px;margin:0 0 34px;background:var(--surface);color:var(--accent);font-weight:800;font-size:clamp(1.25rem,3.5vw,1.75rem)}
+.section{padding:28px 0 34px;border-bottom:1px solid var(--line)}
+.section h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(2rem,5vw,3rem);line-height:1.12;margin:0 0 17px}
+.section p{font-size:clamp(1.05rem,2.4vw,1.3rem);line-height:1.75;color:var(--muted);max-width:850px;margin:0}
+.section + .section{margin-top:18px}
+.cta{background:var(--soft);border-radius:0 72px 0 72px;text-align:center;padding:38px 24px;margin:42px -24px 0}
+.cta h2{font-family:Georgia,'Times New Roman',serif;font-size:clamp(1.9rem,4.5vw,2.8rem);line-height:1.15;margin:0 0 13px}
+.cta p{font-size:clamp(1.05rem,2.5vw,1.25rem);color:var(--muted);max-width:700px;margin:0 auto 24px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:15px 25px;border-radius:999px;background:var(--accent-bright);color:#292321;text-decoration:none;font-weight:800;font-size:1.08rem}
+.btn:hover,.donate-top:hover{filter:brightness(.96)}
+.back{text-align:center;padding:38px 0 8px}
+.back a{display:inline-block;border:1px solid var(--line);border-radius:999px;padding:13px 22px;text-decoration:none;color:var(--text);font-weight:700;background:var(--surface)}
+footer{text-align:center;padding:24px 16px 34px;background:var(--surface);border-top:1px solid var(--line);color:var(--muted)}
+footer a{color:var(--accent);font-weight:700;text-decoration:none}
+@media(max-width:650px){
+ header{padding:15px 18px;align-items:flex-start}
+ .brand{max-width:100%}.actions{width:100%}.mode,.donate-top{flex:1;text-align:center}
+ .hero{min-height:440px;background-position:58% center}
+ .hero-inner{padding:48px 22px}
+ main{padding:28px 22px 50px}
+ .motto{border-radius:22px;padding:20px 12px;margin-bottom:20px}
+ .section{padding:24px 0 28px}
+ .cta{margin:34px -22px 0;padding:36px 22px;border-radius:0 60px 0 60px}
+}
 </style>
 </head>
 <body>
 <header>
   <div class="brand">Lebensbrücke Deutschland – Mensch &amp; Tier e. V.<small>Ein WIR für Mensch &amp; Tier.</small></div>
   <div class="actions">
-    <button class="mode" id="modeToggle" type="button">☀ Hell / ☾ Dunkel</button>
+    <button class="mode" id="modeToggle" type="button">☾ Dunkel</button>
     <a class="donate-top" href="spenden.html">Jetzt spenden</a>
   </div>
 </header>
 
 <section class="hero">
   <div class="hero-inner">
-    <span class="kicker">Wir sind da, wenn es schwierig wird</span>
+    <div class="kicker">Wir sind da, wenn es schwierig wird</div>
     <h1>Finanzielle Notlage</h1>
     <p>Wir hören zu und suchen gemeinsam nach Möglichkeiten, wenn das Geld für wichtige Dinge nicht mehr reicht.</p>
   </div>
@@ -55,17 +76,17 @@ footer a{color:#ff9b90}
 <main>
   <div class="motto">Ein WIR für Mensch &amp; Tier.</div>
 
-  <section class="card">
+  <section class="section">
     <h2>Wir hören zu</h2>
     <p>Eine finanzielle Notlage kann jeden treffen. Wenn das Geld für wichtige Dinge nicht mehr reicht, möchten wir gemeinsam nach einer Möglichkeit der Unterstützung suchen.</p>
   </section>
 
-  <section class="card">
+  <section class="section">
     <h2>Wobei wird Hilfe benötigt?</h2>
     <p>Beschreibe uns deine Situation möglichst kurz und verständlich. So können wir besser einschätzen, welche Unterstützung möglich ist.</p>
   </section>
 
-  <section class="card">
+  <section class="section">
     <h2>Gemeinsam helfen</h2>
     <p>Unser Ziel ist es, Menschen in schwierigen Situationen nicht allein zu lassen und Hilfe dort zu ermöglichen, wo sie dringend gebraucht wird.</p>
   </section>
@@ -73,7 +94,7 @@ footer a{color:#ff9b90}
   <section class="cta">
     <h2>Du möchtest helfen?</h2>
     <p>Jeder Beitrag kann etwas bewegen – für Menschen und Tiere. Gemeinsam können wir Hoffnung schenken.</p>
-    <a class="btn" href="spenden.html">Jetzt helfen &amp; spenden&nbsp; →</a>
+    <a class="btn" href="spenden.html">♥ Jetzt helfen &amp; spenden&nbsp; →</a>
   </section>
 
   <div class="back"><a href="mensch.html">← Zurück zu Hilfe für Menschen</a></div>
@@ -82,10 +103,14 @@ footer a{color:#ff9b90}
 <footer>
   <strong>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</strong><br>
   <span>Ein WIR für Mensch &amp; Tier.</span><br>
-  <a href="index.html">Startseite</a> &nbsp;·&nbsp; <a href="spenden.html">Spenden</a>
+  <a href="index.html">Zur Startseite</a> &nbsp;·&nbsp; <a href="spenden.html">Spenden</a>
 </footer>
 <script>
-document.getElementById('modeToggle').addEventListener('click',()=>document.body.classList.toggle('dark'));
+const modeToggle=document.getElementById('modeToggle');
+modeToggle.addEventListener('click',()=>{
+  const dark=document.body.classList.toggle('dark');
+  modeToggle.textContent=dark?'☀ Hell':'☾ Dunkel';
+});
 </script>
 </body>
 </html>
