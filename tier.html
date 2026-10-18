@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="de">
 <head>
@@ -6,116 +7,323 @@
 <meta name="theme-color" content="#fff8f1">
 <title>Hilfe für Tiere – Lebensbrücke Deutschland</title>
 <style>
-:root{--bg:#fff8f1;--paper:#fffdf9;--ink:#292b2e;--muted:#62646a;--coral:#e96f61;--coral-dark:#bd4d48;--soft:#f9e7df;--green:#e7f0e8;--line:#eadfd7;--shadow:0 12px 34px rgba(58,39,30,.09)}
-body.dark{--bg:#1d2426;--paper:#273033;--ink:#f7f1eb;--muted:#d0c7c0;--coral:#ff9181;--coral-dark:#ffb1a5;--soft:#3a3030;--green:#2c3a34;--line:#455052;--shadow:0 12px 34px rgba(0,0,0,.25)}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.55;transition:background .2s,color .2s}
-.topbar{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px clamp(18px,5vw,60px);background:var(--paper);border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:11px;font-weight:700;line-height:1.12}
-.brand-mark{width:43px;height:43px;display:grid;place-items:center;border:2px solid var(--coral);border-radius:50%;font-size:25px}
-.brand small{display:block;font-size:12px;font-weight:400;color:var(--muted);margin-top:4px}
-.mode{border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:30px;padding:10px 14px;font-weight:bold;cursor:pointer}
-.hero{position:relative;min-height:440px;display:flex;align-items:center;overflow:hidden;background:#3d4a43}
-.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(20,27,24,.78),rgba(20,27,24,.40) 58%,rgba(20,27,24,.08))}
-.hero-copy{position:relative;z-index:1;max-width:760px;padding:56px clamp(22px,7vw,88px);color:#fff}
-.eyebrow{font-size:12px;text-transform:uppercase;letter-spacing:.14em;font-weight:bold;color:#ffd0c3}
-h1,h2{font-family:Georgia,"Times New Roman",serif}
-.hero h1{font-size:clamp(39px,6.5vw,66px);line-height:1.02;margin:14px 0 18px}
-.hero p{font-size:clamp(17px,2.2vw,20px);max-width:540px;margin:0 0 24px}
-.cta{display:inline-flex;align-items:center;gap:10px;background:#ff9584;color:#30221e;text-decoration:none;font-weight:bold;padding:13px 20px;border-radius:30px}
-.intro{max-width:900px;margin:auto;text-align:center;padding:44px 22px 22px}
-.intro h2{font-size:clamp(28px,4vw,40px);line-height:1.15;margin:0 0 12px}
-.intro p{max-width:700px;margin:auto;color:var(--muted);font-size:17px}
-.services{max-width:1100px;margin:auto;padding:18px clamp(18px,4vw,42px) 48px}
-.service{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(22px,5vw,56px);align-items:center;padding:28px 0 36px;border-bottom:1px solid var(--line)}
-.service:nth-child(even) .service-photo{order:2}
-.service-photo{width:100%;height:260px;object-fit:cover;box-shadow:var(--shadow);border-radius:4px 48px 4px 48px}
-.service-copy{padding:6px 0}
-.kicker{color:var(--coral-dark);font-size:12px;letter-spacing:.12em;text-transform:uppercase;font-weight:bold}
-.service h2{font-size:clamp(29px,4vw,41px);line-height:1.1;margin:10px 0 12px}
-.service p{color:var(--muted);font-size:16px;margin:0 0 17px}
-.text-link{display:inline-flex;gap:9px;align-items:center;color:var(--coral-dark);font-weight:bold;text-decoration:none;border-bottom:2px solid var(--coral);padding-bottom:5px}
-.donate{max-width:1000px;margin:0 auto 48px;padding:30px clamp(20px,5vw,52px);background:var(--soft);border-radius:4px 40px 4px 40px}
-.donate h2{font-size:clamp(26px,3.6vw,35px);line-height:1.15;margin:0 0 10px}
-.donate p{color:var(--muted);margin:0 0 18px}
-.donate .cta{background:var(--coral);color:#241c1a}
-.footer{text-align:center;padding:25px 18px 38px;background:var(--paper);border-top:1px solid var(--line)}
-.footer a{display:inline-block;padding:12px 18px;border:1px solid var(--line);border-radius:28px;text-decoration:none;font-weight:bold}
-.footer p{font-size:13px;color:var(--muted);margin:14px 0 0}
-@media(max-width:700px){.hero{min-height:490px;align-items:flex-end}.hero img{object-position:58% center}.hero:after{background:linear-gradient(0deg,rgba(20,27,24,.86),rgba(20,27,24,.18) 85%)}.hero-copy{padding:38px 23px 34px}.service{grid-template-columns:1fr;gap:19px;padding:24px 0 30px}.service:nth-child(even) .service-photo{order:0}.service-photo{height:225px;border-radius:4px 36px 4px 36px}.intro{padding-top:36px}.donate{margin-left:16px;margin-right:16px}}
+:root {
+  --bg:#fff8f1; --paper:#fffdf9; --ink:#29332e;
+  --muted:#6e706c; --coral:#ef7768; --coral-dark:#b65d54;
+  --line:#e8ddd3; --nav:#fffdf9; --soft:#fbe8e2;
+}
+body.dark {
+  --bg:#202923; --paper:#2c3730; --ink:#f5f0e8;
+  --muted:#c7cec8; --coral:#ef8a7c; --coral-dark:#f3a397;
+  --line:#46534a; --nav:#202923; --soft:#44342f;
+}
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; scroll-padding-top:20px; }
+body {
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:Arial,sans-serif; line-height:1.65;
+}
+a { color:var(--coral-dark); }
+.topbar {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; padding:16px 5%; background:var(--nav);
+  border-bottom:1px solid var(--line);
+}
+.brand { display:flex; align-items:center; gap:12px; font-weight:700; }
+.brand-mark {
+  width:48px; height:48px; border:2px solid var(--coral);
+  border-radius:50%; display:grid; place-items:center;
+  color:#68409a; font-size:27px; flex-shrink:0;
+}
+.brand small { display:block; color:var(--muted); font-size:.9rem; font-weight:400; }
+.actions { display:flex; align-items:center; gap:9px; }
+.mode,.donate {
+  padding:10px 14px; border-radius:28px; font-weight:700;
+  cursor:pointer; text-decoration:none; font-size:.9rem;
+}
+.mode { color:var(--ink); background:var(--paper); border:1px solid var(--line); }
+.donate { color:#292b28; background:var(--coral); border:1px solid var(--coral); }
+.hero {
+  min-height:430px; display:flex; align-items:center;
+  padding:55px 6%; position:relative; overflow:hidden;
+  background:#394239;
+}
+.hero::before {
+  content:""; position:absolute; inset:0;
+  background:linear-gradient(90deg,rgba(22,27,22,.78),rgba(22,27,22,.25)),
+  url("https://images.unsplash.com/photo-1516734212186-a967f81ad0d7?auto=format&fit=crop&w=1800&q=85")
+  center 45%/cover;
+}
+.hero-copy { position:relative; z-index:1; max-width:760px; color:white; }
+.eyebrow {
+  color:#f5b8ad; font-size:.85rem; font-weight:700;
+  letter-spacing:2px; text-transform:uppercase;
+}
+h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; line-height:1.2; }
+.hero h1 { font-size:clamp(2.5rem,7vw,4.2rem); margin:15px 0; }
+.hero p { font-size:clamp(1.05rem,2.5vw,1.35rem); }
+main { max-width:1000px; margin:auto; padding:40px 22px 55px; }
+.intro { text-align:center; max-width:760px; margin:0 auto 32px; }
+.intro h2 { font-size:clamp(2rem,5vw,2.8rem); margin:10px 0; }
+.intro p { color:var(--muted); font-size:1.08rem; }
+.service {
+  display:grid; grid-template-columns:1fr 1fr; gap:28px;
+  align-items:center; padding:28px 0 35px;
+  border-bottom:1px solid var(--line);
+}
+.service:nth-child(even) img { order:2; }
+.service img {
+  width:100%; height:280px; object-fit:cover;
+  border-radius:25px; display:block;
+}
+.kicker { color:var(--coral-dark); font-weight:700;
+  letter-spacing:1.5px; font-size:.82rem; }
+.service h2 { font-size:clamp(1.9rem,4vw,2.5rem); margin:8px 0; }
+.service p { color:var(--muted); font-size:1.05rem; }
+.form-section {
+  margin-top:48px; padding:clamp(22px,5vw,42px);
+  background:var(--paper); border:1px solid var(--line);
+  border-radius:28px;
+}
+.form-section h2 { font-size:clamp(1.9rem,5vw,2.6rem); margin:10px 0; }
+.form-section>p { color:var(--muted); }
+.step-title { display:flex; align-items:center; gap:13px; margin-top:28px; }
+.step-number {
+  width:43px; height:43px; border-radius:50%; display:grid;
+  place-items:center; background:var(--soft); color:var(--coral-dark);
+  font-weight:700; flex-shrink:0;
+}
+label { display:block; margin:17px 0 7px; font-weight:700; }
+input,select,textarea {
+  display:block; width:100%; padding:14px;
+  font:inherit; color:var(--ink); background:var(--bg);
+  border:1px solid var(--line); border-radius:13px;
+}
+textarea { min-height:125px; resize:vertical; }
+.choice-list { display:grid; gap:10px; margin-top:15px; }
+.choice {
+  display:flex; align-items:flex-start; gap:12px;
+  border:1px solid var(--line); background:var(--bg);
+  border-radius:16px; padding:15px; cursor:pointer;
+}
+.choice input { width:20px; height:20px; margin:4px 0 0; flex-shrink:0; accent-color:var(--coral); }
+.choice strong { display:block; }
+.choice small { display:block; color:var(--muted); margin-top:3px; }
+.check { display:flex; gap:10px; align-items:flex-start; font-weight:400; }
+.check input { width:20px; margin-top:7px; flex-shrink:0; }
+.submit {
+  width:100%; padding:16px; margin-top:22px;
+  border:0; border-radius:30px; background:var(--coral);
+  color:#292b28; font-size:1.05rem; font-weight:700; cursor:pointer;
+}
+.note { background:var(--soft); border-radius:15px; padding:16px; color:var(--muted); font-size:.92rem; }
+.donation {
+  margin:45px auto 0; padding:30px 24px; text-align:center;
+  background:var(--paper); border:1px solid var(--line); border-radius:25px;
+}
+.donation h2 { font-size:clamp(1.9rem,5vw,2.5rem); }
+.donation p { color:var(--muted); }
+.donation a { display:inline-block; padding:14px 24px; border-radius:28px;
+  background:var(--coral); color:#292b28; text-decoration:none; font-weight:700; }
+footer { text-align:center; padding:28px 18px; background:var(--nav); border-top:1px solid var(--line); }
+footer p { color:var(--muted); }
+footer a { display:inline-block; margin:5px; }
+@media(max-width:700px) {
+  .topbar { padding:12px; }
+  .brand { font-size:.9rem; gap:8px; }
+  .brand-mark { width:42px; height:42px; }
+  .mode,.donate { font-size:.8rem; padding:9px 10px; }
+  .hero { min-height:410px; padding:40px 22px; }
+  main { padding:32px 18px 42px; }
+  .service { grid-template-columns:1fr; gap:12px; padding:24px 0 30px; }
+  .service:nth-child(even) img { order:0; }
+  .service img { height:240px; }
+}
 </style>
 </head>
 <body>
-<nav class="topbar" aria-label="Kopfbereich">
-  <div class="brand"><div class="brand-mark" aria-hidden="true">♡</div><div>Lebensbrücke Deutschland<small>Mensch &amp; Tiere e. V.</small></div></div>
-  <button class="mode" id="modeButton" type="button">🌙 Dunkel</button>
-</nav>
-
-<header class="hero">
-  <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1800&q=85" alt="Hunde gemeinsam auf einer Wiese">
-  <div class="hero-copy">
-    <div class="eyebrow">Hinschauen. Helfen. Zusammenhalten.</div>
-    <h1>Weil jedes Tier Geborgenheit verdient.</h1>
-    <p>Wenn ein Tier Hilfe braucht, zählt jeder Schritt. Wir möchten gemeinsam schauen, welche Unterstützung möglich ist – respektvoll und ohne Vorurteile.</p>
-    <a class="cta" href="#hilfeangebote">Hilfe entdecken <span aria-hidden="true">→</span></a>
+<header class="topbar">
+  <div class="brand">
+    <span class="brand-mark" aria-hidden="true">♡</span>
+    <span>Lebensbrücke Deutschland<small>Mensch &amp; Tier e. V.</small></span>
+  </div>
+  <div class="actions">
+    <button class="mode" id="modeButton" type="button">☾ Dunkel</button>
+    <a class="donate" href="spenden.html">Jetzt spenden</a>
   </div>
 </header>
 
-<section class="intro" id="hilfeangebote">
-  <h2>Ein WIR für Mensch &amp; Tier.</h2>
-  <p>Wähle das passende Anliegen. Mit wenigen Schritten gelangst du zur richtigen Anfrageseite.</p>
-</section>
+<header class="hero">
+  <div class="hero-copy">
+    <div class="eyebrow">Wir hören zu und schauen gemeinsam</div>
+    <h1>Hilfe für dein Tier anfragen.</h1>
+    <p>Wenn Tierarztkosten oder die Versorgung zur Belastung werden, musst du dich nicht schämen, um Unterstützung zu bitten.</p>
+  </div>
+</header>
 
-<main class="services">
-  <section class="service">
-    <img class="service-photo" src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&fit=crop&w=1000&q=85" alt="Tier beim Tierarzt" loading="lazy">
-    <div class="service-copy">
-      <div class="kicker">01 · Medizinische Versorgung</div>
+<main>
+  <section class="intro">
+    <div class="eyebrow">Ein WIR für Mensch &amp; Tier</div>
+    <h2>Welche Hilfe wird benötigt?</h2>
+    <p>Hier findest du unsere Hilfsangebote. Am Ende kannst du in einem einzigen Formular auswählen, wobei du Unterstützung brauchst.</p>
+  </section>
+
+  <section class="service" id="tierarzt">
+    <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&fit=crop&w=1200&q=85" alt="Hund bei einer tierärztlichen Untersuchung">
+    <div>
+      <div class="kicker">01 · MEDIZINISCHE VERSORGUNG</div>
       <h2>Tierarztkosten</h2>
-      <p>Wenn notwendige tierärztliche Behandlungen finanziell schwer zu stemmen sind, kannst du hier Unterstützung anfragen.</p>
-      <a class="text-link" href="tier-hilfe-antrag.html">Hilfe anfragen <span aria-hidden="true">→</span></a>
+      <p>Wenn eine notwendige Untersuchung oder Behandlung finanziell schwer zu stemmen ist, kannst du uns deine Situation schildern.</p>
     </div>
   </section>
 
-  <section class="service">
-    <img class="service-photo" src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1000&q=85" alt="Futter für Hunde und Katzen" loading="lazy">
-    <div class="service-copy">
-      <div class="kicker">02 · Versorgung im Alltag</div>
+  <section class="service" id="futter">
+    <img src="https://images.unsplash.com/photo-1589924691995-400dc9ecc119?auto=format&fit=crop&w=1200&q=85" alt="Futter für Haustiere">
+    <div>
+      <div class="kicker">02 · VERSORGUNG IM ALLTAG</div>
       <h2>Futterhilfe</h2>
-      <p>Manchmal hilft schon ein gefüllter Napf. Wenn du Futter für dein Tier benötigst, kannst du uns dein Anliegen schildern.</p>
-      <a class="text-link" href="tier-hilfe-antrag.html">Hilfe anfragen <span aria-hidden="true">→</span></a>
+      <p>Wenn das Geld für geeignetes Tierfutter knapp ist, prüfen wir, ob Unterstützung möglich ist.</p>
     </div>
   </section>
 
-  <section class="service">
-    <img class="service-photo" src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1000&q=85" alt="Hund schaut aufmerksam in die Kamera" loading="lazy">
-    <div class="service-copy">
-      <div class="kicker">03 · Individuelle Unterstützung</div>
-      <h2>Sonstige Hilfe für Tiere</h2>
-      <p>Du hast eine andere schwierige Situation mit deinem Tier? Beschreibe uns, wobei du Unterstützung brauchst.</p>
-      <a class="text-link" href="tier-hilfe-antrag.html">Hilfe anfragen <span aria-hidden="true">→</span></a>
+  <section class="service" id="zubehoer">
+    <img src="https://images.unsplash.com/photo-1601758228041-f3b2795255f1?auto=format&fit=crop&w=1200&q=85" alt="Hund erhält liebevolle Zuwendung">
+    <div>
+      <div class="kicker">03 · ZUBEHÖR UND GRUNDBEDARF</div>
+      <h2>Zubehör &amp; Versorgung</h2>
+      <p>Manchmal fehlen wichtige Dinge für den Alltag mit einem Tier. Teile uns mit, was benötigt wird.</p>
     </div>
+  </section>
+
+  <section class="service" id="sonstiges">
+    <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=1200&q=85" alt="Hund in einer grünen Umgebung">
+    <div>
+      <div class="kicker">04 · INDIVIDUELLE UNTERSTÜTZUNG</div>
+      <h2>Sonstige Hilfe</h2>
+      <p>Du hast eine andere schwierige Situation mit deinem Tier? Beschreibe uns, welche Unterstützung du brauchst.</p>
+    </div>
+  </section>
+
+  <section class="form-section" id="anfrage">
+    <div class="eyebrow">Dein Anliegen</div>
+    <h2>Hilfe für dein Tier anfragen</h2>
+    <p>Fülle das Formular einmal aus. Wir prüfen jedes Anliegen individuell. Eine Anfrage bedeutet keine automatische Zusage von Unterstützung.</p>
+
+    <form id="helpForm">
+      <div class="step-title"><span class="step-number">1</span><h3>Deine Kontaktdaten</h3></div>
+      <label for="name">Vor- und Nachname *</label>
+      <input id="name" name="name" autocomplete="name" required placeholder="Dein Name">
+
+      <label for="email">E-Mail-Adresse *</label>
+      <input id="email" name="email" type="email" autocomplete="email" required placeholder="Deine E-Mail-Adresse">
+
+      <label for="phone">Telefon (optional)</label>
+      <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Für Rückfragen">
+
+      <label for="location">Postleitzahl / Ort *</label>
+      <input id="location" name="location" autocomplete="postal-code" required placeholder="PLZ und Ort">
+
+      <div class="step-title"><span class="step-number">2</span><h3>Wobei braucht dein Tier Hilfe?</h3></div>
+      <div class="choice-list">
+        <label class="choice"><input type="radio" name="helpType" value="Tierarztkosten" required><span><strong>🩺 Tierarztkosten</strong><small>Behandlung oder Untersuchung</small></span></label>
+        <label class="choice"><input type="radio" name="helpType" value="Futterhilfe"><span><strong>🐾 Futterhilfe</strong><small>Futter oder Grundversorgung</small></span></label>
+        <label class="choice"><input type="radio" name="helpType" value="Zubehör & Versorgung"><span><strong>🧺 Zubehör &amp; Versorgung</strong><small>Wichtige Dinge für dein Tier</small></span></label>
+        <label class="choice"><input type="radio" name="helpType" value="Sonstige Hilfe"><span><strong>💛 Sonstige Hilfe</strong><small>Eine andere schwierige Situation</small></span></label>
+      </div>
+
+      <label for="animal">Tierart *</label>
+      <select id="animal" name="animal" required>
+        <option value="">Bitte auswählen</option>
+        <option>Hund</option><option>Katze</option><option>Kleintier</option>
+        <option>Vogel</option><option>Anderes Tier</option>
+      </select>
+
+      <label for="count">Anzahl der Tiere (optional)</label>
+      <input id="count" name="count" type="number" min="1" step="1" placeholder="z. B. 2">
+
+      <label for="situation">Beschreibung deiner Situation *</label>
+      <textarea id="situation" name="situation" required placeholder="Wobei brauchst du Unterstützung?"></textarea>
+
+      <label for="amount">Benötigter Betrag in Euro (optional)</label>
+      <input id="amount" name="amount" type="number" min="0" step="0.01" placeholder="z. B. 250">
+
+      <label for="details">Weitere Informationen (optional)</label>
+      <textarea id="details" name="details" placeholder="Was sollten wir noch wissen?"></textarea>
+
+      <label class="check"><input type="checkbox" id="privacy" required><span>Ich habe die Datenschutzhinweise gelesen und stimme der Verarbeitung meiner Angaben zur Bearbeitung meiner Anfrage zu. *</span></label>
+
+      <button class="submit" type="submit">Hilfeanfrage vorbereiten →</button>
+      <p class="note">Das Formular bereitet eine E-Mail vor. Sie wird nicht automatisch versendet. Bitte prüfe die Angaben und bestätige den Versand in deinem E-Mail-Programm. Eine Unterstützung wird nicht automatisch zugesagt.</p>
+      <p id="status" role="status" aria-live="polite"></p>
+    </form>
+  </section>
+
+  <section class="donation">
+    <div class="eyebrow">Gemeinsam helfen</div>
+    <h2>Wo Mitgefühl zu Hilfe wird.</h2>
+    <p>Auch eine Spende kann helfen. Die Online-Zahlung ist derzeit noch nicht eingerichtet.</p>
+    <a href="spenden.html">Zur Spendenseite →</a>
   </section>
 </main>
 
-<section class="donate">
-  <h2>Du möchtest helfen? Das bewegt etwas.</h2>
-  <p>Jede Spende kann dazu beitragen, Tiere und ihre Menschen in schwierigen Zeiten zu unterstützen.</p>
-  <a class="cta" href="spenden.html">💛 Jetzt helfen <span aria-hidden="true">→</span></a>
-</section>
-
-<footer class="footer">
-  <a href="hilfe.html">← Zurück zur Hilfe</a>
-  <p>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</p>
+<footer>
+  <strong>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</strong>
+  <p>Ein WIR für Mensch &amp; Tier.</p>
+  <a href="index.html">Startseite</a>
+  <a href="hilfe.html">Hilfe</a>
+  <a href="spenden.html">Spenden</a>
+  <a href="impressum.html">Impressum</a>
+  <a href="datenschutz.html">Datenschutz</a>
 </footer>
 
 <script>
 const modeButton = document.getElementById("modeButton");
+try {
+  if (localStorage.getItem("lebensbruecke-mode") === "dark") {
+    document.body.classList.add("dark");
+  }
+} catch (e) {}
+
+function updateModeLabel() {
+  modeButton.textContent = document.body.classList.contains("dark") ? "☀ Hell" : "☾ Dunkel";
+}
+updateModeLabel();
+
 modeButton.addEventListener("click", () => {
   document.body.classList.toggle("dark");
-  const dark = document.body.classList.contains("dark");
-  modeButton.textContent = dark ? "☀️ Hell" : "🌙 Dunkel";
+  try {
+    localStorage.setItem("lebensbruecke-mode",
+      document.body.classList.contains("dark") ? "dark" : "light");
+  } catch (e) {}
+  updateModeLabel();
+});
+
+document.getElementById("helpForm").addEventListener("submit", event => {
+  event.preventDefault();
+  const form = event.currentTarget;
+  if (!form.reportValidity()) return;
+
+  const data = new FormData(form);
+  const subject = "Hilfeanfrage für ein Tier: " + data.get("helpType");
+  const body = [
+    "Name: " + data.get("name"),
+    "E-Mail: " + data.get("email"),
+    "Telefon: " + (data.get("phone") || "Keine Angabe"),
+    "PLZ / Ort: " + data.get("location"),
+    "Gewünschte Hilfe: " + data.get("helpType"),
+    "Tierart: " + data.get("animal"),
+    "Anzahl der Tiere: " + (data.get("count") || "Keine Angabe"),
+    "Beschreibung:\n" + data.get("situation"),
+    "Benötigter Betrag: " + (data.get("amount") || "Keine Angabe") + " Euro",
+    "Weitere Informationen:\n" + (data.get("details") || "Keine Angabe")
+  ].join("\n\n");
+
+  document.getElementById("status").textContent =
+    "Dein E-Mail-Programm wird geöffnet. Bitte prüfe die Angaben und sende die E-Mail dort ab.";
+
+  window.location.href = "mailto:info@lebensbruecke-deutschland.de"
+    + "?subject=" + encodeURIComponent(subject)
+    + "&body=" + encodeURIComponent(body);
 });
 </script>
 </body>
