@@ -1,281 +1,517 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="light">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Hilfe für Menschen beantragen – Lebensbrücke</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#fff8f1">
+<title>Hilfe für Menschen – Lebensbrücke Deutschland</title>
 
 <style>
+:root {
+  --bg: #fff8f1;
+  --paper: #fffdf9;
+  --field: #fff8f1;
+  --ink: #292d29;
+  --muted: #70756f;
+  --coral: #ef8175;
+  --coral-dark: #ad625a;
+  --line: #e9ded4;
+  --soft: #fbe7e1;
+  --notice: #e6f1e8;
+  --shadow: 0 12px 35px rgba(67,48,34,.07);
+}
+
+html[data-theme="dark"] {
+  --bg: #20231f;
+  --paper: #2b2f2a;
+  --field: #343832;
+  --ink: #f7f0e8;
+  --muted: #c0c3bb;
+  --coral: #f18b7e;
+  --coral-dark: #f2a096;
+  --line: #484b43;
+  --soft: #45332f;
+  --notice: #303f34;
+  --shadow: 0 12px 35px rgba(0,0,0,.16);
+}
+
+* { box-sizing: border-box; }
+
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #fff8f2;
-  color: #333;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.65;
 }
 
-header {
-  background: #d94f4f;
-  color: white;
-  text-align: center;
-  padding: 30px 20px;
+.topbar {
+  background: var(--paper);
+  padding: 18px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--line);
 }
 
-header h1 {
-  margin: 0;
-  font-size: 30px;
-}
-
-header p {
-  margin: 10px 0 0;
-  font-size: 17px;
-  line-height: 1.5;
-}
-
-.wir {
-  background: #ffe3d6;
-  color: #9f4141;
-  text-align: center;
-  padding: 17px;
-  font-size: 19px;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 13px;
   font-weight: bold;
+  color: var(--coral-dark);
+  line-height: 1.35;
 }
 
-.content {
-  padding: 25px 20px;
-  max-width: 650px;
+.brand-mark {
+  width: 54px;
+  height: 54px;
+  border: 3px solid var(--coral);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 30px;
+  color: #673d8c;
+  flex-shrink: 0;
+}
+
+.brand small {
+  display: block;
+  color: var(--muted);
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.mode {
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 11px 16px;
+  background: var(--bg);
+  color: var(--ink);
+  font-size: 15px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.hero {
+  min-height: 330px;
+  padding: 55px 28px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgba(28,30,26,.76), rgba(28,30,26,.22)),
+    url("https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1400&q=85")
+    center 48% / cover;
+  color: white;
+}
+
+.hero-inner {
+  max-width: 760px;
   margin: auto;
+  width: 100%;
+}
+
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-size: 13px;
+  font-weight: bold;
+  color: #ffd4cb;
+}
+
+h1, h2 {
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.12;
+}
+
+h1 {
+  font-size: clamp(38px, 8vw, 60px);
+  margin: 12px 0;
+}
+
+.hero p {
+  font-size: clamp(17px, 4vw, 23px);
+  max-width: 650px;
+  margin-bottom: 0;
 }
 
 .intro {
-  font-size: 18px;
-  line-height: 1.5;
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 38px 24px 24px;
   text-align: center;
-  margin-bottom: 25px;
+}
+
+.intro h2 {
+  font-size: clamp(30px, 6vw, 43px);
+  margin: 0 0 15px;
+}
+
+.intro p {
+  color: var(--muted);
+  font-size: 18px;
+  margin: 0;
 }
 
 form {
-  background: white;
-  padding: 22px;
-  border-radius: 20px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  max-width: 760px;
+  margin: 18px auto 45px;
+  padding: 0 20px;
 }
 
-label {
-  display: block;
-  margin-top: 18px;
-  margin-bottom: 7px;
+.section {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 30px;
+  padding: 28px 24px;
+  margin-bottom: 22px;
+  box-shadow: var(--shadow);
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.number {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--soft);
+  color: var(--coral-dark);
+  font-size: 22px;
   font-weight: bold;
-  color: #b04444;
+  flex-shrink: 0;
 }
 
-input,
+.section-title h2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 23px;
+  line-height: 1.3;
+  margin: 0;
+}
+
+label.field-label {
+  display: block;
+  font-weight: bold;
+  margin: 20px 0 8px;
+}
+
+input:not([type="checkbox"]),
 select,
 textarea {
+  display: block;
   width: 100%;
-  box-sizing: border-box;
-  padding: 13px;
-  border: 2px solid #f0d8ce;
-  border-radius: 10px;
-  font-size: 16px;
-  font-family: Arial, sans-serif;
+  padding: 15px 16px;
+  background: var(--field);
+  color: var(--ink);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  font: inherit;
+  font-size: 17px;
 }
 
 textarea {
-  min-height: 120px;
+  min-height: 145px;
   resize: vertical;
 }
 
-.checkbox {
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid var(--coral);
+  outline-offset: 2px;
+}
+
+.help-options {
+  display: grid;
+  gap: 12px;
+  margin: 12px 0 22px;
+}
+
+.help-option {
   display: flex;
-  gap: 10px;
   align-items: flex-start;
-  margin-top: 20px;
-  font-weight: normal;
-  color: #333;
+  gap: 12px;
+  border: 1px solid var(--line);
+  background: var(--field);
+  border-radius: 20px;
+  padding: 15px;
+  cursor: pointer;
 }
 
-.checkbox input {
-  width: auto;
-  margin-top: 4px;
+.help-option input {
+  margin-top: 7px;
+  accent-color: var(--coral);
+  flex-shrink: 0;
 }
 
-button {
-  width: 100%;
-  margin-top: 25px;
-  padding: 16px;
-  border: none;
-  border-radius: 14px;
-  background: #f0a900;
-  color: white;
-  font-size: 19px;
+.help-option strong {
+  display: block;
+  font-size: 17px;
+}
+
+.help-option span {
+  display: block;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.consent {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  margin: 24px 0;
+  color: var(--muted);
   font-weight: bold;
 }
 
-.hinweis {
-  margin-top: 20px;
-  padding: 15px;
-  background: #fff4d6;
-  border-radius: 12px;
-  font-size: 14px;
-  line-height: 1.5;
+.consent input {
+  margin-top: 7px;
+  width: 21px;
+  height: 21px;
+  accent-color: var(--coral);
+  flex-shrink: 0;
 }
 
-.email-hinweis {
+.submit {
+  display: block;
+  width: 100%;
+  padding: 17px 18px;
+  border: none;
+  border-radius: 40px;
+  background: var(--coral);
+  color: #292d29;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.notice {
   margin-top: 18px;
-  padding: 14px;
-  background: #fff0eb;
-  border-radius: 12px;
-  color: #a04444;
-  text-align: center;
-  font-size: 14px;
+  padding: 18px;
+  border-radius: 20px;
+  background: var(--notice);
+  color: var(--ink);
+  font-size: 15px;
 }
 
-.back {
-  text-align: center;
-  padding: 25px;
+.closing {
+  max-width: 760px;
+  margin: 0 auto 35px;
+  padding: 0 20px;
 }
 
-.back a {
-  color: #9f4141;
+.closing img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 28px;
+  display: block;
+}
+
+.closing-text {
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 0 0 28px 28px;
+  padding: 22px;
+  margin-top: -5px;
+}
+
+.closing-text h2 {
+  font-size: 30px;
+  margin: 0 0 10px;
+}
+
+.closing-text p, .closing-text li {
+  color: var(--muted);
+}
+
+footer {
+  text-align: center;
+  padding: 28px 18px 38px;
+  background: var(--paper);
+  border-top: 1px solid var(--line);
+}
+
+footer a {
+  color: var(--coral-dark);
   text-decoration: none;
   font-weight: bold;
+  display: inline-block;
+  margin: 8px 12px;
+}
+
+@media (min-width: 650px) {
+  .section { padding: 34px; }
+  .hero { min-height: 390px; }
+}
+
+@media (max-width: 390px) {
+  .topbar { padding: 14px; }
+  .brand { font-size: 14px; }
+  .brand-mark { width: 44px; height: 44px; }
+  .mode { padding: 9px 11px; font-size: 13px; }
+  .section { padding: 22px 17px; border-radius: 24px; }
 }
 </style>
 </head>
 
 <body>
-
-<header>
-  <h1>❤️ Hilfe für Menschen</h1>
-  <p>
-    Niemand sollte mit seiner Not allein bleiben.
-  </p>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark">♡</div>
+    <div>
+      Lebensbrücke Deutschland
+      <small>Mensch &amp; Tier e. V.</small>
+    </div>
+  </div>
+  <button class="mode" id="modeButton" type="button">🌙 Dunkel</button>
 </header>
 
-<div class="wir">
-  Ein WIR für Mensch &amp; Tier. 🐾❤️
-</div>
-
-<div class="content">
-
-  <div class="intro">
-    Bitte beschreibe uns deine Situation möglichst genau.
-    Wir schauen uns dein Anliegen an und prüfen,
-    welche Unterstützung möglich ist.
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Wir hören zu und schauen gemeinsam</div>
+    <h1>Hilfe für Menschen anfragen.</h1>
+    <p>Wenn das Leben schwierig wird, musst du dich nicht schämen, um Unterstützung zu bitten.</p>
   </div>
+</section>
 
-  <form
-    action="mailto:info@lebensbruecke-deutschland.de"
-    method="post"
-    enctype="text/plain"
-  >
+<section class="intro">
+  <h2>Ein WIR für Mensch &amp; Tier.</h2>
+  <p>Fülle das Formular in Ruhe aus. Angaben mit * sind erforderlich. Wir prüfen, welche Unterstützung möglich ist.</p>
+</section>
 
-    <label for="name">Dein Name *</label>
-    <input
-      type="text"
-      id="name"
-      name="Name"
-      required
-    >
+<form id="hilfeForm">
+  <section class="section">
+    <div class="section-title">
+      <div class="number">1</div>
+      <h2>Deine Kontaktdaten</h2>
+    </div>
 
-    <label for="email">E-Mail-Adresse *</label>
-    <input
-      type="email"
-      id="email"
-      name="E-Mail-Adresse"
-      required
-    >
+    <label class="field-label" for="name">Vor- und Nachname *</label>
+    <input id="name" name="Name" autocomplete="name" placeholder="Dein Name" required>
 
-    <label for="telefon">Telefonnummer</label>
-    <input
-      type="tel"
-      id="telefon"
-      name="Telefonnummer"
-    >
+    <label class="field-label" for="email">E-Mail-Adresse *</label>
+    <input id="email" name="E-Mail-Adresse" type="email" autocomplete="email" placeholder="name@beispiel.de" required>
 
-    <label for="hilfe">Wobei wird Hilfe benötigt? *</label>
-    <select
-      id="hilfe"
-      name="Benötigte Hilfe"
-      required
-    >
+    <label class="field-label" for="telefon">Telefon (optional)</label>
+    <input id="telefon" name="Telefon" type="tel" autocomplete="tel" placeholder="Für Rückfragen">
+
+    <label class="field-label" for="ort">Postleitzahl / Ort *</label>
+    <input id="ort" name="Postleitzahl und Ort" autocomplete="postal-code" placeholder="PLZ und Ort" required>
+  </section>
+
+  <section class="section">
+    <div class="section-title">
+      <div class="number">2</div>
+      <h2>Wobei brauchst du Hilfe?</h2>
+    </div>
+
+    <div class="help-options">
+      <label class="help-option">
+        <input type="radio" name="Benötigte Hilfe" value="Finanzielle Notlage" required>
+        <div><strong>💶 Finanzielle Notlage</strong><span>Wenn das Geld für das Nötigste nicht reicht</span></div>
+      </label>
+
+      <label class="help-option">
+        <input type="radio" name="Benötigte Hilfe" value="Lebensmittel und Alltag">
+        <div><strong>🛒 Lebensmittel &amp; Alltag</strong><span>Lebensmittel oder wichtige Dinge des täglichen Bedarfs</span></div>
+      </label>
+
+      <label class="help-option">
+        <input type="radio" name="Benötigte Hilfe" value="Wohnen und Sicherheit">
+        <div><strong>🏠 Wohnen &amp; Sicherheit</strong><span>Wenn die Wohnsituation schwierig ist</span></div>
+      </label>
+
+      <label class="help-option">
+        <input type="radio" name="Benötigte Hilfe" value="Unterstützung im Alltag">
+        <div><strong>🤝 Unterstützung im Alltag</strong><span>Hilfe bei alltäglichen Herausforderungen</span></div>
+      </label>
+
+      <label class="help-option">
+        <input type="radio" name="Benötigte Hilfe" value="Sonstige Hilfe">
+        <div><strong>💛 Sonstige Hilfe</strong><span>Eine andere schwierige Situation</span></div>
+      </label>
+    </div>
+
+    <label class="field-label" for="beschreibung">Beschreibe deine Situation *</label>
+    <textarea id="beschreibung" name="Beschreibung der Situation" placeholder="Was ist passiert und welche Unterstützung wäre hilfreich? Bitte keine unnötigen sensiblen Angaben eintragen." required></textarea>
+
+    <label class="field-label" for="betrag">Voraussichtliche Kosten oder Bedarf (optional)</label>
+    <input id="betrag" name="Kosten oder Bedarf" placeholder="z. B. 180 € oder Lebensmittel">
+
+    <label class="field-label" for="dringlichkeit">Wie dringend ist die Hilfe?</label>
+    <select id="dringlichkeit" name="Dringlichkeit">
       <option value="">Bitte auswählen</option>
-      <option>Finanzielle Notlage</option>
-      <option>Lebensmittel &amp; Alltag</option>
-      <option>Wohnen</option>
-      <option>Mobilität</option>
-      <option>Unterstützung im Alltag</option>
-      <option>Sonstige Hilfe</option>
+      <option>Sehr dringend</option>
+      <option>Innerhalb der nächsten Tage</option>
+      <option>Es besteht kein unmittelbarer Zeitdruck</option>
     </select>
 
-    <label for="beschreibung">
-      Beschreibung der Situation *
+    <label class="consent">
+      <input type="checkbox" id="bestaetigung" required>
+      <span>Ich bestätige, dass meine Angaben nach bestem Wissen richtig sind. *</span>
     </label>
 
-    <textarea
-      id="beschreibung"
-      name="Beschreibung"
-      placeholder="Beschreibe bitte deine Situation und wobei du Hilfe benötigst."
-      required
-    ></textarea>
-
-    <label for="betrag">
-      Falls es um finanzielle Hilfe geht:
-      benötigter Betrag
+    <label class="consent">
+      <input type="checkbox" id="datenschutz" required>
+      <span>Ich habe die Datenschutzhinweise gelesen und bin mit der Verwendung meiner Angaben zur Bearbeitung der Anfrage einverstanden. *</span>
     </label>
 
-    <input
-      type="text"
-      id="betrag"
-      name="Benötigter Betrag"
-      placeholder="z. B. 250 €"
-    >
+    <button class="submit" type="submit">💛 Hilfeanfrage vorbereiten →</button>
 
-    <label for="weitere">
-      Weitere Informationen
-    </label>
-
-    <textarea
-      id="weitere"
-      name="Weitere Informationen"
-      placeholder="Gibt es noch etwas, das wir wissen sollten?"
-    ></textarea>
-
-    <label class="checkbox">
-      <input
-        type="checkbox"
-        required
-      >
-      <span>
-        Ich bestätige, dass meine Angaben nach bestem Wissen
-        und Gewissen richtig sind.
-      </span>
-    </label>
-
-    <button type="submit">
-      ❤️ Hilfeanfrage absenden
-    </button>
-
-    <div class="email-hinweis">
-      Deine Anfrage wird an<br>
-      <strong>info@lebensbruecke-deutschland.de</strong>
-      gesendet.
+    <div class="notice" id="versandHinweis">
+      <strong>Wichtig:</strong> Dieses Formular ist noch nicht mit einem sicheren Versanddienst verbunden. Beim Absenden wird deshalb keine Anfrage automatisch an den Verein übermittelt. Vor der Veröffentlichung müssen die Datenschutzerklärung verlinkt und ein sicherer Versandweg eingerichtet werden.
     </div>
+  </section>
+</form>
 
-    <div class="hinweis">
-      Bitte beachte: Das Absenden einer Anfrage bedeutet
-      keine automatische Zusage von Unterstützung.
-      Wir prüfen jedes Anliegen individuell.
-    </div>
+<section class="closing">
+  <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1200&q=85" alt="Menschen unterstützen einander">
+  <div class="closing-text">
+    <h2>Du bist nicht allein.</h2>
+    <p>Jede Anfrage wird individuell betrachtet. Eine Unterstützung kann nicht garantiert werden.</p>
+    <ul>
+      <li>Beschreibe deinen Bedarf möglichst klar.</li>
+      <li>Wenn vorhanden, halte Nachweise oder Kostenvoranschläge bereit.</li>
+      <li>Wir prüfen dein Anliegen so sorgfältig wie möglich.</li>
+    </ul>
+  </div>
+</section>
 
-  </form>
-
-</div>
-
-<div class="back">
+<footer>
   <a href="mensch.html">← Zurück zu Hilfe für Menschen</a>
-</div>
+  <a href="index.html">Zur Startseite</a>
+  <p>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</p>
+</footer>
 
+<script>
+const modeButton = document.getElementById("modeButton");
+const savedTheme = localStorage.getItem("lebensbruecke-mode");
+
+if (savedTheme === "dark") {
+  document.documentElement.dataset.theme = "dark";
+  modeButton.textContent = "☀️ Hell";
+}
+
+modeButton.addEventListener("click", () => {
+  const dark = document.documentElement.dataset.theme !== "dark";
+  document.documentElement.dataset.theme = dark ? "dark" : "light";
+  modeButton.textContent = dark ? "☀️ Hell" : "🌙 Dunkel";
+  localStorage.setItem("lebensbruecke-mode", dark ? "dark" : "light");
+});
+
+document.getElementById("hilfeForm").addEventListener("submit", event => {
+  event.preventDefault();
+  document.getElementById("versandHinweis").scrollIntoView({
+    behavior: "smooth",
+    block: "center"
+  });
+});
+</script>
 </body>
 </html>
