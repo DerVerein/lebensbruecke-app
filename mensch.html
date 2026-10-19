@@ -1,152 +1,215 @@
+
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" data-theme="light">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#fff8f1">
 <title>Hilfe für Menschen – Lebensbrücke Deutschland</title>
 <style>
-:root{--bg:#fff8f1;--paper:#fffdf9;--ink:#26302f;--muted:#626967;--coral:#ff8f80;--coral-dark:#c85e51;--line:#eaded5;--soft:#fbe5dd;--sage:#e5f0e7;--shadow:0 14px 38px rgba(48,37,31,.09)}
-body.dark{--bg:#1d2928;--paper:#293635;--ink:#f7f0e9;--muted:#d0d0c9;--coral:#ff9a89;--coral-dark:#ffb0a2;--line:#465250;--soft:#493633;--sage:#30443b;--shadow:0 14px 38px rgba(0,0,0,.22)}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.65;transition:background .2s,color .2s}
-a{color:inherit}
-.topbar{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:18px clamp(18px,5vw,64px);background:var(--paper);border-bottom:1px solid var(--line)}
-.brand{display:flex;align-items:center;gap:13px;text-decoration:none}
-.brand-mark{width:48px;height:48px;border:2px solid var(--coral);border-radius:50%;display:grid;place-items:center;font-size:26px;flex-shrink:0}
-.brand strong{display:block;font-size:clamp(16px,2.5vw,23px);line-height:1.2}
-.brand small{display:block;color:var(--muted);font-size:14px;margin-top:4px}
-.mode{border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:11px 16px;font-size:15px;font-weight:bold;cursor:pointer}
-.hero{position:relative;min-height:530px;display:flex;align-items:center;overflow:hidden;background:#51433b}
-.hero>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 45%}
-.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(25,27,25,.78) 0%,rgba(25,27,25,.52) 53%,rgba(25,27,25,.12) 100%)}
-.hero-copy{position:relative;z-index:1;max-width:760px;padding:70px clamp(24px,6vw,80px);color:white}
-.eyebrow{font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:#ffd0c7;font-weight:bold}
-h1,h2{font-family:Georgia,"Times New Roman",serif;line-height:1.08;letter-spacing:-.02em}
-h1{font-size:clamp(40px,7vw,76px);margin:16px 0 22px;max-width:720px}
-.hero-copy p{font-size:clamp(17px,2vw,21px);max-width:630px;margin:0 0 28px}
-.cta{display:inline-flex;align-items:center;gap:12px;background:var(--coral);color:#302b29;text-decoration:none;padding:15px 23px;border-radius:999px;font-weight:bold;font-size:17px;box-shadow:0 8px 22px rgba(0,0,0,.12)}
-.cta:hover{transform:translateY(-1px)}
-.intro{max-width:920px;margin:0 auto;padding:64px 22px 34px;text-align:center}
-.intro h2{font-size:clamp(31px,4.5vw,48px);margin:0 0 17px}
-.intro p{font-size:18px;color:var(--muted);max-width:760px;margin:auto}
-.services{max-width:1120px;margin:0 auto;padding:16px 22px 64px}
-.service{display:grid;grid-template-columns:minmax(0, .95fr) minmax(0,1.05fr);gap:clamp(22px,4vw,52px);align-items:center;margin:0 0 34px;padding:clamp(18px,3vw,30px);background:var(--paper);border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}
-.service:nth-child(even) .service-photo{order:2}
-.service-photo{width:100%;height:300px;object-fit:cover;border-radius:20px;background:var(--sage)}
-.kicker{font-size:12px;letter-spacing:.13em;text-transform:uppercase;color:var(--coral-dark);font-weight:bold}
-.service h2{font-size:clamp(28px,4vw,42px);margin:8px 0 13px}
-.service p{color:var(--muted);font-size:17px;margin:0 0 17px}
-.text-link{display:inline-flex;align-items:center;gap:9px;color:var(--coral-dark);font-weight:bold;text-decoration:none;border-bottom:2px solid var(--coral);padding:4px 0}
-.donate{margin:0 auto 60px;max-width:1000px;padding:clamp(28px,5vw,54px);text-align:center;border-radius:30px;background:var(--soft)}
-.donate h2{font-size:clamp(30px,4vw,44px);margin:0 0 14px}
-.donate p{color:var(--muted);font-size:17px;max-width:700px;margin:0 auto 22px}
-.footer{text-align:center;padding:28px 20px 36px;border-top:1px solid var(--line);color:var(--muted)}
-.footer a{color:var(--coral-dark);font-weight:bold;text-decoration:none}
-@media(max-width:720px){.hero{min-height:590px}.hero:after{background:linear-gradient(90deg,rgba(25,27,25,.72),rgba(25,27,25,.36))}.hero-copy{padding:54px 23px}.service{grid-template-columns:1fr;gap:18px;border-radius:23px}.service:nth-child(even) .service-photo{order:0}.service-photo{height:230px}.intro{padding-top:48px}.services{padding-inline:14px}.topbar{padding:14px}.brand-mark{width:42px;height:42px}.mode{padding:10px 12px;font-size:13px}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+:root {
+  --bg: #fff8f1;
+  --paper: #fffdf9;
+  --ink: #29211d;
+  --muted: #6e625b;
+  --accent: #f16f5b;
+  --line: #eadbd0;
+}
+html[data-theme="dark"] {
+  --bg: #211b18;
+  --paper: #302621;
+  --ink: #fff6ed;
+  --muted: #d0c0b5;
+  --accent: #ff7964;
+  --line: #51413a;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: Arial, sans-serif;
+  line-height: 1.65;
+}
+a { color: inherit; text-decoration: none; }
+.wrap { max-width: 1050px; margin: auto; padding: 18px; }
+.topbar {
+  display: flex; justify-content: space-between;
+  align-items: center; gap: 12px; padding: 12px 0 20px;
+}
+.brand { display: flex; align-items: center; gap: 10px; }
+.brand-mark {
+  display: grid; place-items: center; width: 44px; height: 44px;
+  border-radius: 14px; background: var(--accent);
+  color: white; font-size: 27px;
+}
+.brand strong, .brand small { display: block; }
+.brand small { color: var(--muted); }
+.mode, .btn {
+  border: 0; border-radius: 12px; padding: 12px 16px;
+  font-weight: bold; cursor: pointer; font-size: 15px;
+}
+.mode { background: var(--paper); color: var(--ink); border: 1px solid var(--line); }
+.hero {
+  overflow: hidden; border-radius: 24px; background: var(--paper);
+  border: 1px solid var(--line);
+}
+.hero img {
+  width: 100%; height: 300px; object-fit: cover; display: block;
+}
+.hero-copy { padding: clamp(22px, 5vw, 44px); }
+.eyebrow { color: var(--accent); font-weight: bold; }
+h1, h2 { font-family: Georgia, serif; line-height: 1.2; }
+h1 { font-size: clamp(32px, 6vw, 52px); margin: 8px 0 16px; }
+h2 { font-size: clamp(25px, 4vw, 34px); }
+p { color: var(--muted); }
+.btn {
+  display: inline-block; background: var(--accent); color: #281b17;
+  margin-top: 8px;
+}
+.intro { text-align: center; padding: 28px 8px 12px; }
+.services { display: grid; gap: 18px; }
+.service {
+  display: grid; grid-template-columns:  minmax(0, 0.85fr) minmax(0, 1fr);
+  overflow: hidden; border-radius: 20px;
+  background: var(--paper); border: 1px solid var(--line);
+}
+.service img { width: 100%; height: 100%; min-height: 230px; object-fit: cover; }
+.service-copy { padding: 24px; }
+.kicker { color: var(--accent); font-size: 13px; font-weight: bold; }
+.service h2 { margin: 8px 0; }
+.text-link { color: var(--accent); font-weight: bold; }
+.request {
+  margin: 28px 0; padding: 28px 20px; text-align: center;
+  border-radius: 22px; background: var(--paper); border: 2px solid var(--accent);
+}
+.request h2 { margin-top: 0; }
+footer { text-align: center; padding: 24px 10px; color: var(--muted); }
+@media(max-width:650px) {
+  .service { grid-template-columns: 1fr; }
+  .service img { height: 200px; min-height: 0; }
+  .hero img { height: 220px; }
+}
 </style>
 </head>
 <body>
-<nav class="topbar" aria-label="Kopfbereich">
-  <a class="brand" href="index.html" aria-label="Zur Startseite">
+<div class="wrap">
+<header class="topbar">
+  <a class="brand" href="index.html">
     <span class="brand-mark">♡</span>
     <span><strong>Lebensbrücke Deutschland</strong><small>Mensch &amp; Tier e. V.</small></span>
   </a>
-  <button class="mode" id="modeButton" type="button" aria-label="Farbmodus wechseln">🌙 Dunkel</button>
-</nav>
+  <button class="mode" id="modeButton" type="button">🌙 Dunkel</button>
+</header>
 
-<header class="hero">
-  <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1800&q=85" alt="Ein Hund schaut freundlich in die Kamera">
+<section class="hero">
+  <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=1600&q=85"
+       alt="Hund schaut freundlich in die Kamera">
   <div class="hero-copy">
     <div class="eyebrow">Du musst nicht alles allein schaffen</div>
     <h1>Manchmal braucht man einfach jemanden an seiner Seite.</h1>
-    <p>Wenn das Leben schwierig wird, möchten wir zuhören, Orientierung geben und gemeinsam schauen, welche Unterstützung möglich ist.</p>
-    <a class="cta" href="#hilfsangebote">Passende Hilfe finden <span aria-hidden="true">→</span></a>
+    <p>Wir hören zu und schauen gemeinsam, welche Unterstützung möglich ist.</p>
+    <a class="btn" href="#hilfsangebote">Passende Hilfe finden ↓</a>
   </div>
-</header>
+</section>
 
 <section class="intro" id="hilfsangebote">
   <h2>Ein WIR für Mensch &amp; Tier.</h2>
-  <p>Du musst nicht schon alle Antworten kennen. Schau in Ruhe, welcher Bereich zu deiner Situation passt. Gemeinsam finden wir heraus, was der nächste Schritt sein kann.</p>
+  <p>Wähle den Bereich, der zu deiner Situation passt.</p>
 </section>
 
 <main class="services">
   <section class="service">
-    <img class="service-photo" src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1200&q=85" alt="Menschen reichen sich unterstützend die Hände" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1000&q=85"
+         alt="Unterstützung für Menschen">
     <div class="service-copy">
       <div class="kicker">01 · Wenn Geld knapp wird</div>
       <h2>Finanzielle Notlage</h2>
-      <p>Wenn das Geld kaum für das Nötigste reicht, kann es schwer sein, den Überblick zu behalten. Wir schauen gemeinsam, welche Anlaufstellen und Möglichkeiten infrage kommen.</p>
-      <a class="text-link" href="finanzielle-notlage.html">Mehr erfahren <span aria-hidden="true">→</span></a>
+      <p>Wenn das Geld kaum für das Nötigste reicht, schauen wir gemeinsam nach möglichen Anlaufstellen.</p>
+      <a class="text-link" href="finanzielle-notlage.html">Mehr erfahren →</a>
     </div>
   </section>
 
   <section class="service">
-    <img class="service-photo" src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=85" alt="Frische Lebensmittel in einem Geschäft" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1000&q=85"
+         alt="Lebensmittel für den Alltag">
     <div class="service-copy">
       <div class="kicker">02 · Hilfe im Alltag</div>
       <h2>Lebensmittel &amp; Alltag</h2>
-      <p>Manchmal fehlen Lebensmittel, wichtige Dinge des täglichen Bedarfs oder Unterstützung bei einer schwierigen Alltagssituation. Du darfst dich melden.</p>
-      <a class="text-link" href="menschen-hilfe-antrag.html">Hilfe anfragen <span aria-hidden="true">→</span></a>
+      <p>Wenn Lebensmittel oder wichtige Dinge des täglichen Bedarfs fehlen, kannst du dich an uns wenden.</p>
+      <a class="text-link" href="menschen-hilfe-antrag.html">Hilfe anfragen →</a>
     </div>
   </section>
 
   <section class="service">
-    <img class="service-photo" src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=85" alt="Menschen verbringen gemeinsam Zeit" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1000&q=85"
+         alt="Menschen verbringen gemeinsam Zeit">
     <div class="service-copy">
       <div class="kicker">03 · Wohnen &amp; Sicherheit</div>
       <h2>Wohnen</h2>
-      <p>Wenn Sorgen rund um Wohnung, Miete oder die eigene Sicherheit entstehen, kann ein erster Überblick helfen. Wir suchen mit dir nach passenden Anlaufstellen.</p>
-      <a class="text-link" href="menschen-hilfe-antrag.html">Hilfe anfragen <span aria-hidden="true">→</span></a>
+      <p>Bei Sorgen rund um Wohnung, Miete oder Sicherheit suchen wir mit dir nach passenden Anlaufstellen.</p>
+      <a class="text-link" href="menschen-hilfe-antrag.html">Hilfe anfragen →</a>
     </div>
   </section>
 
   <section class="service">
-    <img class="service-photo" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1200&q=85" alt="Ein Weg führt durch eine ruhige Landschaft" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1000&q=85"
+         alt="Weg durch eine ruhige Landschaft">
     <div class="service-copy">
-      <div class="kicker">04 · Gemeinsam einen Weg finden</div>
-      <h2>Unterstützung im Alltag</h2>
-      <p>Du brauchst praktische Hilfe oder weißt nicht, an wen du dich wenden kannst? Beschreibe uns deine Situation. Wir schauen, was möglich ist.</p>
-      <a class="text-link" href="menschen-hilfe-antrag.html">Hilfe anfragen <span aria-hidden="true">→</span></a>
+      <div class="kicker">04 · Unterstützung im Alltag</div>
+      <h2>Praktische Hilfe</h2>
+      <p>Du brauchst Unterstützung im Alltag oder weißt nicht, an wen du dich wenden kannst? Erzähl uns davon.</p>
+      <a class="text-link" href="menschen-hilfe-antrag.html">Hilfe anfragen →</a>
     </div>
   </section>
 
   <section class="service">
-    <img class="service-photo" src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1200&q=85" alt="Menschen unterstützen einander" loading="lazy">
+    <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=1000&q=85"
+         alt="Menschen unterstützen einander">
     <div class="service-copy">
       <div class="kicker">05 · Dein Anliegen</div>
       <h2>Sonstige Hilfe</h2>
-      <p>Deine Situation passt in keine dieser Kategorien? Das ist in Ordnung. Erzähl uns, wobei du Unterstützung brauchst.</p>
-      <a class="text-link" href="menschen-hilfe-antrag.html">Kontakt aufnehmen <span aria-hidden="true">→</span></a>
+      <p>Dein Anliegen passt in keine Kategorie? Du kannst uns deine Situation im Formular beschreiben.</p>
+      <a class="text-link" href="menschen-hilfe-antrag.html">Hilfe anfragen →</a>
     </div>
   </section>
 </main>
 
-<section class="donate">
-  <h2>Gemeinsam können wir etwas bewegen.</h2>
-  <p>Mit deiner Unterstützung können wir Menschen und Tiere in schwierigen Situationen helfen. Jeder Beitrag zählt.</p>
-  <a class="cta" href="spenden.html">💛 Jetzt helfen <span aria-hidden="true">→</span></a>
+<section class="request">
+  <h2>Du brauchst Unterstützung?</h2>
+  <p>Über das gemeinsame Formular kannst du uns mitteilen, welche Hilfe du benötigst.</p>
+  <a class="btn" href="menschen-hilfe-antrag.html">Hilfe beantragen →</a>
 </section>
 
-<footer class="footer">
-  <p><a href="index.html">← Zurück zur Startseite</a></p>
-  <p>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</p>
+<footer>
+  <strong>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</strong>
+  <p>Ein WIR für Mensch &amp; Tier.</p>
+  <a href="index.html">← Zur Startseite</a>
+  &nbsp; · &nbsp;
+  <a href="spenden.html">Spenden</a>
 </footer>
+</div>
 
 <script>
+const root = document.documentElement;
 const modeButton = document.getElementById("modeButton");
-function setMode(dark){
-  document.body.classList.toggle("dark", dark);
-  modeButton.textContent = dark ? "☀️ Hell" : "🌙 Dunkel";
-  document.querySelector('meta[name="theme-color"]').setAttribute("content", dark ? "#1d2928" : "#fff8f1");
-  try { localStorage.setItem("lebensbruecke-mode", dark ? "dark" : "light"); } catch(e) {}
+
+function setMode(mode) {
+  root.dataset.theme = mode;
+  modeButton.textContent = mode === "dark" ? "☀️ Hell" : "🌙 Dunkel";
+  document.querySelector('meta[name="theme-color"]').content =
+    mode === "dark" ? "#211b18" : "#fff8f1";
+  try { localStorage.setItem("lebensbruecke-mode", mode); } catch (e) {}
 }
-let savedMode = "light";
-try { savedMode = localStorage.getItem("lebensbruecke-mode") || "light"; } catch(e) {}
-setMode(savedMode === "dark");
-modeButton.addEventListener("click", () => setMode(!document.body.classList.contains("dark")));
+
+let saved = "light";
+try { saved = localStorage.getItem("lebensbruecke-mode") || "light"; } catch (e) {}
+setMode(saved);
+
+modeButton.addEventListener("click", () => {
+  setMode(root.dataset.theme === "dark" ? "light" : "dark");
+});
 </script>
 </body>
 </html>
