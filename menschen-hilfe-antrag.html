@@ -357,6 +357,64 @@ footer a {
   .mode { padding: 9px 11px; font-size: 13px; }
   .section { padding: 22px 17px; border-radius: 24px; }
 }
+
+/* Reparatur: Auswahlfelder im Menschenformular */
+.help-options {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 12px 0 22px;
+}
+
+.help-option {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: var(--field);
+  cursor: pointer;
+}
+
+.help-option input[type="radio"] {
+  appearance: auto;
+  -webkit-appearance: radio;
+  display: inline-block;
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  margin: 5px 0 0;
+  padding: 0;
+  border: initial;
+  border-radius: 50%;
+  background: initial;
+  accent-color: var(--coral);
+}
+
+.help-option div {
+  flex: 1;
+  min-width: 0;
+}
+
+.help-option strong {
+  display: block;
+  font-size: 17px;
+  line-height: 1.4;
+}
+
+.help-option span {
+  display: block;
+  margin-top: 4px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
 </style>
 </head>
 
