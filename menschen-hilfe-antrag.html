@@ -1,383 +1,266 @@
 <!DOCTYPE html>
-<html lang="de" data-theme="light">
+<html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fff8f1">
-<title>Hilfe für Menschen – Lebensbrücke Deutschland</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hilfe für Menschen anfragen – Lebensbrücke Deutschland</title>
 
 <style>
 :root {
-  --bg: #fff8f1;
-  --paper: #fffdf9;
-  --field: #fff8f1;
-  --ink: #292d29;
-  --muted: #70756f;
-  --coral: #ef8175;
-  --coral-dark: #ad625a;
-  --line: #e9ded4;
-  --soft: #fbe7e1;
-  --notice: #e6f1e8;
-  --shadow: 0 12px 35px rgba(67,48,34,.07);
+  --bg: #f7f3ed;
+  --card: #fffdf9;
+  --text: #303a35;
+  --muted: #68716b;
+  --coral: #df795f;
+  --coral-dark: #c65f48;
+  --green: #e8f0e8;
+  --border: #e8e0d6;
+  --shadow: 0 8px 28px rgba(48, 58, 53, .07);
 }
 
-html[data-theme="dark"] {
-  --bg: #20231f;
-  --paper: #2b2f2a;
-  --field: #343832;
-  --ink: #f7f0e8;
-  --muted: #c0c3bb;
-  --coral: #f18b7e;
-  --coral-dark: #f2a096;
-  --line: #484b43;
-  --soft: #45332f;
-  --notice: #303f34;
-  --shadow: 0 12px 35px rgba(0,0,0,.16);
+* {
+  box-sizing: border-box;
 }
-
-* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  background: var(--bg);
-  color: var(--ink);
   font-family: Arial, Helvetica, sans-serif;
-  line-height: 1.65;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
 }
 
-.topbar {
-  background: var(--paper);
-  padding: 18px 24px;
+body.dark {
+  --bg: #202722;
+  --card: #2b342e;
+  --text: #f5f1e9;
+  --muted: #c1c9c1;
+  --green: #35443a;
+  --border: #465148;
+  --shadow: 0 8px 28px rgba(0, 0, 0, .18);
+}
+
+header {
+  padding: 18px 20px;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  max-width: 1000px;
+  margin: auto;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 12px;
-  border-bottom: 1px solid var(--line);
+  justify-content: space-between;
+  gap: 15px;
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 13px;
+  gap: 12px;
   font-weight: bold;
-  color: var(--coral-dark);
-  line-height: 1.35;
+  line-height: 1.3;
 }
 
-.brand-mark {
-  width: 54px;
-  height: 54px;
-  border: 3px solid var(--coral);
-  border-radius: 50%;
+.brand-icon {
   display: grid;
   place-items: center;
-  font-size: 30px;
-  color: #673d8c;
+  width: 46px;
+  height: 46px;
   flex-shrink: 0;
+  background: #f8e5de;
+  border-radius: 15px;
+  font-size: 24px;
 }
 
 .brand small {
   display: block;
-  color: var(--muted);
-  font-size: 15px;
+  margin-top: 4px;
+  font-size: 12px;
   font-weight: normal;
+  color: var(--muted);
 }
 
-.mode {
-  border: 1px solid var(--line);
-  border-radius: 30px;
-  padding: 11px 16px;
-  background: var(--bg);
-  color: var(--ink);
-  font-size: 15px;
+.mode-button {
+  border: 1px solid var(--border);
+  border-radius: 25px;
+  padding: 9px 13px;
+  background: var(--card);
+  color: var(--text);
   cursor: pointer;
   white-space: nowrap;
 }
 
-.hero {
-  min-height: 330px;
-  padding: 55px 28px;
-  display: flex;
-  align-items: center;
-  background:
-    linear-gradient(90deg, rgba(28,30,26,.76), rgba(28,30,26,.22)),
-    url("https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1400&q=85")
-    center 48% / cover;
-  color: white;
+main {
+  width: min(900px, calc(100% - 30px));
+  margin: 28px auto 55px;
 }
 
-.hero-inner {
-  max-width: 760px;
-  margin: auto;
-  width: 100%;
+.hero {
+  position: relative;
+  min-height: 270px;
+  overflow: hidden;
+  display: flex;
+  align-items: end;
+  border-radius: 25px;
+  background:
+    linear-gradient(0deg, rgba(24, 34, 28, .82), rgba(24, 34, 28, .03)),
+    url("https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=1400&q=85")
+    center 43% / cover no-repeat;
+  color: white;
+  padding: 30px;
+}
+
+.hero-content {
+  max-width: 650px;
 }
 
 .eyebrow {
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 13px;
+  font-size: 12px;
   font-weight: bold;
-  color: #ffd4cb;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
 }
 
-h1, h2 {
+.hero h1 {
+  margin: 10px 0;
   font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.12;
-}
-
-h1 {
-  font-size: clamp(38px, 8vw, 60px);
-  margin: 12px 0;
+  font-size: clamp(30px, 5vw, 45px);
+  line-height: 1.15;
 }
 
 .hero p {
-  font-size: clamp(17px, 4vw, 23px);
-  max-width: 650px;
-  margin-bottom: 0;
+  margin: 0;
+  max-width: 520px;
 }
 
 .intro {
-  max-width: 760px;
-  margin: 0 auto;
-  padding: 38px 24px 24px;
   text-align: center;
+  padding: 35px 15px 25px;
 }
 
-.intro h2 {
-  font-size: clamp(30px, 6vw, 43px);
-  margin: 0 0 15px;
+.intro h2,
+.closing h2 {
+  margin: 0 0 10px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(26px, 4vw, 34px);
+  line-height: 1.25;
 }
 
 .intro p {
+  max-width: 650px;
+  margin: 0 auto;
   color: var(--muted);
-  font-size: 18px;
-  margin: 0;
 }
 
 form {
-  max-width: 760px;
-  margin: 18px auto 45px;
-  padding: 0 20px;
+  display: grid;
+  gap: 20px;
 }
 
-.section {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 30px;
-  padding: 28px 24px;
-  margin-bottom: 22px;
+.section-card {
+  padding: clamp(20px, 4vw, 30px);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 22px;
   box-shadow: var(--shadow);
 }
 
-.section-title {
+.section-heading {
   display: flex;
   align-items: center;
-  gap: 14px;
-  margin-bottom: 24px;
+  gap: 12px;
+  margin-bottom: 22px;
 }
 
 .number {
+  width: 38px;
+  height: 38px;
   display: grid;
   place-items: center;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: var(--soft);
-  color: var(--coral-dark);
-  font-size: 22px;
-  font-weight: bold;
   flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--coral);
+  color: white;
+  font-weight: bold;
 }
 
-.section-title h2 {
-  font-family: Arial, Helvetica, sans-serif;
+.section-heading h3 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 23px;
   line-height: 1.3;
-  margin: 0;
 }
 
-label.field-label {
+.field-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.field {
+  min-width: 0;
+}
+
+.field.full {
+  grid-column: 1 / -1;
+}
+
+label,
+.field-label {
   display: block;
+  margin-bottom: 7px;
+  font-size: 14px;
   font-weight: bold;
-  margin: 20px 0 8px;
 }
 
-input:not([type="checkbox"]),
+input:not([type="checkbox"]):not([type="radio"]),
 select,
 textarea {
   display: block;
   width: 100%;
-  padding: 15px 16px;
-  background: var(--field);
-  color: var(--ink);
-  border: 1px solid var(--line);
-  border-radius: 20px;
+  max-width: 100%;
+  min-width: 0;
+  padding: 13px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--text);
   font: inherit;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 textarea {
-  min-height: 145px;
+  min-height: 135px;
   resize: vertical;
 }
 
-input:focus, select:focus, textarea:focus {
+input:focus,
+select:focus,
+textarea:focus {
   outline: 2px solid var(--coral);
   outline-offset: 2px;
 }
 
 .help-options {
   display: grid;
-  gap: 12px;
-  margin: 12px 0 22px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .help-option {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  border: 1px solid var(--line);
-  background: var(--field);
-  border-radius: 20px;
-  padding: 15px;
-  cursor: pointer;
-}
-
-.help-option input {
-  margin-top: 7px;
-  accent-color: var(--coral);
-  flex-shrink: 0;
-}
-
-.help-option strong {
-  display: block;
-  font-size: 17px;
-}
-
-.help-option span {
-  display: block;
-  color: var(--muted);
-  font-size: 15px;
-}
-
-.consent {
-  display: flex;
-  gap: 12px;
-  align-items: flex-start;
-  margin: 24px 0;
-  color: var(--muted);
-  font-weight: bold;
-}
-
-.consent input {
-  margin-top: 7px;
-  width: 21px;
-  height: 21px;
-  accent-color: var(--coral);
-  flex-shrink: 0;
-}
-
-.submit {
-  display: block;
-  width: 100%;
-  padding: 17px 18px;
-  border: none;
-  border-radius: 40px;
-  background: var(--coral);
-  color: #292d29;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.notice {
-  margin-top: 18px;
-  padding: 18px;
-  border-radius: 20px;
-  background: var(--notice);
-  color: var(--ink);
-  font-size: 15px;
-}
-
-.closing {
-  max-width: 760px;
-  margin: 0 auto 35px;
-  padding: 0 20px;
-}
-
-.closing img {
-  width: 100%;
-  height: 220px;
-  object-fit: cover;
-  border-radius: 28px;
-  display: block;
-}
-
-.closing-text {
-  background: var(--paper);
-  border: 1px solid var(--line);
-  border-radius: 0 0 28px 28px;
-  padding: 22px;
-  margin-top: -5px;
-}
-
-.closing-text h2 {
-  font-size: 30px;
-  margin: 0 0 10px;
-}
-
-.closing-text p, .closing-text li {
-  color: var(--muted);
-}
-
-footer {
-  text-align: center;
-  padding: 28px 18px 38px;
-  background: var(--paper);
-  border-top: 1px solid var(--line);
-}
-
-footer a {
-  color: var(--coral-dark);
-  text-decoration: none;
-  font-weight: bold;
-  display: inline-block;
-  margin: 8px 12px;
-}
-
-@media (min-width: 650px) {
-  .section { padding: 34px; }
-  .hero { min-height: 390px; }
-}
-
-@media (max-width: 390px) {
-  .topbar { padding: 14px; }
-  .brand { font-size: 14px; }
-  .brand-mark { width: 44px; height: 44px; }
-  .mode { padding: 9px 11px; font-size: 13px; }
-  .section { padding: 22px 17px; border-radius: 24px; }
-}
-
-/* Reparatur: Auswahlfelder im Menschenformular */
-.help-options {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 12px;
-  margin: 12px 0 22px;
-}
-
-.help-option {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 12px;
-  width: 100%;
+  gap: 10px;
   min-width: 0;
-  padding: 16px;
-  border: 1px solid var(--line);
-  border-radius: 20px;
-  background: var(--field);
+  padding: 14px;
+  border: 1px solid var(--border);
+  border-radius: 13px;
+  background: var(--bg);
   cursor: pointer;
+  font-weight: normal;
+  line-height: 1.4;
 }
 
 .help-option input[type="radio"] {
@@ -388,188 +271,367 @@ footer a {
   width: 20px;
   height: 20px;
   min-width: 20px;
-  margin: 5px 0 0;
   padding: 0;
+  margin: 3px 0 0;
   border: initial;
   border-radius: 50%;
   background: initial;
   accent-color: var(--coral);
+  cursor: pointer;
 }
 
-.help-option div {
-  flex: 1;
-  min-width: 0;
+.consent {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 17px 0;
+  font-weight: normal;
+  font-size: 14px;
 }
 
-.help-option strong {
+.consent input[type="checkbox"] {
+  flex: 0 0 19px;
+  width: 19px;
+  height: 19px;
+  margin: 3px 0 0;
+  accent-color: var(--coral);
+}
+
+.submit-button {
   display: block;
-  font-size: 17px;
-  line-height: 1.4;
+  width: 100%;
+  padding: 16px 20px;
+  border: 0;
+  border-radius: 30px;
+  background: var(--coral);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.help-option span {
+.submit-button:hover {
+  background: var(--coral-dark);
+}
+
+.notice {
+  padding: 18px 20px;
+  border: 1px solid #cbdcc9;
+  border-radius: 16px;
+  background: var(--green);
+  color: var(--text);
+  font-size: 14px;
+}
+
+.notice strong {
   display: block;
-  margin-top: 4px;
+  margin-bottom: 5px;
+}
+
+.closing {
+  margin-top: 25px;
+  padding: 25px;
+  border-radius: 22px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  text-align: center;
+}
+
+.closing p {
+  margin: 0;
   color: var(--muted);
-  font-size: 15px;
-  line-height: 1.5;
 }
 
+footer {
+  padding: 25px 15px;
+  border-top: 1px solid var(--border);
+  color: var(--muted);
+  text-align: center;
+  font-size: 13px;
+}
+
+footer a {
+  color: inherit;
+  margin: 0 8px;
+}
+
+@media (max-width: 600px) {
+  main {
+    width: calc(100% - 20px);
+    margin-top: 15px;
+  }
+
+  .header-inner {
+    align-items: flex-start;
+  }
+
+  .brand {
+    font-size: 14px;
+  }
+
+  .brand-icon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .mode-button {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .hero {
+    min-height: 260px;
+    padding: 22px;
+    border-radius: 20px;
+  }
+
+  .field-grid,
+  .help-options {
+    grid-template-columns: 1fr;
+  }
+
+  .section-card {
+    border-radius: 18px;
+  }
+
+  .section-heading h3 {
+    font-size: 21px;
+  }
+}
 </style>
 </head>
 
 <body>
-<header class="topbar">
-  <div class="brand">
-    <div class="brand-mark">♡</div>
-    <div>
-      Lebensbrücke Deutschland
-      <small>Mensch &amp; Tier e. V.</small>
+
+<header>
+  <div class="header-inner">
+    <div class="brand">
+      <div class="brand-icon">💗</div>
+      <div>
+        Lebensbrücke Deutschland
+        <small>Mensch &amp; Tier e.V.</small>
+      </div>
     </div>
+
+    <button class="mode-button" id="modeButton" type="button">
+      🌙 Dunkelmodus
+    </button>
   </div>
-  <button class="mode" id="modeButton" type="button">🌙 Dunkel</button>
 </header>
 
-<section class="hero">
-  <div class="hero-inner">
-    <div class="eyebrow">Wir hören zu und schauen gemeinsam</div>
-    <h1>Hilfe für Menschen anfragen.</h1>
-    <p>Wenn das Leben schwierig wird, musst du dich nicht schämen, um Unterstützung zu bitten.</p>
-  </div>
-</section>
-
-<section class="intro">
-  <h2>Ein WIR für Mensch &amp; Tier.</h2>
-  <p>Fülle das Formular in Ruhe aus. Angaben mit * sind erforderlich. Wir prüfen, welche Unterstützung möglich ist.</p>
-</section>
-
-<form id="hilfeForm">
-  <section class="section">
-    <div class="section-title">
-      <div class="number">1</div>
-      <h2>Deine Kontaktdaten</h2>
-    </div>
-
-    <label class="field-label" for="name">Vor- und Nachname *</label>
-    <input id="name" name="Name" autocomplete="name" placeholder="Dein Name" required>
-
-    <label class="field-label" for="email">E-Mail-Adresse *</label>
-    <input id="email" name="E-Mail-Adresse" type="email" autocomplete="email" placeholder="name@beispiel.de" required>
-
-    <label class="field-label" for="telefon">Telefon (optional)</label>
-    <input id="telefon" name="Telefon" type="tel" autocomplete="tel" placeholder="Für Rückfragen">
-
-    <label class="field-label" for="ort">Postleitzahl / Ort *</label>
-    <input id="ort" name="Postleitzahl und Ort" autocomplete="postal-code" placeholder="PLZ und Ort" required>
-  </section>
-
-  <section class="section">
-    <div class="section-title">
-      <div class="number">2</div>
-      <h2>Wobei brauchst du Hilfe?</h2>
-    </div>
-
-    <div class="help-options">
-      <label class="help-option">
-        <input type="radio" name="Benötigte Hilfe" value="Finanzielle Notlage" required>
-        <div><strong>💶 Finanzielle Notlage</strong><span>Wenn das Geld für das Nötigste nicht reicht</span></div>
-      </label>
-
-      <label class="help-option">
-        <input type="radio" name="Benötigte Hilfe" value="Lebensmittel und Alltag">
-        <div><strong>🛒 Lebensmittel &amp; Alltag</strong><span>Lebensmittel oder wichtige Dinge des täglichen Bedarfs</span></div>
-      </label>
-
-      <label class="help-option">
-        <input type="radio" name="Benötigte Hilfe" value="Wohnen und Sicherheit">
-        <div><strong>🏠 Wohnen &amp; Sicherheit</strong><span>Wenn die Wohnsituation schwierig ist</span></div>
-      </label>
-
-      <label class="help-option">
-        <input type="radio" name="Benötigte Hilfe" value="Unterstützung im Alltag">
-        <div><strong>🤝 Unterstützung im Alltag</strong><span>Hilfe bei alltäglichen Herausforderungen</span></div>
-      </label>
-
-      <label class="help-option">
-        <input type="radio" name="Benötigte Hilfe" value="Sonstige Hilfe">
-        <div><strong>💛 Sonstige Hilfe</strong><span>Eine andere schwierige Situation</span></div>
-      </label>
-    </div>
-
-    <label class="field-label" for="beschreibung">Beschreibe deine Situation *</label>
-    <textarea id="beschreibung" name="Beschreibung der Situation" placeholder="Was ist passiert und welche Unterstützung wäre hilfreich? Bitte keine unnötigen sensiblen Angaben eintragen." required></textarea>
-
-    <label class="field-label" for="betrag">Voraussichtliche Kosten oder Bedarf (optional)</label>
-    <input id="betrag" name="Kosten oder Bedarf" placeholder="z. B. 180 € oder Lebensmittel">
-
-    <label class="field-label" for="dringlichkeit">Wie dringend ist die Hilfe?</label>
-    <select id="dringlichkeit" name="Dringlichkeit">
-      <option value="">Bitte auswählen</option>
-      <option>Sehr dringend</option>
-      <option>Innerhalb der nächsten Tage</option>
-      <option>Es besteht kein unmittelbarer Zeitdruck</option>
-    </select>
-
-    <label class="consent">
-      <input type="checkbox" id="bestaetigung" required>
-      <span>Ich bestätige, dass meine Angaben nach bestem Wissen richtig sind. *</span>
-    </label>
-
-    <label class="consent">
-      <input type="checkbox" id="datenschutz" required>
-      <span>Ich habe die Datenschutzhinweise gelesen und bin mit der Verwendung meiner Angaben zur Bearbeitung der Anfrage einverstanden. *</span>
-    </label>
-
-    <button class="submit" type="submit">💛 Hilfeanfrage vorbereiten →</button>
-
-    <div class="notice" id="versandHinweis">
-      <strong>Wichtig:</strong> Dieses Formular ist noch nicht mit einem sicheren Versanddienst verbunden. Beim Absenden wird deshalb keine Anfrage automatisch an den Verein übermittelt. Vor der Veröffentlichung müssen die Datenschutzerklärung verlinkt und ein sicherer Versandweg eingerichtet werden.
+<main>
+  <section class="hero">
+    <div class="hero-content">
+      <div class="eyebrow">Wir hören zu und schauen gemeinsam</div>
+      <h1>Hilfe für Menschen anfragen.</h1>
+      <p>Du musst schwierige Zeiten nicht allein bewältigen. Wir hören dir zu.</p>
     </div>
   </section>
-</form>
 
-<section class="closing">
-  <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1200&q=85" alt="Menschen unterstützen einander">
-  <div class="closing-text">
+  <section class="intro">
+    <h2>Ein WIR für Mensch &amp; Tier.</h2>
+    <p>
+      Beschreibe uns deine Situation und wobei du Unterstützung brauchst.
+      Wir schauen uns deine Anfrage in Ruhe an.
+    </p>
+  </section>
+
+  <form id="humanHelpForm">
+
+    <section class="section-card">
+      <div class="section-heading">
+        <div class="number">1</div>
+        <h3>Wie können wir dich erreichen?</h3>
+      </div>
+
+      <div class="field-grid">
+        <div class="field">
+          <label for="name">Vor- und Nachname *</label>
+          <input id="name" name="name" autocomplete="name" required>
+        </div>
+
+        <div class="field">
+          <label for="email">E-Mail-Adresse *</label>
+          <input id="email" name="email" type="email"
+                 autocomplete="email" required>
+        </div>
+
+        <div class="field">
+          <label for="phone">Telefonnummer (optional)</label>
+          <input id="phone" name="phone" type="tel"
+                 autocomplete="tel">
+        </div>
+
+        <div class="field">
+          <label for="town">Postleitzahl und Wohnort *</label>
+          <input id="town" name="town" autocomplete="postal-code"
+                 required>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-card">
+      <div class="section-heading">
+        <div class="number">2</div>
+        <h3>Wobei brauchst du Hilfe?</h3>
+      </div>
+
+      <div class="field">
+        <span class="field-label">Was trifft auf deine Situation zu? *</span>
+
+        <div class="help-options">
+          <label class="help-option">
+            <input type="radio" name="helpType"
+                   value="Finanzielle Notlage" required>
+            <span>Finanzielle Notlage</span>
+          </label>
+
+          <label class="help-option">
+            <input type="radio" name="helpType"
+                   value="Lebensmittel und Alltag">
+            <span>Lebensmittel &amp; Alltag</span>
+          </label>
+
+          <label class="help-option">
+            <input type="radio" name="helpType"
+                   value="Wohnen">
+            <span>Wohnen</span>
+          </label>
+
+          <label class="help-option">
+            <input type="radio" name="helpType"
+                   value="Mobilität">
+            <span>Mobilität</span>
+          </label>
+
+          <label class="help-option">
+            <input type="radio" name="helpType"
+                   value="Unterstützung im Alltag">
+            <span>Unterstützung im Alltag</span>
+          </label>
+
+          <label class="help-option">
+            <input type="radio" name="helpType"
+                   value="Sonstige Hilfe">
+            <span>Sonstige Hilfe</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field" style="margin-top:22px">
+        <label for="description">
+          Erzähl uns von deiner Situation. *
+        </label>
+        <textarea id="description" name="description"
+          placeholder="Wobei brauchst du Unterstützung? Was ist gerade besonders schwierig?"
+          required></textarea>
+      </div>
+
+      <div class="field-grid" style="margin-top:18px">
+        <div class="field">
+          <label for="amount">Benötigter Betrag (optional)</label>
+          <input id="amount" name="amount" type="number"
+                 min="0" step="0.01" placeholder="Betrag in Euro">
+        </div>
+
+        <div class="field">
+          <label for="urgency">Wie dringend ist die Hilfe?</label>
+          <select id="urgency" name="urgency">
+            <option value="">Bitte auswählen</option>
+            <option>Sehr dringend</option>
+            <option>In den nächsten Tagen</option>
+            <option>In den nächsten Wochen</option>
+            <option>Keine unmittelbare Dringlichkeit</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="additional">Weitere Informationen (optional)</label>
+          <textarea id="additional" name="additional"
+            placeholder="Gibt es noch etwas, das wir wissen sollten?"></textarea>
+        </div>
+      </div>
+
+      <label class="consent">
+        <input type="checkbox" name="truthful" required>
+        <span>Ich bestätige, dass meine Angaben nach bestem Wissen richtig sind. *</span>
+      </label>
+
+      <label class="consent">
+        <input type="checkbox" name="privacy" required>
+        <span>
+          Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung
+          meiner Anfrage verwendet werden. Mir ist bekannt, dass die
+          Datenschutzhinweise vor dem echten Versand eingesehen werden müssen. *
+        </span>
+      </label>
+
+      <button class="submit-button" type="submit">
+        Anfrage vorbereiten →
+      </button>
+    </section>
+
+    <div class="notice" id="notice">
+      <strong>💚 Ein wichtiger Hinweis</strong>
+      Dieses Formular ist noch nicht mit einem sicheren Versanddienst
+      verbunden. Deine Angaben werden nicht versendet oder gespeichert.
+      Bitte veröffentliche das Formular erst, wenn der sichere Versand
+      und die Datenschutzhinweise eingerichtet sind.
+    </div>
+  </form>
+
+  <section class="closing">
     <h2>Du bist nicht allein.</h2>
-    <p>Jede Anfrage wird individuell betrachtet. Eine Unterstützung kann nicht garantiert werden.</p>
-    <ul>
-      <li>Beschreibe deinen Bedarf möglichst klar.</li>
-      <li>Wenn vorhanden, halte Nachweise oder Kostenvoranschläge bereit.</li>
-      <li>Wir prüfen dein Anliegen so sorgfältig wie möglich.</li>
-    </ul>
-  </div>
-</section>
+    <p>
+      Jeder Mensch kann in eine schwierige Situation geraten.
+      Wir möchten zuhören und gemeinsam nach Möglichkeiten suchen.
+    </p>
+  </section>
+</main>
 
 <footer>
-  <a href="mensch.html">← Zurück zu Hilfe für Menschen</a>
+  <p>Lebensbrücke Deutschland – Mensch &amp; Tier e.V.</p>
+  <a href="mensch.html">Zurück zur Menschenhilfe</a>
   <a href="index.html">Zur Startseite</a>
-  <p>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</p>
 </footer>
 
 <script>
 const modeButton = document.getElementById("modeButton");
-const savedTheme = localStorage.getItem("lebensbruecke-mode");
 
-if (savedTheme === "dark") {
-  document.documentElement.dataset.theme = "dark";
-  modeButton.textContent = "☀️ Hell";
+function setMode(mode) {
+  document.body.classList.toggle("dark", mode === "dark");
+  modeButton.textContent =
+    mode === "dark" ? "☀️ Hellmodus" : "🌙 Dunkelmodus";
 }
 
-modeButton.addEventListener("click", () => {
-  const dark = document.documentElement.dataset.theme !== "dark";
-  document.documentElement.dataset.theme = dark ? "dark" : "light";
-  modeButton.textContent = dark ? "☀️ Hell" : "🌙 Dunkel";
-  localStorage.setItem("lebensbruecke-mode", dark ? "dark" : "light");
+try {
+  const savedMode = localStorage.getItem("lebensbruecke-mode");
+  if (savedMode === "dark" || savedMode === "light") {
+    setMode(savedMode);
+  }
+} catch (error) {
+  // Die Seite funktioniert auch, wenn lokaler Speicher nicht verfügbar ist.
+}
+
+modeButton.addEventListener("click", function () {
+  const dark = !document.body.classList.contains("dark");
+  setMode(dark ? "dark" : "light");
+
+  try {
+    localStorage.setItem("lebensbruecke-mode", dark ? "dark" : "light");
+  } catch (error) {
+    // Der Moduswechsel funktioniert auch ohne gespeicherte Einstellung.
+  }
 });
 
-document.getElementById("hilfeForm").addEventListener("submit", event => {
+document.getElementById("humanHelpForm").addEventListener("submit", function (event) {
   event.preventDefault();
-  document.getElementById("versandHinweis").scrollIntoView({
-    behavior: "smooth",
-    block: "center"
-  });
+
+  const notice = document.getElementById("notice");
+  notice.scrollIntoView({ behavior: "smooth", block: "center" });
+  notice.focus?.();
 });
 </script>
+
 </body>
 </html>
