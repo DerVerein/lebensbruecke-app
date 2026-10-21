@@ -84,21 +84,32 @@ h1 em { color:var(--accent); font-style:normal; }
 .section-head h2 { font-size:clamp(27px,5vw,37px); line-height:1.15; margin:0; }
 .section-head p { margin:5px 0 0; color:var(--muted); }
 
+
 .tile-grid {
-  display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
-.tile {
-  overflow:hidden; min-width:0; border-radius:19px;
-  background:var(--paper); border:1px solid var(--line);
-  box-shadow:0 6px 22px #54301a0b;
-  transition:transform .18s ease;
+
+.tile img {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
 }
-.tile:active { transform:scale(.985); }
-.tile img { display:block; width:100%; height:145px; object-fit:cover; }
-.tile-link {
-  display:flex; align-items:center; gap:7px; min-height:59px;
-  padding:12px; font-size:15px; font-weight:800; line-height:1.25;
+
+@media (min-width: 760px) {
+  .tile-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
+
+@media (min-width: 1000px) {
+  .tile-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
 .arrow { color:var(--accent); font-size:23px; margin-left:auto; }
 
 .sub-links {
