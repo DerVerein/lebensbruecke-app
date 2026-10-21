@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="de" data-theme="warm">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#fff0e8">
+<meta name="theme-color" content="#fff4e8">
 <meta name="description" content="Lebensbrücke Deutschland – Mensch & Tier e. V.">
 <link rel="manifest" href="manifest.json">
 <link rel="icon" href="VereinsIcon.png">
@@ -11,47 +12,43 @@
 
 <style>
 :root {
-  --bg:#fff0e8;
-  --paper:#fffaf5;
-  --ink:#30231e;
-  --muted:#79665c;
-  --line:#ead4c7;
-  --accent:#f16f5b;
-  --soft:#f8dfd2;
+  --bg:#fff4e8; --paper:#fffaf4; --ink:#30231e;
+  --muted:#78685d; --line:#ead8c8; --accent:#f16f5b; --soft:#f7e5d5;
 }
 html[data-theme="light"] {
-  --bg:#fffaf2; --paper:#fff; --ink:#29211d;
-  --muted:#74685e; --line:#e7d9c8;
-  --accent:#e96c57; --soft:#f5e7d5;
+  --bg:#fffdf8; --paper:#fff; --ink:#29211d;
+  --muted:#70645c; --line:#e8ddd0; --accent:#e96c57; --soft:#f5eee5;
 }
 html[data-theme="dark"] {
   --bg:#211b18; --paper:#302621; --ink:#fff6ed;
-  --muted:#d0bfb1; --line:#514239;
-  --accent:#ff7964; --soft:#44352d;
+  --muted:#d0bfb1; --line:#514239; --accent:#ff7964; --soft:#44352d;
 }
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body {
   margin:0; background:var(--bg); color:var(--ink);
   font:16px/1.55 Arial,Helvetica,sans-serif;
+  transition:background .2s,color .2s;
 }
 a { color:inherit; text-decoration:none; }
-.wrap { max-width:1100px; margin:auto; padding:16px; }
+.wrap { max-width:1000px; margin:auto; padding:14px; }
+
 .topbar {
   display:flex; align-items:center; justify-content:space-between;
-  gap:12px; margin:4px 0 18px;
+  gap:12px; margin:3px 0 16px;
 }
 .brand { display:flex; align-items:center; gap:10px; min-width:0; }
-.logo { width:54px; height:54px; object-fit:contain; }
-.brand-name { display:block; font-size:clamp(14px,3.5vw,21px); font-weight:800; line-height:1.2; }
+.logo { width:54px; height:54px; object-fit:contain; border-radius:12px; }
+.brand-name { display:block; font-size:clamp(14px,3.7vw,21px); font-weight:800; line-height:1.2; }
 .brand-sub { display:block; color:var(--muted); font-size:13px; margin-top:3px; }
+
 .themes {
   display:flex; gap:3px; padding:4px;
   border:1px solid var(--line); border-radius:30px;
   background:var(--paper); flex-shrink:0;
 }
 .theme {
-  border:0; border-radius:50%; min-width:33px; height:36px;
+  border:0; border-radius:50%; min-width:34px; height:36px;
   background:transparent; color:var(--ink); font-size:17px; cursor:pointer;
 }
 .theme[aria-pressed="true"] { background:var(--accent); color:#291b17; }
@@ -63,93 +60,96 @@ a { color:inherit; text-decoration:none; }
 }
 .hero-image {
   display:block; width:100%; height:auto;
-  max-height:600px; object-fit:cover; object-position:center;
+  max-height:660px; object-fit:cover; object-position:center;
 }
-.hero-copy { padding:25px clamp(18px,4vw,40px) 30px; }
+.hero-copy { padding:23px clamp(18px,4vw,38px) 27px; }
 .eyebrow {
   color:var(--accent); font-size:12px; font-weight:800;
-  letter-spacing:.09em; text-transform:uppercase; margin:0 0 10px;
+  letter-spacing:.08em; text-transform:uppercase; margin:0 0 9px;
 }
 h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; }
-h1 { font-size:clamp(35px,7vw,59px); line-height:1.05; margin:0 0 14px; }
+h1 { font-size:clamp(34px,7vw,54px); line-height:1.06; margin:0 0 12px; }
 h1 em { color:var(--accent); font-style:normal; }
-.hero-copy p:not(.eyebrow) { color:var(--muted); font-size:18px; margin:0 0 20px; }
+.hero-copy p:not(.eyebrow) {
+  color:var(--muted); font-size:18px; margin:0 0 19px;
+}
 .button {
   display:inline-flex; align-items:center; justify-content:center; gap:9px;
   min-height:47px; padding:12px 22px; border-radius:28px;
   background:var(--accent); color:#291b17; font-weight:800;
 }
+
 .section { margin-top:32px; }
 .section-head { margin:0 2px 15px; }
-.section-head h2 { font-size:clamp(27px,5vw,37px); line-height:1.15; margin:0; }
+.section-head h2 {
+  font-size:clamp(28px,5vw,38px); line-height:1.15; margin:0;
+}
 .section-head p { margin:5px 0 0; color:var(--muted); }
 
-
+/* Große Karten: auf dem Handy untereinander */
 .tile-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 16px;
+  display:grid;
+  grid-template-columns:minmax(0,1fr);
+  gap:16px;
 }
-
+.tile {
+  display:block; min-width:0; overflow:hidden;
+  border-radius:22px; background:var(--paper);
+  border:1px solid var(--line);
+  box-shadow:0 6px 22px #54301a0b;
+  transition:transform .18s ease;
+}
+.tile:active { transform:scale(.99); }
 .tile img {
-  display: block;
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
+  display:block; width:100%;
+  height:clamp(190px,55vw,280px);
+  object-fit:cover; object-position:center;
 }
-
-@media (min-width: 760px) {
-  .tile-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
+.tile-link {
+  display:flex; align-items:center; gap:8px;
+  padding:16px 18px; font-size:18px;
+  font-weight:800; min-height:65px;
 }
-
-@media (min-width: 1000px) {
-  .tile-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-}
-
-.arrow { color:var(--accent); font-size:23px; margin-left:auto; }
-
-.sub-links {
-  padding:0 13px 14px;
-  color:var(--muted); font-size:14px;
-}
+.arrow { color:var(--accent); font-size:25px; margin-left:auto; }
+.sub-links { padding:0 18px 18px; color:var(--muted); font-size:15px; }
 .sub-links a {
-  color:var(--accent); font-weight:800;
-  text-decoration:underline; text-underline-offset:3px;
+  display:inline-block; color:var(--accent); font-weight:800;
+  text-decoration:underline; text-underline-offset:3px; margin-top:5px;
 }
+
 .welcome-note {
-  margin-top:27px; padding:23px;
-  background:var(--soft); border:1px solid var(--line); border-radius:21px;
+  margin-top:26px; padding:24px;
+  background:var(--soft); border:1px solid var(--line);
+  border-radius:22px;
 }
-.welcome-note h2 { font-size:clamp(25px,5vw,34px); line-height:1.15; margin:0 0 8px; }
+.welcome-note h2 {
+  font-size:clamp(27px,5vw,36px);
+  line-height:1.15; margin:0 0 8px;
+}
 .welcome-note p { color:var(--muted); margin:0 0 17px; }
 
 .donate-float {
-  position:fixed; z-index:100; right:15px; bottom:16px;
+  position:fixed; z-index:100; right:14px; bottom:14px;
   display:flex; align-items:center; gap:8px;
   padding:14px 20px; border-radius:999px;
   background:var(--accent); color:#291b17;
   box-shadow:0 5px 22px #0004; font-weight:900;
 }
 footer {
-  padding:30px 8px 72px; text-align:center;
+  padding:30px 8px 78px; text-align:center;
   color:var(--muted); font-size:14px;
 }
-footer strong { display:block; color:var(--ink); font-size:15px; margin-bottom:6px; }
+footer strong {
+  display:block; color:var(--ink);
+  font-size:15px; margin-bottom:6px;
+}
 footer p { margin:5px 0; }
 
-@media(min-width:650px) {
+@media(min-width:760px) {
   .wrap { padding:24px; }
-  .hero-copy { padding:32px 38px; }
-  .tile-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:17px; }
-  .tile img { height:220px; }
-  .tile-link { font-size:18px; min-height:68px; padding:15px; }
-}
-@media(min-width:900px) {
-  .tile-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+  .hero-copy { padding:30px 38px; }
+  .tile-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; }
+  .tile img { height:230px; }
 }
 @media(max-width:380px) {
   .wrap { padding:10px; }
@@ -157,8 +157,7 @@ footer p { margin:5px 0; }
   .brand-name { font-size:13px; }
   .brand-sub { font-size:11px; }
   .theme { min-width:28px; height:33px; }
-  .tile img { height:105px; }
-  .tile-link { font-size:13px; padding:10px; }
+  .tile-link { font-size:16px; padding:13px; }
 }
 @media(prefers-reduced-motion:reduce) {
   * { scroll-behavior:auto!important; transition:none!important; }
@@ -185,89 +184,95 @@ footer p { margin:5px 0; }
   </div>
 </header>
 
-<!-- Euer Hauptfoto -->
-<section class="hero">
+<!-- Hauptfoto: ganz oben und nicht als Kachel wiederholt -->
+<section class="hero" aria-label="Willkommen bei Lebensbrücke Deutschland">
   <img class="hero-image"
        src="file_00000000b5788210a59bc98b3a8234b5.png"
-       alt="Hauptmotiv der Lebensbrücke Deutschland – Mensch und Tier gemeinsam">
+       alt="Hauptmotiv der Lebensbrücke Deutschland – Menschen und Tiere gemeinsam im Abendlicht">
+
   <div class="hero-copy">
     <p class="eyebrow">Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</p>
     <h1>Ein <em>WIR</em> für Mensch &amp; Tier.</h1>
     <p>Wir stehen Menschen in schwierigen Situationen und Tieren, die Hilfe brauchen, zur Seite. Gemeinsam schenken wir Hoffnung.</p>
-    <a class="button" href="hilfe.html">Mehr über uns <span>→</span></a>
+    <a class="button" href="hilfe.html">Hilfe bekommen <span>→</span></a>
   </div>
 </section>
 
-<!-- Die wichtigsten Bereiche -->
-<section class="section">
+<!-- Hilfe bekommen -->
+<section class="section" aria-labelledby="hilfe-title">
   <div class="section-head">
-    <h2>Gemeinsam helfen</h2>
-    <p>Jede Unterstützung zählt. Schön, dass du da bist.</p>
+    <h2 id="hilfe-title">Hilfe bekommen</h2>
+    <p>Wenn du Unterstützung brauchst, bist du hier richtig.</p>
   </div>
 
   <div class="tile-grid">
-
-    <!-- Spenden -->
-    <a class="tile" href="spenden.html">
-      <img loading="lazy"
-           src="file_00000000b5788210a59bc98b3a8234b5.png"
-           alt="Gemeinsam Mensch und Tier unterstützen">
-      <span class="tile-link">Spenden <span class="arrow">→</span></span>
-    </a>
-
-    <!-- Mitmachen mit Sachspenden direkt darunter -->
-    <div class="tile">
-      <a href="ehrenamt.html">
-        <img loading="lazy"
-             src="mitmachen.jpg"
-             alt="Gemeinsam für Menschen und Tiere da sein">
-        <span class="tile-link">Mitmachen <span class="arrow">→</span></span>
-      </a>
-      <div class="sub-links">
-        Auch mit Sachspenden helfen:
-        <a href="sachspenden.html">Sachspenden ansehen →</a>
-      </div>
-    </div>
-
-    <!-- Hilfe für Tiere: vorhandene Seite -->
-    <a class="tile" href="tier.html">
-      <img loading="lazy"
-           src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
-           alt="Katze in liebevoller Nahaufnahme">
-      <span class="tile-link">Hilfe für Tiere <span class="arrow">→</span></span>
-    </a>
-
-    <!-- Hilfe für Menschen: vorhandene Seite -->
     <a class="tile" href="mensch.html">
       <img loading="lazy"
-           src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=900&amp;q=85"
+           src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
            alt="Menschen, die füreinander da sind">
       <span class="tile-link">Hilfe für Menschen <span class="arrow">→</span></span>
     </a>
 
+    <a class="tile" href="tier.html">
+      <img loading="lazy"
+           src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+           alt="Katze in liebevoller Nahaufnahme">
+      <span class="tile-link">Hilfe für Tiere <span class="arrow">→</span></span>
+    </a>
   </div>
 </section>
 
-<section class="welcome-note">
-  <h2>Von Herzen füreinander da.</h2>
-  <p>Ob du Zeit schenkst, Sachspenden gibst oder unseren Verein finanziell unterstützt – gemeinsam können wir etwas bewegen.</p>
-  <a class="button" href="ehrenamt.html">Mitmachen <span>→</span></a>
+<!-- Helfen -->
+<section class="section" aria-labelledby="helfen-title">
+  <div class="section-head">
+    <h2 id="helfen-title">Helfen</h2>
+    <p>Jede helfende Hand kann etwas bewegen.</p>
+  </div>
+
+  <div class="tile-grid">
+    <a class="tile" href="helfen.html">
+      <img loading="lazy"
+           src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+           alt="Hunde gemeinsam unterwegs">
+      <span class="tile-link">Gemeinsam helfen <span class="arrow">→</span></span>
+    </a>
+
+    <div class="tile">
+      <a href="ehrenamt.html">
+        <img loading="lazy"
+             src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&amp;fit=crop&amp;w=1000&amp;q=85"
+             alt="Menschen engagieren sich gemeinsam">
+        <span class="tile-link">Ehrenamtlich helfen <span class="arrow">→</span></span>
+      </a>
+      <div class="sub-links">
+        Du möchtest Dinge statt Geld geben?<br>
+        <a href="sachspenden.html">Sachspenden ansehen →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Spenden -->
+<section class="welcome-note" aria-labelledby="spenden-title">
+  <h2 id="spenden-title">Von Herzen füreinander da.</h2>
+  <p>Mit deiner Unterstützung helfen wir Menschen und Tieren in schwierigen Situationen.</p>
+  <a class="button" href="spenden.html">Jetzt spenden <span>→</span></a>
 </section>
 
 <footer>
   <strong>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</strong>
   <p>Ein WIR für Mensch &amp; Tier.</p>
   <p>
-    <a href="mensch.html">Hilfe für Menschen</a> ·
-    <a href="tier.html">Hilfe für Tiere</a> ·
+    <a href="hilfe.html">Hilfe bekommen</a> ·
+    <a href="helfen.html">Helfen</a> ·
     <a href="spenden.html">Spenden</a>
   </p>
 </footer>
 
 </main>
 
-<!-- Spenden von jeder Stelle aus erreichbar -->
-<a class="donate-float" href="spenden.html">♥ Spenden</a>
+<!-- Von jeder Seite der Startseite aus erreichbar -->
+<a class="donate-float" href="spenden.html" aria-label="Jederzeit zur Spendenseite">♥ Spenden</a>
 
 <script>
 const root = document.documentElement;
@@ -278,7 +283,7 @@ function applyTheme(mode) {
   root.dataset.theme = mode;
   themeColor.content =
     mode === "dark" ? "#211b18" :
-    mode === "warm" ? "#fff0e8" : "#fffaf2";
+    mode === "warm" ? "#fff4e8" : "#fffdf8";
 
   buttons.forEach(button => {
     button.setAttribute(
