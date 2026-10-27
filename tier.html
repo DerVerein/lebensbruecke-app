@@ -3,233 +3,147 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Hilfe für Tiere – Lebensbrücke Deutschland</title>
+<title>Tierhilfe – Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</title>
 <style>
-:root{
---bg:#111319;--ink:#f7f4f0;--muted:#c1c1ca;
---panel:#1d202b;--line:#393c49;--accent:#ff7868;
---gold:#f3ca72;--button:#ff7868
-}
-[data-theme="day"]{
---bg:#f7f1e8;--ink:#27211d;--muted:#6c625c;
---panel:#fffaf3;--line:#e0d4ca;--accent:#b74f40;
---gold:#a47b20;--button:#e96755
-}
-[data-theme="plum"]{
---bg:#211827;--ink:#fff7f3;--muted:#d0c2d0;
---panel:#302238;--line:#514057;--accent:#e7a4d0;
---gold:#f4ca7a;--button:#e7a4d0
-}
-[data-theme="forest"]{
---bg:#111714;--ink:#f6f5ed;--muted:#c1c9c0;
---panel:#1b2520;--line:#3a4840;--accent:#b9d59b;
---gold:#e9b86d;--button:#b9d59b
-}
-[data-theme="ocean"]{
---bg:#111820;--ink:#f4f7fa;--muted:#bdc9d4;
---panel:#1b2733;--line:#354654;--accent:#83cce0;
---gold:#e9c17a;--button:#83cce0
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-margin:0;background:var(--bg);color:var(--ink);
-font:16px/1.65 Arial,sans-serif
-}
-a{color:inherit}
-.top{
-padding:18px 5%;background:var(--panel);
-border-bottom:1px solid var(--line)
-}
-.navline{
-display:flex;justify-content:space-between;
-align-items:center;gap:18px;flex-wrap:wrap
-}
-.brand{text-decoration:none;font-weight:800;font-size:19px}
-.brand small{display:block;color:var(--muted);font-weight:400}
-.themes{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
-.themes button{
-border:1px solid var(--line);border-radius:22px;
-padding:9px 13px;background:var(--bg);color:var(--ink);
-font-size:14px;cursor:pointer
-}
-.themes button[data-t="midnight"]{background:#292c39;color:white}
-.themes button[data-t="day"]{background:#fff5e8;color:#30251e}
-.themes button[data-t="plum"]{background:#49314e;color:white}
-.themes button[data-t="forest"]{background:#314b3b;color:white}
-.themes button[data-t="ocean"]{background:#24475a;color:white}
-.themes button[aria-pressed="true"]{outline:2px solid var(--accent);outline-offset:2px}
-.hero{
-position:relative;min-height:390px;display:flex;
-align-items:center;overflow:hidden;background:var(--panel)
-}
-.hero img{
-position:absolute;inset:0;width:100%;height:100%;
-object-fit:cover;object-position:center 40%
-}
-.hero:after{
-content:"";position:absolute;inset:0;
-background:linear-gradient(90deg,#111319c9,#11131930)
-}
-.copy{
-position:relative;z-index:1;padding:40px 6%;
-max-width:720px;color:white
-}
-.eyebrow{
-color:var(--gold);font-weight:bold;
-text-transform:uppercase;letter-spacing:1.5px
-}
-h1,h2{font-family:Georgia,serif;line-height:1.15}
-h1{font-size:clamp(38px,7vw,62px);margin:12px 0}
-h2{font-size:clamp(27px,5vw,38px);margin:8px 0 14px}
-.copy p{font-size:19px;max-width:600px}
-.intro{
-max-width:850px;margin:auto;padding:42px 6% 20px;text-align:center
-}
-.intro p,.service p,.end p{color:var(--muted)}
-.services{max-width:1080px;margin:auto;padding:0 5%}
-.service{
-display:grid;grid-template-columns:1fr 1fr;
-gap:28px;align-items:center;padding:30px 0;
-border-bottom:1px solid var(--line)
-}
-.service:nth-child(even) img{order:2}
-.service img{
-width:100%;height:250px;object-fit:cover;
-border-radius:18px
-}
-.kicker{
-color:var(--accent);font-size:13px;
-font-weight:bold;letter-spacing:1px;text-transform:uppercase
-}
-.end{text-align:center;padding:40px 6% 48px}
-.end p{max-width:600px;margin:16px auto 24px}
-.cta{
-display:inline-block;padding:14px 22px;
-background:var(--button);color:#201a19;
-text-decoration:none;font-weight:bold;border-radius:28px
-}
-.cta:hover{filter:brightness(1.08)}
-.footer{
-text-align:center;border-top:1px solid var(--line);
-padding:24px;color:var(--muted);font-size:14px
-}
-.footer a{display:inline-block;margin:5px 9px;color:var(--accent)}
-@media(max-width:650px){
-.navline{align-items:flex-start;flex-direction:column}
-.hero{min-height:360px}
-.copy p{font-size:17px}
-.service{grid-template-columns:1fr;gap:14px}
-.service:nth-child(even) img{order:0}
-.service img{height:230px}
+:root{--bg:#111319;--ink:#f7f4f0;--muted:#c1c1ca;--panel:#1d202b;--panel2:#aeb1d0;--coral:#ff7868;--pink:#b987a0;--green:#e77b6d;--line:#393c49;--gold:#f3ca72}
+[data-theme="day"]{--bg:#f7f1e8;--ink:#27211d;--muted:#6c625c;--panel:#fffaf3;--panel2:#deddf0;--coral:#e96755;--pink:#ad7890;--green:#d66e62;--line:#e0d4ca;--gold:#dfb74e}
+[data-theme="plum"]{--bg:#17131c;--ink:#fff7f3;--muted:#d0c2d0;--panel:#241d2b;--panel2:#c2b8d7;--coral:#ff796b;--pink:#b98ba5;--green:#d88a8e;--line:#443849;--gold:#f4ca7a}
+[data-theme="forest"]{--bg:#111714;--ink:#f6f5ed;--muted:#c1c9c0;--panel:#1b2520;--panel2:#d2ded0;--coral:#e9b86d;--pink:#9bb99a;--green:#8dd9a2;--line:#3a4840;--gold:#e9b86d}
+[data-theme="ocean"]{--bg:#111820;--ink:#f4f7fa;--muted:#bdc9d4;--panel:#1b2733;--panel2:#c8dbe2;--coral:#f0a77e;--pink:#9dbdc9;--green:#6ed5b1;--line:#354654;--gold:#e9c17a}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.6 Arial,Helvetica,sans-serif;transition:background .2s}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1280px;margin:auto;padding:0 25px 75px}
+header.top{height:78px;display:flex;justify-content:space-between;align-items:center;gap:15px;border-bottom:1px solid var(--line)}
+.brand{display:flex;align-items:center;gap:10px;font-family:Georgia,serif;font-size:17px;font-weight:bold;line-height:1.05}
+.brand img{width:46px;height:46px;object-fit:contain}
+.brand small{display:block;font:11px Arial,sans-serif;color:var(--muted);margin-top:5px}
+.right{display:flex;align-items:center;gap:11px}
+.themes{display:flex;gap:5px}
+.themes button{width:22px;height:22px;border-radius:50%;border:1px solid #777;cursor:pointer;padding:0}
+.themes button:nth-child(1){background:#111319}.themes button:nth-child(2){background:#f7f1e8}
+.themes button:nth-child(3){background:#b8a7d0}.themes button:nth-child(4){background:#8ca88d}.themes button:nth-child(5){background:#8db9c8}
+.themes button[aria-pressed="true"]{outline:2px solid var(--coral);outline-offset:2px}
+.nav{display:flex;gap:22px;color:var(--muted);font-size:14px}
+.menu{display:none;border:0;background:none;color:var(--ink);font-size:24px}
+.hero{padding:25px 0 32px;display:grid;grid-template-columns:1fr 1.08fr;gap:25px;align-items:stretch}
+.hero-copy{display:flex;flex-direction:column;justify-content:center;padding:20px 0 25px}
+.tag{font-size:14px;text-transform:uppercase;letter-spacing:.14em;color:var(--pink);font-weight:900}
+.hero h1{font-size:clamp(48px,6.6vw,82px);font-weight:900;letter-spacing:-.075em;line-height:.9;margin:20px 0 22px}
+.hero h1 em{font-style:normal;color:var(--coral)}
+.hero-copy p{font-size:17px;line-height:1.75;color:var(--muted);max-width:400px}
+.hero-art{min-height:420px;border-radius:22px 22px 90px 22px;overflow:hidden;background:var(--panel2)}
+.hero-art img{display:block;width:100%;height:100%;min-height:420px;object-fit:cover;object-position:center 35%}
+.intro{display:grid;grid-template-columns:.75fr 1.25fr;gap:6vw;margin:12px 0 55px;align-items:start}
+.intro h2,.section-title h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(35px,4.4vw,56px);line-height:.93;letter-spacing:-.055em;margin:13px 0}
+.intro-copy{font-family:Georgia,serif;font-size:clamp(23px,3vw,37px);line-height:1.38}
+.intro-copy em{font-style:normal;color:var(--coral)}
+.services{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.service{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.service img{display:block;width:100%;height:245px;object-fit:cover;object-position:center 35%}
+.service-copy{padding:23px 24px 26px}
+.kicker{color:var(--pink);font-size:13px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.service h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(27px,3vw,36px);line-height:1;margin:12px 0}
+.service p,.end p{color:var(--muted);line-height:1.7}
+.end{text-align:center;padding:48px 5% 35px}
+.end h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(35px,4.5vw,54px);line-height:1;margin:12px 0}
+.end p{max-width:620px;margin:18px auto}
+.cta{display:inline-flex;align-items:center;gap:12px;background:var(--green);color:#10241a;border-radius:28px;padding:15px 24px;font-size:14px;font-weight:900;margin-top:12px;box-shadow:0 4px 0 #a94e45}
+.cta span{font-size:20px}
+footer{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:23px;margin-top:28px;font-size:13px;color:var(--muted)}
+footer strong{color:var(--ink)}footer a{color:var(--pink)}
+.float{position:fixed;right:18px;bottom:18px;background:var(--green);color:#10241a;padding:15px 22px;border-radius:8px;font-size:14px;font-weight:900;box-shadow:0 4px 0 #a94e45;z-index:5}
+@media(max-width:720px){
+.wrap{padding:0 13px 75px}header.top{height:68px}.brand{font-size:13px}.brand img{width:39px;height:39px}
+.nav{display:none}.menu{display:block}.right{gap:9px}
+.hero{grid-template-columns:1fr;gap:17px;padding:16px 0 25px}
+.hero-art{min-height:0;height:310px;order:1;border-radius:18px 18px 65px 18px}
+.hero-art img{min-height:0;height:310px;object-position:center 35%}
+.hero-copy{order:2;padding:13px 5px}.hero h1{font-size:56px;margin:14px 0 17px}
+.hero-copy p{font-size:17px}.intro{grid-template-columns:1fr;gap:10px;margin-bottom:36px}
+.intro h2{font-size:44px}.intro-copy{font-size:24px}
+.services{grid-template-columns:1fr;gap:16px}.service img{height:250px}.service-copy{padding:20px}
+.end{padding:38px 4% 25px}.float{right:12px;bottom:12px;padding:14px 18px}
 }
 </style>
+<script>
+try{const t=localStorage.getItem('lebensbruecke-theme');if(t&&['midnight','day','plum','forest','ocean'].includes(t))document.documentElement.dataset.theme=t}catch(e){}
+</script>
 </head>
 <body>
-
-<nav class="top">
-  <div class="navline">
-    <a class="brand" href="index.html">
-      Lebensbrücke Deutschland
-      <small>Mensch &amp; Tier e. V.</small>
-    </a>
-  </div>
-  <div class="themes" aria-label="Farbschema auswählen">
-    <button data-t="midnight" aria-pressed="true">Nacht</button>
-    <button data-t="day" aria-pressed="false">Hell</button>
-    <button data-t="plum" aria-pressed="false">Pflaume</button>
-    <button data-t="forest" aria-pressed="false">Wald</button>
-    <button data-t="ocean" aria-pressed="false">Ozean</button>
-  </div>
-</nav>
-
-<header class="hero">
-  <img src="images/bild-6.jpg" alt="Hund in liebevoller Umgebung">
-  <div class="copy">
-    <div class="eyebrow">Wir helfen gemeinsam</div>
-    <h1>Hilfe für dein Tier</h1>
-    <p>Wenn Tierarztkosten oder die Versorgung zur Belastung werden, musst du dich nicht schämen, um Unterstützung zu bitten.</p>
-  </div>
+<main class="wrap">
+<header class="top">
+<a class="brand" href="index.html">
+<img src="https://raw.githubusercontent.com/DerVerein/lebensbruecke-app/main/VereinsIcon.png" alt="Vereinslogo">
+<span>Lebensbrücke Deutschland<small>Mensch &amp; Tier e. V.</small></span>
+</a>
+<nav class="nav"><a href="index.html">Startseite</a><a href="#tierhilfe">Tierhilfe</a><a href="#spenden">Spenden</a></nav>
+<div class="right"><div class="themes" aria-label="Farbauswahl">
+<button data-theme="midnight" aria-label="Dunkel" aria-pressed="true"></button>
+<button data-theme="day" aria-label="Hell" aria-pressed="false"></button>
+<button data-theme="plum" aria-label="Mauve" aria-pressed="false"></button>
+<button data-theme="forest" aria-label="Waldgrün" aria-pressed="false"></button>
+<button data-theme="ocean" aria-label="Blau" aria-pressed="false"></button>
+</div><button class="menu" aria-label="Menü">☰</button></div>
 </header>
 
+<section class="hero" id="tierhilfe">
+<div class="hero-copy">
+<div class="tag">Gemeinsam helfen</div>
+<h1>Hilfe für<br><em>dein Tier.</em></h1>
+<p>Für Tiere da sein und Menschen unterstützen, die sich liebevoll um sie kümmern.</p>
+<a class="cta" href="tier-hilfe-antrag.html">Hilfe anfragen <span>↗</span></a>
+</div>
+<div class="hero-art">
+<img src="https://raw.githubusercontent.com/DerVerein/lebensbruecke-app/main/images/bild-1.jpg" alt="Tierfoto für die Tierhilfe">
+</div>
+</section>
+
 <section class="intro">
-  <h2>Ein WIR für Mensch &amp; Tier.</h2>
-  <p>Hier findest du unsere Hilfsangebote für Tiere. Wir schauen uns jedes Anliegen individuell an.</p>
+<h2>Ein WIR<br>für Mensch &amp; Tier.</h2>
+<div class="intro-copy">Manchmal braucht es Unterstützung, damit Mensch und Tier <em>zusammenbleiben können.</em></div>
 </section>
 
-<main class="services">
-
-  <section class="service">
-    <img src="images/bild-2.jpg" alt="Hund">
-    <div>
-      <div class="kicker">01 · Medizinische Versorgung</div>
-      <h2>Tierarztkosten</h2>
-      <p>Wenn notwendige tierärztliche Behandlungen finanziell schwer zu stemmen sind, prüfen wir, ob Unterstützung möglich ist.</p>
-    </div>
-  </section>
-
-  <section class="service">
-    <img src="images/bild-3.jpg" alt="Tierfutter">
-    <div>
-      <div class="kicker">02 · Versorgung im Alltag</div>
-      <h2>Futterhilfe</h2>
-      <p>Wenn das Geld für geeignetes Tierfutter knapp ist, prüfen wir, ob Unterstützung möglich ist.</p>
-    </div>
-  </section>
-
-  <section class="service">
-    <img src="images/bild-4.jpg" alt="Hund beim Spielen">
-    <div>
-      <div class="kicker">03 · Zubehör und Grundbedarf</div>
-      <h2>Zubehör &amp; Versorgung</h2>
-      <p>Manchmal fehlen wichtige Dinge für den Alltag. Beschreibe uns, was dein Tier benötigt.</p>
-    </div>
-  </section>
-
-  <section class="service">
-    <img src="images/bild-5.jpg" alt="Katze">
-    <div>
-      <div class="kicker">04 · Individuelle Unterstützung</div>
-      <h2>Weitere Hilfe für Tiere</h2>
-      <p>Du hast eine andere schwierige Situation? Erkläre uns dein Anliegen im Anfrageformular.</p>
-    </div>
-  </section>
-
-</main>
-
-<section class="end">
-  <h2>Du brauchst Unterstützung?</h2>
-  <p>Wir prüfen jedes Anliegen individuell. Eine Anfrage ist noch keine Zusage für Unterstützung.</p>
-  <a class="cta" href="tier-hilfe-antrag.html">Hilfe für dein Tier anfragen →</a>
-  <p><a href="spenden.html">Unsere Arbeit mit einer Spende unterstützen</a></p>
+<section class="services">
+<article class="service">
+<img src="https://raw.githubusercontent.com/DerVerein/lebensbruecke-app/main/images/bild-2.jpg" alt="Tierhilfe und tierärztliche Versorgung">
+<div class="service-copy"><div class="kicker">01 · Medizinische Versorgung</div><h2>Tierarztkosten</h2><p>Wenn notwendige tierärztliche Behandlungen finanziell schwer zu stemmen sind, prüfen wir, ob Unterstützung möglich ist.</p></div>
+</article>
+<article class="service">
+<img src="https://raw.githubusercontent.com/DerVerein/lebensbruecke-app/main/images/bild-3.jpg" alt="Tierfutter und Versorgung">
+<div class="service-copy"><div class="kicker">02 · Versorgung im Alltag</div><h2>Futterhilfe</h2><p>Wenn das Geld für geeignetes Tierfutter knapp ist, prüfen wir, ob Unterstützung möglich ist.</p></div>
+</article>
+<article class="service">
+<img src="https://raw.githubusercontent.com/DerVerein/lebensbruecke-app/main/images/bild-4.jpg" alt="Hund beim Spielen">
+<div class="service-copy"><div class="kicker">03 · Zubehör und Grundbedarf</div><h2>Zubehör &amp; Versorgung</h2><p>Manchmal fehlen wichtige Dinge für den Alltag. Beschreibe uns, was dein Tier benötigt.</p></div>
+</article>
+<article class="service">
+<img src="https://raw.githubusercontent.com/DerVerein/lebensbruecke-app/main/images/bild-5.jpg" alt="Katze">
+<div class="service-copy"><div class="kicker">04 · Individuelle Unterstützung</div><h2>Weitere Hilfe</h2><p>Du hast eine andere schwierige Situation? Erkläre uns dein Anliegen im Anfrageformular.</p></div>
+</article>
 </section>
 
-<footer class="footer">
-  <p><strong>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</strong></p>
-  <a href="index.html">Startseite</a>
-  <a href="impressum.html">Impressum</a>
-  <a href="datenschutz.html">Datenschutz</a>
+<section class="end" id="spenden">
+<div class="tag">Du bist nicht allein</div>
+<h2>Gemeinsam für Tiere.</h2>
+<p>Wir prüfen jedes Anliegen individuell. Eine Anfrage ist noch keine Zusage für Unterstützung.</p>
+<a class="cta" href="tier-hilfe-antrag.html">Tierhilfe anfragen <span>↗</span></a>
+</section>
+
+<footer>
+<strong>Lebensbrücke Deutschland – Mensch &amp; Tier e. V.</strong>
+<span><a href="index.html">Startseite</a> · <a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
 </footer>
-
+</main>
+<a class="float" href="spenden.html">♥ Spenden</a>
 <script>
-const buttons=document.querySelectorAll("[data-t]");
-function setTheme(theme){
-  document.documentElement.dataset.theme=theme;
-  buttons.forEach(button=>{
-    button.setAttribute("aria-pressed",button.dataset.t===theme?"true":"false");
-  });
-  try{localStorage.setItem("lebensbruecke-theme",theme)}catch(e){}
-}
-buttons.forEach(button=>{
-  button.addEventListener("click",()=>setTheme(button.dataset.t));
-});
-try{
-  const saved=localStorage.getItem("lebensbruecke-theme");
-  if(saved&&["midnight","day","plum","forest","ocean"].includes(saved)){
-    setTheme(saved);
-  }
-}catch(e){}
+const themeButtons=document.querySelectorAll('.themes button');
+themeButtons.forEach(button=>button.addEventListener('click',()=>{
+ const theme=button.dataset.theme;
+ document.documentElement.dataset.theme=theme;
+ themeButtons.forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
+ try{localStorage.setItem('lebensbruecke-theme',theme)}catch(e){}
+}));
 </script>
-
 </body>
 </html>
