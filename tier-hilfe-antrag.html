@@ -1,304 +1,272 @@
 
-<!doctype html>
-<html lang="de" data-theme="dark">
+<!DOCTYPE html>
+<html lang="de">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#1e2928">
+<meta name="theme-color" content="#1b2624">
 <title>Tierhilfe-Antrag – Lebensbrücke Deutschland</title>
 
 <style>
 :root {
-  --bg:#f7f3e9;
-  --paper:#fffdf7;
-  --ink:#29312f;
-  --muted:#68716b;
-  --coral:#df8272;
-  --coral-dark:#a95e51;
-  --soft:#f1e5d8;
-  --sage:#e9efe2;
-  --field:#f0f2e8;
-  --line:#dedfd2;
-  --shadow:0 12px 34px rgba(57,41,33,.09);
-}
-
-body.dark {
   --bg:#1b2624;
   --paper:#222f2c;
+  --field:#2b3932;
+  --field-hover:#36463b;
   --ink:#f8f1e8;
   --muted:#c3ccc4;
-  --coral:#e8a08c;
-  --coral-dark:#f0b4a3;
-  --soft:#343d34;
-  --sage:#293b31;
-  --field:#293832;
-  --line:#40504a;
-  --shadow:0 12px 34px rgba(0,0,0,.23);
+  --accent:#e8a08c;
+  --soft:#3a4034;
+  --line:#46564b;
+  --green:#dce8cb;
+  --green-ink:#263b2b;
+  --shadow:0 10px 28px #0003;
 }
 
-*{box-sizing:border-box}
+* { box-sizing:border-box; }
 
-body{
+html { scroll-behavior:smooth; }
+
+body {
   margin:0;
   background:var(--bg);
   color:var(--ink);
-  font-family:Arial,Helvetica,sans-serif;
-  line-height:1.55;
-  transition:background .2s,color .2s;
+  font:16px/1.55 Arial,Helvetica,sans-serif;
 }
 
-a{color:inherit}
+body.light {
+  --bg:#f5f1e7;
+  --paper:#fffdf7;
+  --field:#f0f2e8;
+  --field-hover:#e7eddd;
+  --ink:#29312b;
+  --muted:#667066;
+  --accent:#c66f60;
+  --soft:#f0e5d8;
+  --line:#d9dfd0;
+  --green:#dce8cb;
+  --green-ink:#263b2b;
+  --shadow:0 10px 28px #55473312;
+}
 
-.topbar{
+a { color:inherit; }
+
+.topbar {
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:12px;
-  padding:14px clamp(16px,5vw,60px);
+  padding:13px 18px;
   background:var(--paper);
   border-bottom:1px solid var(--line);
 }
 
-.brand{
+.brand {
   display:flex;
   align-items:center;
-  gap:11px;
-  text-decoration:none;
+  gap:10px;
   font-weight:bold;
+  text-decoration:none;
+  font-size:15px;
 }
 
-.mark{
-  width:43px;
-  height:43px;
-  border:2px solid var(--coral);
-  border-radius:50%;
-  display:grid;
-  place-items:center;
-  font-size:25px;
-  flex-shrink:0;
-}
-
-.brand small{
+.brand small {
   display:block;
   color:var(--muted);
-  font-weight:normal;
   font-size:12px;
+  font-weight:normal;
 }
 
-.mode{
+.mark {
+  width:42px;
+  height:42px;
+  display:grid;
+  place-items:center;
+  border:2px solid var(--accent);
+  border-radius:50%;
+  font-size:25px;
+}
+
+.mode {
   border:1px solid var(--line);
-  border-radius:99px;
-  padding:10px 13px;
+  border-radius:30px;
+  padding:9px 12px;
   background:var(--field);
   color:var(--ink);
   font-weight:bold;
   cursor:pointer;
 }
 
-.hero{
+.hero {
   position:relative;
-  min-height:290px;
+  min-height:280px;
   display:flex;
   align-items:flex-end;
   overflow:hidden;
-  background:#51443c;
+  background:#303b32;
 }
 
-.hero img{
+.hero img {
   position:absolute;
   inset:0;
   width:100%;
   height:100%;
   object-fit:cover;
-  object-position:center 45%;
 }
 
-.hero:after{
+.hero:after {
   content:"";
   position:absolute;
   inset:0;
-  background:linear-gradient(
-    0deg,
-    rgba(24,29,26,.83),
-    rgba(24,29,26,.12)
-  );
+  background:linear-gradient(0deg,#111c1bea,transparent);
 }
 
-.hero-copy{
+.hero-copy {
   position:relative;
   z-index:1;
+  padding:28px 22px;
+  max-width:750px;
   color:white;
-  padding:34px clamp(20px,6vw,72px);
-  max-width:850px;
 }
 
-.eyebrow{
+.eyebrow {
+  color:#f3c8ad;
   font-size:12px;
-  letter-spacing:.15em;
+  letter-spacing:.12em;
   text-transform:uppercase;
   font-weight:bold;
-  color:#ffd2c7;
 }
 
-.hero h1{
-  font-family:Georgia,serif;
-  font-size:clamp(35px,6vw,57px);
-  line-height:1.05;
-  margin:9px 0 12px;
+.hero h1 {
+  font: bold clamp(35px,7vw,55px)/1.05 Georgia,serif;
+  margin:10px 0;
 }
 
-.hero p{
-  font-size:17px;
-  margin:0;
-  max-width:650px;
-}
+.hero p { margin:0; }
 
-main{
+main {
   max-width:1000px;
-  margin:0 auto;
-  padding:34px 17px 85px;
+  margin:auto;
+  padding:28px 14px 90px;
 }
 
-.intro{
+.intro {
   text-align:center;
-  max-width:760px;
-  margin:0 auto 26px;
+  max-width:740px;
+  margin:0 auto 25px;
 }
 
-.intro h2{
-  font-family:Georgia,serif;
-  font-size:clamp(28px,4vw,38px);
-  line-height:1.12;
-  margin:0 0 9px;
+.intro h2 {
+  font:normal clamp(28px,5vw,38px)/1.15 Georgia,serif;
+  margin:0 0 10px;
 }
 
-.intro p{
-  color:var(--muted);
-  margin:0;
-}
+.intro p { color:var(--muted); }
 
-.form-shell{
+.form-shell {
   display:grid;
-  grid-template-columns:minmax(0,1fr) 260px;
-  gap:22px;
+  grid-template-columns:minmax(0,1fr) 250px;
+  gap:20px;
   align-items:start;
 }
 
-form,.aside-card{
+form,.aside-card {
   background:var(--paper);
   border:1px solid var(--line);
-  border-radius:24px;
-  padding:clamp(20px,3vw,32px);
+  border-radius:22px;
+  padding:24px;
   box-shadow:var(--shadow);
 }
 
-.step-title{
+.step-title {
   display:flex;
   align-items:center;
   gap:12px;
-  margin:0 0 18px;
   font-size:20px;
+  margin:0 0 18px;
 }
 
-.step{
-  width:34px;
-  height:34px;
+.step {
   display:grid;
   place-items:center;
-  background:var(--soft);
+  width:36px;
+  height:36px;
   border-radius:50%;
-  font-weight:bold;
-  color:var(--coral-dark);
+  background:var(--soft);
+  color:var(--accent);
   flex-shrink:0;
 }
 
-.fields{
+.fields {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:16px;
 }
 
-.field{
+.field {
   display:flex;
   flex-direction:column;
-  gap:6px;
+  gap:7px;
+  min-width:0;
 }
 
-.field.full{grid-column:1/-1}
+.field.full { grid-column:1/-1; }
 
-label{
+label {
   font-size:14px;
   font-weight:bold;
 }
 
-.optional{
-  font-weight:normal;
+.optional {
   color:var(--muted);
+  font-weight:normal;
 }
 
-/* Dezente cremegrüne Eingabefelder */
-
-input,select,textarea{
-  font:inherit;
-  color:var(--ink);
-  background:var(--field);
-  border:1px solid var(--line);
-  border-radius:12px;
-  padding:12px 13px;
+input,textarea {
+  display:block;
   width:100%;
   min-width:0;
+  border:1px solid var(--line);
+  border-radius:12px;
+  padding:13px;
+  background:var(--field);
+  color:var(--ink);
+  font:inherit;
 }
 
-input::placeholder,textarea::placeholder{
+input::placeholder,textarea::placeholder {
   color:var(--muted);
   opacity:.85;
 }
 
-select{
-  cursor:pointer;
-}
-
-textarea{
-  min-height:112px;
+textarea {
+  min-height:120px;
   resize:vertical;
 }
 
-input:focus,select:focus,textarea:focus{
-  outline:2px solid var(--coral);
-  outline-offset:1px;
-  border-color:var(--coral);
+input:focus,textarea:focus,.select-trigger:focus-visible {
+  outline:2px solid var(--accent);
+  outline-offset:2px;
 }
 
-body.dark input,
-body.dark select,
-body.dark textarea{
-  color-scheme:dark;
-}
+.section-gap { margin-top:30px; }
 
-.hint{
-  font-size:12px;
-  color:var(--muted);
-  margin:0;
-}
-
-.choice-group{
+.choice-group {
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:10px;
 }
 
-.choice{
-  position:relative;
-}
+.choice { position:relative; }
 
-.choice input{
+.choice input {
   position:absolute;
-  opacity:0;
   width:1px;
   height:1px;
+  opacity:0;
 }
 
-.choice label{
+.choice label {
   display:block;
   height:100%;
   padding:13px;
@@ -306,21 +274,20 @@ body.dark textarea{
   border-radius:14px;
   background:var(--field);
   cursor:pointer;
-  transition:background .2s,border-color .2s;
 }
 
-.choice input:checked+label{
-  border-color:var(--coral-dark);
+.choice input:checked+label {
   background:var(--soft);
-  box-shadow:inset 0 0 0 1px var(--coral-dark);
+  border-color:var(--accent);
+  box-shadow:inset 0 0 0 1px var(--accent);
 }
 
-.choice strong{
+.choice strong {
   display:block;
   font-size:15px;
 }
 
-.choice small{
+.choice small {
   display:block;
   color:var(--muted);
   font-size:12px;
@@ -328,184 +295,230 @@ body.dark textarea{
   margin-top:3px;
 }
 
-.checkrow{
+/* Eigene farbige Auswahlmenüs */
+
+.select-wrap { position:relative; width:100%; }
+
+.native-select {
+  position:absolute!important;
+  width:1px!important;
+  height:1px!important;
+  opacity:0!important;
+  pointer-events:none!important;
+  padding:0!important;
+  border:0!important;
+}
+
+.select-trigger {
   display:flex;
-  align-items:flex-start;
-  gap:10px;
-  margin:20px 0 0;
-  font-size:13px;
-  color:var(--muted);
-}
-
-.checkrow input{
-  width:18px;
-  height:18px;
-  margin-top:2px;
-  flex-shrink:0;
-  accent-color:var(--coral-dark);
-}
-
-.submit{
-  border:0;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
   width:100%;
-  margin-top:20px;
-  border-radius:99px;
-  background:var(--coral);
-  color:#302421;
-  font-size:16px;
-  font-weight:bold;
-  padding:15px 18px;
+  min-height:49px;
+  padding:12px 13px;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:var(--field);
+  color:var(--ink);
+  font:inherit;
+  text-align:left;
   cursor:pointer;
 }
 
-.submit:hover{filter:brightness(.98)}
-
-.local-note{
-  background:var(--sage);
-  padding:15px;
-  border-radius:15px;
-  font-size:13px;
-  color:var(--ink);
-  margin-top:15px;
+.select-trigger .arrow {
+  color:var(--accent);
+  flex-shrink:0;
 }
 
-.aside-card{
+.select-menu {
+  display:none;
+  position:absolute;
+  z-index:30;
+  top:calc(100% + 7px);
+  left:0;
+  right:0;
+  max-height:260px;
+  overflow-y:auto;
+  padding:6px;
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:15px;
+  box-shadow:0 12px 30px #0005;
+}
+
+.select-wrap.open .select-menu { display:block; }
+
+.select-option {
+  display:block;
+  width:100%;
+  padding:12px;
+  border:0;
+  border-radius:9px;
+  background:transparent;
+  color:var(--ink);
+  font:inherit;
+  text-align:left;
+  cursor:pointer;
+}
+
+.select-option:hover,
+.select-option:focus-visible {
+  background:var(--field-hover);
+  outline:none;
+}
+
+.select-option[aria-selected="true"] {
+  background:var(--soft);
+  font-weight:bold;
+}
+
+.select-option[aria-selected="true"]:after {
+  content:" ✓";
+  color:var(--accent);
+  float:right;
+}
+
+.checkrow {
+  display:flex;
+  align-items:flex-start;
+  gap:10px;
+  margin-top:20px;
+  color:var(--muted);
+  font-size:13px;
+}
+
+.checkrow input {
+  width:18px;
+  height:18px;
+  margin-top:3px;
+  flex-shrink:0;
+  accent-color:var(--accent);
+}
+
+.submit {
+  display:block;
+  width:100%;
+  margin-top:20px;
+  padding:15px;
+  border:0;
+  border-radius:30px;
+  background:var(--accent);
+  color:#302421;
+  font-size:16px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.local-note {
+  margin-top:15px;
+  padding:14px;
+  border-radius:13px;
+  background:var(--soft);
+  font-size:13px;
+}
+
+.aside-card {
   padding:0;
   overflow:hidden;
 }
 
-.aside-card img{
+.aside-card img {
+  display:block;
   width:100%;
   height:170px;
   object-fit:cover;
-  display:block;
 }
 
-.aside-copy{padding:19px}
+.aside-copy { padding:18px; }
 
-.aside-copy h3{
-  font-family:Georgia,serif;
-  font-size:23px;
-  line-height:1.15;
-  margin:0 0 9px;
+.aside-copy h3 {
+  font:normal 24px/1.15 Georgia,serif;
+  margin:0 0 10px;
 }
 
-.aside-copy p{
+.aside-copy p,.aside-copy ul {
+  color:var(--muted);
   font-size:14px;
-  color:var(--muted);
-  margin:0 0 12px;
 }
 
-.aside-copy ul{
-  padding-left:19px;
-  margin:0;
-  color:var(--muted);
-  font-size:13px;
-}
+.aside-copy ul { padding-left:19px; }
 
-.bottom{
-  text-align:center;
-  padding:24px 16px 35px;
+.bottom {
+  padding:25px 16px 40px;
   border-top:1px solid var(--line);
   background:var(--paper);
+  text-align:center;
 }
 
-.bottom a{
-  color:var(--coral-dark);
+.bottom a {
+  color:var(--accent);
   font-weight:bold;
   text-decoration:none;
 }
 
-/* Pfoten-Spendenbutton */
+/* Spendenpfote mit gut lesbarer Schrift */
 
-.paw-donate{
+.paw-donate {
   position:fixed;
-  right:16px;
-  bottom:18px;
+  right:15px;
+  bottom:15px;
   z-index:50;
-  width:94px;
-  height:88px;
+  width:88px;
+  height:94px;
   display:flex;
-  align-items:center;
+  align-items:flex-end;
   justify-content:center;
-  text-align:center;
+  padding-bottom:17px;
   text-decoration:none;
-  color:#263b2b;
-  background:#dce7c9;
-  border:2px solid #b4c79d;
-  border-radius:43% 43% 48% 48%;
-  box-shadow:0 5px 15px rgba(0,0,0,.25);
-  font-size:13px;
-  font-weight:900;
-  line-height:1.1;
-  transition:transform .2s,background .2s;
+  color:var(--green-ink);
+  filter:drop-shadow(0 4px 7px #0005);
+  transition:transform .2s;
 }
 
-.paw-donate:hover{
-  transform:scale(1.05);
-  background:#e7efd9;
-}
+.paw-donate:hover { transform:scale(1.05); }
 
-/* Vier Zehen der Pfote */
-
-.paw-donate:before{
-  content:"";
+.paw-donate svg {
   position:absolute;
-  width:18px;
-  height:24px;
-  left:15px;
-  top:-9px;
-  border-radius:50%;
-  background:#dce7c9;
-  border:2px solid #b4c79d;
-  box-shadow:
-    19px -7px 0 -1px #dce7c9,
-    19px -7px 0 1px #b4c79d,
-    39px -7px 0 -1px #dce7c9,
-    39px -7px 0 1px #b4c79d,
-    58px 1px 0 -1px #dce7c9,
-    58px 1px 0 1px #b4c79d;
+  inset:0;
+  width:100%;
+  height:100%;
 }
 
-.paw-donate span{
+.paw-donate span {
   position:relative;
   z-index:1;
-  display:block;
-  max-width:70px;
-  overflow-wrap:normal;
+  font-size:12px;
+  font-weight:900;
   white-space:nowrap;
-  padding:5px 4px;
+  line-height:1.1;
+  padding:5px 7px;
   border-radius:8px;
-  background:rgba(220,231,201,.95);
+  background:#dce8cb;
 }
 
-@media(max-width:760px){
-  .form-shell{grid-template-columns:1fr}
-  .aside-card{display:grid;grid-template-columns:120px 1fr}
-  .aside-card img{height:100%;min-height:185px}
-  .aside-copy{padding:16px}
-  .hero{min-height:300px}
-  .topbar{padding:12px}
-  .brand{font-size:14px}
+@media(max-width:760px) {
+  .form-shell { grid-template-columns:1fr; }
+  .aside-card { display:grid; grid-template-columns:120px 1fr; }
+  .aside-card img { height:100%; min-height:185px; }
+  .aside-copy { padding:15px; }
+  .brand { font-size:13px; }
+  form { padding:19px; }
 }
 
-@media(max-width:470px){
-  .fields{grid-template-columns:1fr}
-  .field.full{grid-column:auto}
-  .choice-group{grid-template-columns:1fr}
-  .aside-card{grid-template-columns:1fr}
-  .aside-card img{height:180px;min-height:0}
-  .paw-donate{
-    width:82px;
-    height:78px;
-    right:12px;
-    bottom:12px;
-    font-size:12px;
+@media(max-width:470px) {
+  .fields { grid-template-columns:1fr; }
+  .field.full { grid-column:auto; }
+  .choice-group { grid-template-columns:1fr; }
+  .aside-card { grid-template-columns:1fr; }
+  .aside-card img { height:180px; min-height:0; }
+  .paw-donate {
+    width:76px;
+    height:82px;
+    right:10px;
+    bottom:10px;
   }
-  .paw-donate:before{
-    transform:scale(.85);
-    transform-origin:bottom left;
-  }
+  .paw-donate span { font-size:11px; }
 }
 </style>
 </head>
@@ -515,8 +528,7 @@ body.dark textarea{
 <nav class="topbar">
   <a class="brand" href="index.html">
     <span class="mark">♡</span>
-    <span>
-      Lebensbrücke Deutschland
+    <span>Lebensbrücke Deutschland
       <small>Mensch &amp; Tier e. V.</small>
     </span>
   </a>
@@ -524,10 +536,8 @@ body.dark textarea{
 </nav>
 
 <header class="hero">
-  <img
-    src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1600&q=85"
-    alt="Hunde laufen gemeinsam über eine Wiese"
-  >
+  <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1600&q=85"
+       alt="Hunde laufen gemeinsam über eine Wiese">
   <div class="hero-copy">
     <div class="eyebrow">Wir hören zu und schauen gemeinsam</div>
     <h1>Hilfe für dein Tier anfragen.</h1>
@@ -536,104 +546,87 @@ body.dark textarea{
 </header>
 
 <main>
-
 <section class="intro">
   <h2>Ein WIR für Mensch &amp; Tier.</h2>
-  <p>Fülle das Formular in Ruhe aus. Angaben mit * sind erforderlich. Wir behandeln deine Angaben vertraulich und prüfen, welche Unterstützung möglich ist.</p>
+  <p>Fülle das Formular in Ruhe aus. Angaben mit * sind erforderlich. Wir prüfen, welche Unterstützung möglich ist.</p>
 </section>
 
 <div class="form-shell">
-
 <form id="tierhilfeForm">
 
-  <h2 class="step-title">
-    <span class="step">1</span>
-    Deine Kontaktdaten
-  </h2>
+  <h2 class="step-title"><span class="step">1</span> Deine Kontaktdaten</h2>
 
   <div class="fields">
     <div class="field">
       <label for="name">Vor- und Nachname *</label>
       <input id="name" name="name" autocomplete="name" required placeholder="Dein Name">
     </div>
-
     <div class="field">
       <label for="email">E-Mail-Adresse *</label>
       <input id="email" name="email" type="email" autocomplete="email" required placeholder="name@beispiel.de">
     </div>
-
     <div class="field">
       <label for="phone">Telefon <span class="optional">(optional)</span></label>
       <input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Für Rückfragen">
     </div>
-
     <div class="field">
       <label for="postcode">Postleitzahl / Ort *</label>
       <input id="postcode" name="postcode" autocomplete="postal-code" required placeholder="PLZ und Ort">
     </div>
   </div>
 
-  <h2 class="step-title" style="margin-top:30px">
-    <span class="step">2</span>
-    Wobei braucht dein Tier Hilfe?
-  </h2>
+  <h2 class="step-title section-gap"><span class="step">2</span> Wobei braucht dein Tier Hilfe?</h2>
 
   <div class="choice-group">
     <div class="choice">
       <input type="radio" id="vet" name="helpType" value="Tierarztkosten" required>
-      <label for="vet">
-        <strong>🩺 Tierarztkosten</strong>
-        <small>Behandlung oder Untersuchung</small>
-      </label>
+      <label for="vet"><strong>🩺 Tierarztkosten</strong><small>Behandlung oder Untersuchung</small></label>
     </div>
-
     <div class="choice">
       <input type="radio" id="food" name="helpType" value="Futterhilfe">
-      <label for="food">
-        <strong>🐾 Futterhilfe</strong>
-        <small>Futter oder Grundversorgung</small>
-      </label>
+      <label for="food"><strong>🐾 Futterhilfe</strong><small>Futter oder Grundversorgung</small></label>
     </div>
-
     <div class="choice">
       <input type="radio" id="supplies" name="helpType" value="Zubehör und Versorgung">
-      <label for="supplies">
-        <strong>🧺 Zubehör &amp; Versorgung</strong>
-        <small>Wichtige Dinge für dein Tier</small>
-      </label>
+      <label for="supplies"><strong>🧺 Zubehör &amp; Versorgung</strong><small>Wichtige Dinge für dein Tier</small></label>
     </div>
-
     <div class="choice">
       <input type="radio" id="other" name="helpType" value="Sonstige Tierhilfe">
-      <label for="other">
-        <strong>💛 Sonstige Hilfe</strong>
-        <small>Eine andere schwierige Situation</small>
-      </label>
+      <label for="other"><strong>💛 Sonstige Hilfe</strong><small>Eine andere schwierige Situation</small></label>
     </div>
   </div>
 
-  <div class="fields" style="margin-top:18px">
+  <div class="fields section-gap">
 
     <div class="field">
       <label for="animal">Tierart *</label>
-      <select id="animal" name="animal" required>
-        <option value="">Bitte auswählen</option>
-        <option>Hund</option>
-        <option>Katze</option>
-        <option>Kleintier</option>
-        <option>Vogel</option>
-        <option>Andere Tierart</option>
-      </select>
+      <div class="select-wrap">
+        <select class="native-select" id="animal" name="animal" required>
+          <option value="">Bitte auswählen</option>
+          <option>Hund</option>
+          <option>Katze</option>
+          <option>Kleintier</option>
+          <option>Vogel</option>
+          <option>Andere Tierart</option>
+        </select>
+        <button type="button" class="select-trigger" aria-expanded="false">
+          <span>Bitte auswählen</span><span class="arrow">▾</span>
+        </button>
+        <div class="select-menu" role="listbox"></div>
+      </div>
     </div>
 
     <div class="field">
       <label for="animals">Anzahl der Tiere</label>
-      <select id="animals" name="animals">
-        <option>1</option>
-        <option>2</option>
-        <option>3</option>
-        <option>4 oder mehr</option>
-      </select>
+      <div class="select-wrap">
+        <select class="native-select" id="animals" name="animals">
+          <option>1</option><option>2</option><option>3</option><option>4 oder mehr</option>
+        </select>
+        <button type="button" class="select-trigger" aria-expanded="false">
+          <span>1</span><span class="arrow">▾</span>
+        </button>
+        <div class="select-menu" role="listbox"></div>
+      </div>
     </div>
 
     <div class="field full">
@@ -648,12 +641,18 @@ body.dark textarea{
 
     <div class="field full">
       <label for="timing">Wie dringend ist die Hilfe?</label>
-      <select id="timing" name="timing">
-        <option>Bitte auswählen</option>
-        <option>Akut / zeitnah</option>
-        <option>Innerhalb der nächsten Wochen</option>
-        <option>Ich möchte mich zunächst informieren</option>
-      </select>
+      <div class="select-wrap">
+        <select class="native-select" id="timing" name="timing">
+          <option value="">Bitte auswählen</option>
+          <option>Akut / zeitnah</option>
+          <option>Innerhalb der nächsten Wochen</option>
+          <option>Ich möchte mich zunächst informieren</option>
+        </select>
+        <button type="button" class="select-trigger" aria-expanded="false">
+          <span>Bitte auswählen</span><span class="arrow">▾</span>
+        </button>
+        <div class="select-menu" role="listbox"></div>
+      </div>
     </div>
 
   </div>
@@ -663,34 +662,26 @@ body.dark textarea{
     <span>Ich habe die Datenschutzhinweise gelesen und bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage verwendet werden. *</span>
   </label>
 
-  <button class="submit" type="submit">
-    Tierhilfe-Anfrage vorbereiten →
-  </button>
+  <button class="submit" type="submit">Tierhilfe-Anfrage vorbereiten →</button>
 
   <div class="local-note">
-    <strong>Wichtig:</strong>
-    Dieses Formular ist derzeit eine Vorschau. Es verschickt noch keine Anfrage. Vor dem Livebetrieb muss ein sicherer Formularversand eingerichtet und die Datenschutzerklärung verlinkt werden.
+    <strong>Wichtig:</strong> Dieses Formular verschickt derzeit noch keine Anfrage. Vor dem Livebetrieb muss ein sicherer Formularversand eingerichtet und die Datenschutzerklärung verlinkt werden.
   </div>
-
 </form>
 
 <aside class="aside-card">
-  <img
-    src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=900&q=85"
-    alt="Ein Hund schaut aufmerksam in die Kamera"
-    loading="lazy"
-  >
+  <img src="https://images.unsplash.com/photo-1450778869180-41d0601e046e?auto=format&fit=crop&w=900&q=85"
+       alt="Ein Hund schaut aufmerksam in die Kamera" loading="lazy">
   <div class="aside-copy">
     <h3>Du bist nicht allein.</h3>
     <p>Wir wissen, wie eng Mensch und Tier verbunden sind. Jede Anfrage wird individuell betrachtet; eine Unterstützung kann nicht garantiert werden.</p>
     <ul>
-      <li>Bitte beschreibe deinen Bedarf möglichst klar.</li>
-      <li>Wenn vorhanden, halte Kostenvoranschläge bereit.</li>
+      <li>Beschreibe deinen Bedarf möglichst klar.</li>
+      <li>Halte, wenn vorhanden, Kostenvoranschläge bereit.</li>
       <li>Bei einem medizinischen Notfall wende dich bitte direkt an eine Tierarztpraxis.</li>
     </ul>
   </div>
 </aside>
-
 </div>
 </main>
 
@@ -701,37 +692,129 @@ body.dark textarea{
 </footer>
 
 <a class="paw-donate" href="spenden.html" aria-label="Spenden">
+  <svg viewBox="0 0 100 105" aria-hidden="true">
+    <g fill="#dce8cb" stroke="#aabf91" stroke-width="2">
+      <ellipse cx="19" cy="25" rx="11" ry="16" transform="rotate(-25 19 25)"/>
+      <ellipse cx="39" cy="13" rx="11" ry="15" transform="rotate(-8 39 13)"/>
+      <ellipse cx="62" cy="13" rx="11" ry="15" transform="rotate(8 62 13)"/>
+      <ellipse cx="82" cy="25" rx="11" ry="16" transform="rotate(25 82 25)"/>
+      <path d="M15 57 C17 42 31 36 42 45 C47 49 53 49 58 45 C69 36 83 42 85 57 C88 75 72 92 50 96 C28 92 12 75 15 57Z"/>
+    </g>
+  </svg>
   <span>Spenden</span>
 </a>
 
 <script>
-const modeButton=document.getElementById('modeButton');
+/* Hell- und Dunkelmodus */
+const modeButton = document.getElementById('modeButton');
 
-function setMode(dark){
-  document.body.classList.toggle('dark',dark);
-  modeButton.textContent=dark?'☀️ Hell':'🌙 Dunkel';
-  try{
-    localStorage.setItem('lebensbruecke-mode',dark?'dark':'light');
-  }catch(e){}
+function setMode(dark) {
+  document.body.classList.toggle('dark', dark);
+  document.body.classList.toggle('light', !dark);
+  modeButton.textContent = dark ? '☀️ Hell' : '🌙 Dunkel';
+  try {
+    localStorage.setItem('lebensbruecke-mode', dark ? 'dark' : 'light');
+  } catch(e) {}
 }
 
-let saved='light';
+let savedMode = 'dark';
+try {
+  savedMode = localStorage.getItem('lebensbruecke-mode') || 'dark';
+} catch(e) {}
+setMode(savedMode === 'dark');
 
-try{
-  saved=localStorage.getItem('lebensbruecke-mode')||'light';
-}catch(e){}
-
-setMode(saved==='dark');
-
-modeButton.addEventListener('click',()=>{
+modeButton.addEventListener('click', () => {
   setMode(!document.body.classList.contains('dark'));
 });
 
-document.getElementById('tierhilfeForm').addEventListener('submit',function(e){
-  e.preventDefault();
-  alert('Die Vorschau ist vollständig ausgefüllt. Die Anfrage wurde NICHT versendet. Vor dem Livebetrieb muss der sichere Formularversand eingerichtet werden.');
+/* Farbige eigene Auswahlmenüs */
+const selectWraps = document.querySelectorAll('.select-wrap');
+
+function closeMenus(except) {
+  selectWraps.forEach(wrap => {
+    if (wrap !== except) {
+      wrap.classList.remove('open');
+      wrap.querySelector('.select-trigger').setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
+selectWraps.forEach(wrap => {
+  const select = wrap.querySelector('select');
+  const trigger = wrap.querySelector('.select-trigger');
+  const label = trigger.querySelector('span:first-child');
+  const menu = wrap.querySelector('.select-menu');
+
+  function buildOptions() {
+    menu.replaceChildren();
+
+    Array.from(select.options).forEach(option => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'select-option';
+      button.setAttribute('role', 'option');
+      button.setAttribute('aria-selected', String(option.selected));
+      button.textContent = option.textContent;
+      button.disabled = option.disabled;
+
+      button.addEventListener('click', () => {
+        select.value = option.value;
+        select.dispatchEvent(new Event('change', {bubbles:true}));
+        label.textContent = option.textContent;
+        menu.querySelectorAll('.select-option').forEach(item => {
+          item.setAttribute('aria-selected', String(item === button));
+        });
+        wrap.classList.remove('open');
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.focus();
+      });
+
+      menu.appendChild(button);
+    });
+  }
+
+  buildOptions();
+
+  select.addEventListener('change', () => {
+    const option = select.options[select.selectedIndex];
+    label.textContent = option ? option.textContent : 'Bitte auswählen';
+    buildOptions();
+  });
+
+  trigger.addEventListener('click', () => {
+    const opening = !wrap.classList.contains('open');
+    closeMenus(wrap);
+    wrap.classList.toggle('open', opening);
+    trigger.setAttribute('aria-expanded', String(opening));
+
+    if (opening) {
+      buildOptions();
+      const first = menu.querySelector('.select-option');
+      if (first) first.focus();
+    }
+  });
+
+  trigger.addEventListener('keydown', event => {
+    if (event.key === 'Escape') {
+      wrap.classList.remove('open');
+      trigger.setAttribute('aria-expanded', 'false');
+    }
+  });
+});
+
+document.addEventListener('click', event => {
+  if (!event.target.closest('.select-wrap')) closeMenus(null);
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeMenus(null);
+});
+
+/* Formularvorschau: Es werden keine Daten versendet */
+document.getElementById('tierhilfeForm').addEventListener('submit', event => {
+  event.preventDefault();
+  alert('Das Formular ist ausgefüllt. Die Anfrage wurde NICHT versendet. Der sichere Formularversand muss noch eingerichtet werden.');
 });
 </script>
-
 </body>
 </html>
